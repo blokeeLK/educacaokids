@@ -594,6 +594,160 @@
     }
 
     /* =========================================================
+       PROOF BLOCKS (foto + texto) — estilo referência
+    ========================================================= */
+    .section-deco-lines {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 10px 0 36px;
+    }
+    .section-deco-lines span {
+      display: block;
+      height: 4px;
+      border-radius: 4px;
+      width: 36px;
+    }
+    .section-deco-lines span:nth-child(1) { background: #FF6B6B; }
+    .section-deco-lines span:nth-child(2) { background: #FFD93D; }
+    .section-deco-lines span:nth-child(3) { background: #6BCB77; }
+    .section-deco-lines span:nth-child(4) { background: #4D96FF; }
+
+    .proof-block {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: center;
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .proof-block--blue { background: #DFF0FF; }
+    .proof-block--green { background: #E6F9EE; }
+
+    .proof-block__img {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+      background: #cde;
+    }
+    .proof-block__img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .proof-block__text h3 {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: var(--brown);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .proof-block__text p {
+      font-size: .88rem;
+      color: #4A4A4A;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .proof-block__text p strong { color: var(--brown); }
+
+    .proof-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .proof-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .88rem;
+      color: #2D4A2D;
+      background: rgba(255,255,255,.7);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .proof-checklist .ck {
+      width: 20px; height: 20px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: .7rem;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .proof-closing {
+      text-align: center;
+      padding: 32px 20px 12px;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+    .proof-closing > p:first-child {
+      font-size: .95rem;
+      color: #4A4A4A;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .proof-pencil {
+      width: 52px; height: 52px;
+      background: var(--yellow-mid);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(255,200,0,.3);
+    }
+    .proof-closing__sub {
+      font-size: 1rem;
+      color: var(--brown);
+      margin-bottom: 22px;
+    }
+    .proof-closing__sub strong { color: var(--green-dark); }
+
+    /* Learn cards */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .learn-card {
+      background: var(--white);
+      border: 2px dashed #C8E6C9;
+      border-radius: var(--radius);
+      padding: 20px 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .learn-card__icon {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .learn-card__icon-fallback {
+      width: 64px; height: 64px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+    }
+    .learn-card h3 { font-size: .88rem; color: var(--brown); line-height: 1.3; }
+    .learn-card p  { font-size: .78rem; color: var(--gray); line-height: 1.5; }
+
+    @media (max-width: 768px) {
+      .proof-block { grid-template-columns: 1fr; }
+      .proof-block__img { max-width: 260px; margin-inline: auto; width: 100%; }
+      .learn-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .learn-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* =========================================================
        AUTHORITY SECTION
     ========================================================= */
     .auth-blocks {
@@ -1172,8 +1326,7 @@
         <div class="hero__visual">
           <!-- ✏️ Substitua pelo mockup real do produto -->
           <div class="hero__mockup">
-            <img src="IMAGEM_MOCKUP_PRINCIPAL.png" alt="Kit de Atividades Educativas — mockup" onerror="this.style.display='none'" />
-            🖼️ Insira aqui o mockup<br>do Kit Educativo<br><small style="display:block;margin-top:8px;opacity:.7">(substitua IMAGEM_MOCKUP_PRINCIPAL.png)</small>
+            <img src="fotoprincipal.png" alt="Kit de Atividades Educativas — mockup" />
           </div>
         </div>
 
@@ -1343,44 +1496,104 @@
     </div>
   </section>
 
-  <div class="divider">✦ ✦ ✦</div>
+  <!-- =========================================================
+       5. POR QUE FUNCIONA — proof blocks estilo referência
+  ========================================================= -->
+  <section class="section section--white" id="transformacao">
+    <div class="container text-center">
+
+      <h2 class="section-title">Por que as atividades de<br><span class="text-green">Grafismo Fonético funcionam?</span></h2>
+      <div class="section-deco-lines">
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <!-- Bloco 1 — azul -->
+      <div class="proof-block proof-block--blue">
+        <div class="proof-block__img">
+          <!-- ✏️ Substitua pela foto real de uma criança estudando -->
+          <img
+            src="https://placehold.co/520x390/C8E0FF/4A7BB5?text=📖+Criança+aprendendo"
+            alt="Criança aprendendo a ler"
+            loading="lazy"
+          />
+        </div>
+        <div class="proof-block__text" style="text-align:left">
+          <h3>Antes de aprender a ler, o cérebro da criança precisa reconhecer padrões, sons e movimentos.</h3>
+          <p>As atividades de grafismo fonético desenvolvem a <strong>consciência fonológica e visual</strong> — habilidades essenciais para que a criança reconheça sílabas, sons e estruturas das palavras de forma natural.</p>
+          <p>Ao traçar linhas, curvas e padrões fonéticos, isso fortalece as <strong>conexões cerebrais responsáveis pela leitura</strong>, acelerando o processo de alfabetização de forma divertida e sem pressão.</p>
+        </div>
+      </div>
+
+      <!-- Bloco 2 — verde -->
+      <div class="proof-block proof-block--green">
+        <div class="proof-block__img">
+          <!-- ✏️ Substitua pela foto real de mãe/pai com filho -->
+          <img
+            src="https://placehold.co/520x390/C8F0D8/2D7A4A?text=👨‍👧+Família+aprendendo"
+            alt="Mãe e filho estudando juntos"
+            loading="lazy"
+          />
+        </div>
+        <div class="proof-block__text" style="text-align:left">
+          <h3>E em poucos dias você vai notar a diferença na leitura do seu filho:</h3>
+          <ul class="proof-checklist">
+            <li><span class="ck">✓</span> Vai reconhecer sílabas e sons com mais <strong>facilidade</strong></li>
+            <li><span class="ck">✓</span> Vai se sentir mais <strong>confiante</strong> ao tentar ler palavras novas</li>
+            <li><span class="ck">✓</span> Vai mostrar mais <strong>interesse</strong> por livros e histórias</li>
+            <li><span class="ck">✓</span> Vai aprender no <strong>ritmo dele</strong>, sem frustração ou comparação</li>
+            <li><span class="ck">✓</span> E o melhor: vai começar a <strong>gostar do momento de leitura em casa</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Fechamento + CTA -->
+      <div class="proof-closing">
+        <p>Com o <strong>Kit de Grafismo Fonético</strong>, seu filho desenvolve o cérebro para aprender a ler com leveza, no tempo dele — e com resultados visíveis em poucos dias.</p>
+        <div class="proof-pencil">✏️</div>
+        <p class="proof-closing__sub">Comece a jornada de <strong>aprendizado do seu filho hoje</strong></p>
+        <div class="btn-wrap">
+          <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
+            📖 Quero meu filho(a) Lendo!
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- =========================================================
-       5. BEFORE / AFTER
+       5B. O QUE SEU FILHO VAI APRENDER
   ========================================================= -->
-  <section class="section section--green" id="transformacao">
-    <div class="container">
-      <div class="section-label">Transformação</div>
-      <h2 class="section-title">Transforme momentos comuns em momentos de aprendizado real</h2>
-      <p class="section-sub">Em vez de deixar a criança apenas no celular, você pode oferecer atividades educativas que ajudam no desenvolvimento enquanto ela se diverte.</p>
+  <section class="section section--yellow" id="vai-aprender">
+    <div class="container text-center">
+      <h2 class="section-title">📚 O Que Seu Filho<br>Vai Aprender 📚</h2>
 
-      <div class="ba-grid">
-        <div class="ba-card ba-card--before">
-          <div class="ba-card__header">
-            <div class="icon">😓</div>
-            <div class="badge">Antes</div>
-          </div>
-          <ul class="ba-list">
-            <li><span class="dot">✗</span> Criança dispersa, sem foco</li>
-            <li><span class="dot">✗</span> Atividades aleatórias ou nenhuma</li>
-            <li><span class="dot">✗</span> Pais sem saber o que fazer</li>
-            <li><span class="dot">✗</span> Pouco estímulo pedagógico em casa</li>
-            <li><span class="dot">✗</span> Muitas horas no celular sem propósito</li>
-          </ul>
+      <div class="learn-grid">
+
+        <div class="learn-card">
+          <div class="learn-card__icon-fallback">🔤</div>
+          <h3>Reconhecimento de Sons e Letras</h3>
+          <p>Cada som é associado ao símbolo visual, <strong>fortalecendo as conexões cerebrais</strong> de forma sólida e duradoura.</p>
         </div>
-        <div class="ba-card ba-card--after">
-          <div class="ba-card__header">
-            <div class="icon">🌈</div>
-            <div class="badge">Depois</div>
-          </div>
-          <ul class="ba-list">
-            <li><span class="dot">✓</span> Rotina educativa leve e consistente</li>
-            <li><span class="dot">✓</span> Atividades prontas, sem precisar criar</li>
-            <li><span class="dot">✓</span> Mais interesse em aprender</li>
-            <li><span class="dot">✓</span> Desenvolvimento com leveza e alegria</li>
-            <li><span class="dot">✓</span> Tempo de qualidade com a criança</li>
-          </ul>
+
+        <div class="learn-card">
+          <div class="learn-card__icon-fallback">🧩</div>
+          <h3>Formação de Palavras</h3>
+          <p>Atividades dinâmicas que transformam a <strong>construção de palavras</strong> numa experiência divertida e intuitiva.</p>
         </div>
+
+        <div class="learn-card">
+          <div class="learn-card__icon-fallback">📖</div>
+          <h3>Compreensão e Leitura Fluente</h3>
+          <p>Exercícios práticos que aprimoram a compreensão do texto, ajudando seu filho a <strong>ganhar fluência e confiança.</strong></p>
+        </div>
+
+        <div class="learn-card">
+          <div class="learn-card__icon-fallback">🗺️</div>
+          <h3>Guia Passo a Passo com Ilustrações</h3>
+          <p>Instruções visuais e detalhadas para que cada fase do aprendizado seja clara e <strong>tranquila, sem complicações.</strong></p>
+        </div>
+
       </div>
     </div>
   </section>
