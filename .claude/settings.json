@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir \"c:/Users/bloke/Documents/GitHub/educacaokids\")"
+      "Bash(dir \"c:/Users/bloke/Documents/GitHub/educacaokids\")",
+      "Read(//c/Users/bloke/Downloads/bonus/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\bloke\\Downloads\\bonus"
     ]
   }
 }
