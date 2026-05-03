@@ -1382,7 +1382,7 @@
         gap: 32px;
       }
       .hero__text { order: 1; }
-      .hero__visual { order: 0; max-width: 280px; margin-inline: auto; }
+      .hero__visual { order: 0; max-width: 100%; width: 100%; margin-inline: auto; }
 
       .product__inner { grid-template-columns: 1fr; }
       .product__video { max-width: 480px; margin-inline: auto; }
@@ -1408,6 +1408,37 @@
       .hero__eyebrow { font-size: .72rem; }
       .steps { grid-template-columns: 1fr; }
       .auth-blocks { grid-template-columns: 1fr; }
+
+      /* 1 — banner principal maior no mobile */
+      .hero__visual { max-width: 100% !important; width: 100%; }
+      .hero__mockup { aspect-ratio: 4/3; }
+
+      /* 2 — checklist alinhado no mobile */
+      .proof-checklist li {
+        align-items: flex-start;
+        padding: 8px 10px;
+        font-size: .82rem;
+      }
+      .proof-checklist .ck {
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      /* 3 — caixa CTA menor no mobile */
+      .offer {
+        padding: 16px 12px;
+        max-width: 100%;
+        border-radius: 12px;
+      }
+      .offer h2 { font-size: 1.1rem !important; }
+      .offer__includes li { font-size: .78rem; padding: 4px 0; gap: 7px; }
+      .price-anchor { font-size: .82rem; }
+      .price-main { font-size: 1.8rem !important; }
+      .price-sub { font-size: .75rem; margin-bottom: 16px; }
+      .value-stack { padding: 8px 12px; margin: 10px 0 14px; }
+      .value-stack p { font-size: .72rem; }
+      .security-row { gap: 10px; font-size: .7rem; }
+      .section-label { font-size: .7rem; }
     }
   </style>
 </head>
@@ -1672,11 +1703,11 @@
         <div class="proof-block__text" style="text-align:left">
           <h3>E em poucos dias você vai notar a diferença na leitura do seu filho:</h3>
           <ul class="proof-checklist">
-            <li><span class="ck">✓</span> Vai reconhecer sílabas e sons com mais <strong>facilidade</strong></li>
-            <li><span class="ck">✓</span> Vai se sentir mais <strong>confiante</strong> ao tentar ler palavras novas</li>
-            <li><span class="ck">✓</span> Vai mostrar mais <strong>interesse</strong> por livros e histórias</li>
-            <li><span class="ck">✓</span> Vai aprender no <strong>ritmo dele</strong>, sem frustração ou comparação</li>
-            <li><span class="ck">✓</span> E o melhor: vai começar a <strong>gostar do momento de leitura em casa</strong></li>
+            <li><span class="ck">✓</span><span>Vai reconhecer sílabas e sons com mais <strong>facilidade</strong></span></li>
+            <li><span class="ck">✓</span><span>Vai se sentir mais <strong>confiante</strong> ao tentar ler palavras novas</span></li>
+            <li><span class="ck">✓</span><span>Vai mostrar mais <strong>interesse</strong> por livros e histórias</span></li>
+            <li><span class="ck">✓</span><span>Vai aprender no <strong>ritmo dele</strong>, sem frustração ou comparação</span></li>
+            <li><span class="ck">✓</span><span>E o melhor: vai começar a <strong>gostar do momento de leitura em casa</strong></span></li>
           </ul>
         </div>
       </div>
