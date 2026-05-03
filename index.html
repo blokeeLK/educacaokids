@@ -1424,20 +1424,49 @@
         flex-shrink: 0;
       }
 
-      /* 3 — caixa CTA menor no mobile */
+      /* 3 — caixa CTA cabe em 1 tela no mobile */
       .offer {
-        padding: 16px 12px;
+        padding: 14px 12px;
         max-width: 100%;
         border-radius: 12px;
       }
-      .offer h2 { font-size: 1.1rem !important; }
-      .offer__includes li { font-size: .78rem; padding: 4px 0; gap: 7px; }
-      .price-anchor { font-size: .82rem; }
-      .price-main { font-size: 1.8rem !important; }
-      .price-sub { font-size: .75rem; margin-bottom: 16px; }
-      .value-stack { padding: 8px 12px; margin: 10px 0 14px; }
-      .value-stack p { font-size: .72rem; }
-      .security-row { gap: 10px; font-size: .7rem; }
+      .offer::before { display: none; }
+      .offer .section-label { font-size: .68rem; padding: 3px 10px; margin-bottom: 6px; }
+      .offer h2 { font-size: .95rem !important; margin-bottom: 2px !important; }
+      .offer .section-sub { font-size: .72rem; margin-bottom: 0; }
+
+      /* lista em 2 colunas compactas */
+      .offer__includes {
+        margin: 8px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .offer__includes li {
+        font-size: .7rem;
+        padding: 3px 0;
+        gap: 4px;
+        border-bottom: none;
+      }
+      .offer__includes .icon { font-size: .75rem; }
+
+      /* value stack compacto */
+      .value-stack { padding: 6px 10px; margin: 6px auto 8px; }
+      .value-stack p { font-size: .68rem; margin-bottom: 1px; }
+      .value-stack .total { font-size: .78rem; }
+      .value-stack .today { font-size: .88rem; }
+
+      /* preço menor */
+      .price-anchor { font-size: .75rem; margin-bottom: 0; }
+      .price-main { font-size: 1.6rem !important; margin-bottom: 2px; }
+      .price-sub { font-size: .68rem; margin-bottom: 10px; }
+
+      /* botão compacto */
+      .offer .btn--primary { font-size: .78rem !important; padding: 11px 16px !important; max-width: 100% !important; }
+      .offer .microcopy { font-size: .62rem; gap: 3px; }
+
+      /* esconde security-row (info redundante) */
+      .offer .security-row { display: none; }
       .section-label { font-size: .7rem; }
     }
   </style>
