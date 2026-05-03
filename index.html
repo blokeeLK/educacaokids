@@ -811,7 +811,9 @@
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: var(--shadow-md);
-      margin: 32px 0 0;
+      margin: 28px auto 0;
+      max-width: 320px;
+      background: #fff;
     }
 
     .carousel-track {
@@ -823,8 +825,9 @@
     .carousel-track img {
       min-width: 100%;
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
       flex-shrink: 0;
       display: block;
     }
@@ -912,7 +915,8 @@
     }
 
     @media (max-width: 768px) {
-      .carousel-track img { height: 160px; }
+      .carousel-wrap { max-width: 260px; }
+      .carousel-track img { max-height: 220px; }
     }
 
     /* =========================================================
@@ -1093,12 +1097,14 @@
     ========================================================= */
     .offer {
       background: linear-gradient(135deg, #FFFBEC 0%, #FFF3CC 100%);
-      border: 3px solid #FFCC40;
-      border-radius: 24px;
-      padding: 52px 36px;
+      border: 2px solid #FFCC40;
+      border-radius: 18px;
+      padding: 28px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      max-width: 480px;
+      margin-inline: auto;
     }
     .offer::before {
       content: '🎁';
@@ -1122,7 +1128,7 @@
       font-size: 1rem; color: #A09080; text-decoration: line-through; margin-bottom: 4px;
     }
     .price-main {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
       font-weight: 900;
       color: var(--green-dark);
       line-height: 1;
@@ -1134,15 +1140,15 @@
     .value-stack {
       background: var(--white);
       border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      margin: 20px 0 28px;
+      padding: 10px 16px;
+      margin: 14px 0 18px;
       display: inline-block;
       box-shadow: var(--shadow);
       text-align: left;
     }
-    .value-stack p { font-size: .85rem; margin-bottom: 4px; }
-    .value-stack .total { font-weight: 800; font-size: 1rem; color: var(--brown); }
-    .value-stack .today { font-weight: 900; font-size: 1.2rem; color: var(--green); }
+    .value-stack p { font-size: .78rem; margin-bottom: 2px; }
+    .value-stack .total { font-weight: 800; font-size: .88rem; color: var(--brown); }
+    .value-stack .today { font-weight: 900; font-size: 1rem; color: var(--green); }
 
     .security-row {
       display: flex;
@@ -1391,7 +1397,7 @@
         padding: 28px 20px;
       }
 
-      .offer { padding: 36px 20px; }
+      .offer { padding: 22px 16px; }
 
       .auth-blocks { grid-template-columns: repeat(2, 1fr); }
     }
