@@ -318,24 +318,19 @@
       align-items: center;
     }
 
-    /* ✏️ Troque por imagem real */
-    .product__image {
-      background: #E8D8C0;
+    /* VSL video */
+    .product__video {
       border-radius: var(--radius);
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .8rem;
-      color: #9A7E68;
-      font-weight: 600;
-      text-align: center;
-      padding: 20px;
-      box-shadow: var(--shadow-md);
-      position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #000;
+      width: 100%;
     }
-    .product__image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .product__video video {
+      width: 100%;
+      display: block;
+      border-radius: var(--radius);
+    }
 
     .check-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0 28px; }
     .check-list li {
@@ -1092,7 +1087,7 @@
       .hero__visual { order: 0; max-width: 280px; margin-inline: auto; }
 
       .product__inner { grid-template-columns: 1fr; }
-      .product__image { max-width: 300px; margin-inline: auto; }
+      .product__video { max-width: 480px; margin-inline: auto; }
 
       .ba-grid { grid-template-columns: 1fr; }
 
@@ -1255,11 +1250,16 @@
     <div class="container">
       <div class="product__inner">
 
-        <!-- MOCKUP -->
-        <div class="product__image">
-          <!-- ✏️ Substitua pelo mockup/preview das atividades -->
-          <img src="IMAGEM_ATIVIDADES.png" alt="Prévia das atividades do kit" onerror="this.style.display='none'" />
-          🖼️ Prévia das<br>atividades do kit<br><small style="opacity:.7">(substitua IMAGEM_ATIVIDADES.png)</small>
+        <!-- VSL VIDEO -->
+        <div class="product__video">
+          <video
+            src="vsl.mp4"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+            aria-label="Vídeo de apresentação do Kit de Atividades Educativas"
+          ></video>
         </div>
 
         <div>
@@ -1610,10 +1610,10 @@
           </div>
         </div>
 
-        <!-- Bônus 6 — ✏️ Salve a imagem como GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-IMAGEM.webp na pasta images/ -->
+        <!-- Bônus 6 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-IMAGEM.webp"
+            <img src="https://i.ibb.co/WNVXttxg/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png"
                  alt="Caderno Alfabeto com Imagem" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
