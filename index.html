@@ -464,25 +464,23 @@
       margin-top: 36px;
     }
 
-    .why-image {
-      background: #E8D8C0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      aspect-ratio: 3/4;
+    /* duas imagens empilhadas no lado esquerdo da seção */
+    .why-images {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .8rem;
-      color: #9A7E68;
-      font-weight: 600;
-      text-align: center;
-      padding: 20px;
-      position: relative;
+      flex-direction: column;
+      gap: 14px;
     }
-    .why-image img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
+    .why-img-main {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      object-fit: cover;
+    }
+    .why-img-secondary {
+      width: 72%;
+      align-self: center;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
       object-fit: cover;
     }
 
@@ -1316,10 +1314,17 @@
 
       <!-- Grid imagem + checklist -->
       <div class="why-grid">
-        <!-- ✏️ Substitua pela imagem real do produto -->
-        <div class="why-image">
-          <img src="IMAGEM_PRODUTO_PRINCIPAL.png" alt="Kit Grafismo Fonético" onerror="this.style.display='none'" />
-          🖼️ Insira aqui a imagem<br>do kit completo
+
+        <!-- Coluna esquerda: mockup principal + foto da criança -->
+        <div class="why-images">
+          <img class="why-img-main"
+               src="images/1_MOCKUP-PRINCIPAL-GRAFISMO-FONETICO-768x421.webp"
+               alt="Kit de Grafismo Fonético — mockup completo"
+               loading="lazy" />
+          <img class="why-img-secondary"
+               src="images/JcDcvm3874423-643x1024.webp"
+               alt="Criança aprendendo com as atividades do kit"
+               loading="lazy" />
         </div>
 
         <div style="text-align:left">
@@ -1605,10 +1610,26 @@
           </div>
         </div>
 
+        <!-- Bônus 6 — ✏️ Salve a imagem como GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-IMAGEM.webp na pasta images/ -->
+        <div class="bonus-box-card">
+          <div class="bonus-box-img-wrap">
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-IMAGEM.webp"
+                 alt="Caderno Alfabeto com Imagem" loading="lazy" />
+            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
+          </div>
+          <div class="bonus-box-num">Bônus 6</div>
+          <h3 class="bonus-box-name">Caderno Alfabeto<br>com Imagem</h3>
+          <p class="bonus-box-desc">Cada letra do alfabeto associada a uma imagem ilustrada, facilitando a memorização fonética de forma visual e divertida.</p>
+          <div class="bonus-box-value">
+            <span class="old-price">R$ 19,90</span>
+            <span class="free-tag">✅ Grátis</span>
+          </div>
+        </div>
+
       </div>
 
       <div class="bonus-total">
-        🎁 Valor total dos bônus: <s>R$ 84,50</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!
+        🎁 Valor total dos bônus: <s>R$ 104,40</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!
       </div>
 
       <div class="btn-wrap">
