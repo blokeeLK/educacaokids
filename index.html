@@ -325,11 +325,52 @@
       box-shadow: var(--shadow-md);
       background: #000;
       width: 100%;
+      position: relative;
     }
     .product__video video {
       width: 100%;
       display: block;
       border-radius: var(--radius);
+    }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: rgba(0,0,0,.52);
+      cursor: pointer;
+      border-radius: var(--radius);
+      transition: background .2s;
+      z-index: 5;
+    }
+    .video-overlay:hover { background: rgba(0,0,0,.42); }
+    .video-overlay__btn {
+      width: 68px; height: 68px;
+      background: linear-gradient(135deg, #28A745, #1A6B35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(40,167,69,.55);
+      transition: transform .2s;
+    }
+    .video-overlay:hover .video-overlay__btn { transform: scale(1.08); }
+    .video-overlay__btn::after {
+      content: '';
+      display: block;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 12px 0 12px 22px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+    .video-overlay__text {
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.5);
     }
 
     .check-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0 28px; }
@@ -1608,15 +1649,18 @@
       <div class="product__inner">
 
         <!-- VSL VIDEO -->
-        <div class="product__video">
+        <div class="product__video" id="vslWrap">
           <video
+            id="vslVideo"
             src="vsl.mp4"
-            controls
             playsinline
             preload="metadata"
-            poster=""
             aria-label="Vídeo de apresentação do Kit de Atividades Educativas"
           ></video>
+          <div class="video-overlay" id="vslOverlay">
+            <div class="video-overlay__btn"></div>
+            <span class="video-overlay__text">▶ Clique para assistir ao vídeo</span>
+          </div>
         </div>
 
         <div>
@@ -2474,6 +2518,18 @@
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── VSL overlay ───────────────────────────────────────────────
+    (function() {
+      var overlay = document.getElementById('vslOverlay');
+      var video   = document.getElementById('vslVideo');
+      if (!overlay || !video) return;
+      overlay.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        video.controls = true;
+        video.play();
+      });
+    })();
 
     // ── Carousel ──────────────────────────────────────────────────
     (function() {
