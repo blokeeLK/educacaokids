@@ -459,24 +459,48 @@
       margin-top: 36px;
     }
 
-    /* duas imagens empilhadas no lado esquerdo da seção */
-    .why-images {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    /* fotos lado a lado */
+    .why-photos-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
     }
-    .why-img-main {
+    .why-photos-row img {
       width: 100%;
       border-radius: var(--radius);
       box-shadow: var(--shadow-md);
       object-fit: cover;
+      aspect-ratio: 4/3;
     }
-    .why-img-secondary {
-      width: 72%;
-      align-self: center;
+
+    /* checklist abaixo das fotos */
+    .why-checklist-below {
+      background: var(--cream);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      object-fit: cover;
+      padding: 28px 32px;
+      text-align: left;
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .why-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .why-checks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+    .why-checks .wck { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+    @media (max-width: 600px) {
+      .why-photos-row { grid-template-columns: 1fr; }
+      .why-checklist-below { padding: 20px 18px; }
     }
 
     .why-intro {
@@ -775,6 +799,120 @@
       margin-top: 28px;
       font-size: .88rem;
       color: #6B5000;
+    }
+
+    /* =========================================================
+       CAROUSEL
+    ========================================================= */
+    .carousel-section { background: var(--cream-dark); }
+
+    .carousel-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin: 32px 0 0;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform .7s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+
+    .carousel-track img {
+      min-width: 100%;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.85);
+      border: none; cursor: pointer;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+      z-index: 10;
+      transition: background .2s;
+    }
+    .carousel-btn:hover { background: #fff; }
+    .carousel-btn--prev { left: 12px; }
+    .carousel-btn--next { right: 12px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 14px;
+    }
+    .carousel-dots button {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: #C8C0B0;
+      cursor: pointer;
+      padding: 0;
+      transition: background .2s, transform .2s;
+    }
+    .carousel-dots button.active {
+      background: var(--green);
+      transform: scale(1.3);
+    }
+
+    .kit-contents {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-top: 28px;
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+    .kit-contents__title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .kit-contents__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .kit-contents__list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--brown);
+      padding: 10px 14px;
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--green);
+    }
+    .kit-contents__list li .num {
+      background: var(--green);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 800;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-track img { height: 260px; }
     }
 
     /* =========================================================
@@ -1465,32 +1603,25 @@
 
       <h2 class="section-title" style="margin-bottom:32px">Por isso você precisa do Kit...</h2>
 
-      <!-- Grid imagem + checklist -->
-      <div class="why-grid">
+      <!-- Fotos lado a lado -->
+      <div class="why-photos-row">
+        <img src="images/1_MOCKUP-PRINCIPAL-GRAFISMO-FONETICO-768x421.webp"
+             alt="Kit de Grafismo Fonético — mockup completo" loading="lazy" />
+        <img src="images/JcDcvm3874423-643x1024.webp"
+             alt="Criança aprendendo com as atividades do kit" loading="lazy" />
+      </div>
 
-        <!-- Coluna esquerda: mockup principal + foto da criança -->
-        <div class="why-images">
-          <img class="why-img-main"
-               src="images/1_MOCKUP-PRINCIPAL-GRAFISMO-FONETICO-768x421.webp"
-               alt="Kit de Grafismo Fonético — mockup completo"
-               loading="lazy" />
-          <img class="why-img-secondary"
-               src="images/JcDcvm3874423-643x1024.webp"
-               alt="Criança aprendendo com as atividades do kit"
-               loading="lazy" />
-        </div>
-
-        <div style="text-align:left">
-          <p class="why-intro">Cada atividade do Kit de Grafismo Fonético foi cuidadosamente criada para:</p>
-          <ul class="check-list">
-            <li><span class="icon">✅</span> Desenvolver a <strong>coordenação motora fina</strong></li>
-            <li><span class="icon">✅</span> Estimular a <strong>criatividade e a atenção</strong> da criança</li>
-            <li><span class="icon">✅</span> Fortalecer as <strong>conexões cerebrais</strong> que facilitam a leitura</li>
-            <li><span class="icon">✅</span> Despertar o <strong>interesse pelas palavras e pelos sons</strong></li>
-            <li><span class="icon">✅</span> Tornar o processo de <strong>alfabetização leve, divertido e eficaz!</strong></li>
-          </ul>
-          <p class="why-footer">Tudo isso com apenas alguns minutos por dia — direto de casa, no ritmo natural da criança.</p>
-        </div>
+      <!-- Checklist abaixo das fotos -->
+      <div class="why-checklist-below">
+        <p class="why-intro">Cada atividade do Kit de Grafismo Fonético foi cuidadosamente criada para:</p>
+        <ul class="why-checks">
+          <li><span class="wck">✅</span><span>Desenvolver a <strong>coordenação motora fina</strong></span></li>
+          <li><span class="wck">✅</span><span>Estimular a <strong>criatividade e a atenção</strong> da criança</span></li>
+          <li><span class="wck">✅</span><span>Fortalecer as <strong>conexões cerebrais</strong> que facilitam a leitura</span></li>
+          <li><span class="wck">✅</span><span>Despertar o <strong>interesse pelas palavras e pelos sons</strong></span></li>
+          <li><span class="wck">✅</span><span>Tornar o processo de <strong>alfabetização leve, divertido e eficaz!</strong></span></li>
+        </ul>
+        <p class="why-footer">Tudo isso com apenas alguns minutos por dia — direto de casa, no ritmo natural da criança.</p>
       </div>
 
     </div>
@@ -1597,45 +1728,59 @@
   </section>
 
   <!-- =========================================================
-       6. AUTHORITY / PROOF
+       6. CARROSSEL + CONTEÚDO DO KIT
   ========================================================= -->
-  <section class="section section--white" id="autoridade">
+  <section class="section carousel-section" id="autoridade">
     <div class="container">
-      <div class="section-label">Por que funciona</div>
-      <h2 class="section-title">Por que esse tipo de atividade ajuda tanto no desenvolvimento infantil?</h2>
-      <p class="section-sub">Atividades estruturadas de grafismo, percepção visual, coordenação motora e consciência fonológica são amplamente usadas na educação infantil porque criam a base para a alfabetização.</p>
 
-      <div class="auth-blocks" style="margin-top:32px">
-        <div class="auth-block">
-          <div class="icon">✍️</div>
-          <h3>Preparação para a Escrita</h3>
-          <p>O grafismo desenvolve o traço antes mesmo da escrita formal começar.</p>
+      <div class="section-label">O que está incluído</div>
+      <h2 class="section-title">Veja tudo que você vai receber<br>no <span class="text-green">kit de atividades</span></h2>
+
+      <!-- Carrossel -->
+      <div class="carousel-wrap" id="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <img src="1.webp" alt="Atividade 1 do kit" loading="eager" />
+          <img src="2.webp" alt="Atividade 2 do kit" loading="lazy" />
+          <img src="3.webp" alt="Atividade 3 do kit" loading="lazy" />
+          <img src="4.webp" alt="Atividade 4 do kit" loading="lazy" />
+          <img src="5.webp" alt="Atividade 5 do kit" loading="lazy" />
+          <img src="6.webp" alt="Atividade 6 do kit" loading="lazy" />
+          <img src="7.webp" alt="Atividade 7 do kit" loading="lazy" />
         </div>
-        <div class="auth-block">
-          <div class="icon">🔊</div>
-          <h3>Som + Letra</h3>
-          <p>A associação fonema-grafema é fundamental para a leitura fluente.</p>
-        </div>
-        <div class="auth-block">
-          <div class="icon">👁️</div>
-          <h3>Estímulo Visual</h3>
-          <p>Percepção visual aprimora diferenciação de formas e letras parecidas.</p>
-        </div>
-        <div class="auth-block">
-          <div class="icon">🤲</div>
-          <h3>Controle Motor</h3>
-          <p>A coordenação fina é pré-requisito para uma caligrafia confortável.</p>
-        </div>
-        <div class="auth-block">
-          <div class="icon">🎲</div>
-          <h3>Aprendizado Lúdico</h3>
-          <p>Crianças aprendem muito mais quando a atividade parece uma brincadeira.</p>
-        </div>
+        <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Anterior">&#8249;</button>
+        <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Próximo">&#8250;</button>
       </div>
 
-      <div class="auth-note">
-        📋 <strong>Importante:</strong> Este material é complementar e pode ser usado em casa, no reforço escolar, sala de aula ou atividades pedagógicas. Não substitui o acompanhamento profissional quando necessário.
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
+
+      <!-- Conteúdo do kit -->
+      <div class="kit-contents">
+        <div class="kit-contents__title">📋 O que você recebe no kit:</div>
+        <ul class="kit-contents__list">
+          <li>
+            <span class="num">+100</span>
+            Mais de <strong>100 Atividades de Grafismo Fonético</strong>
+          </li>
+          <li>
+            <span class="num">N1</span>
+            Atividades <strong>Nível 01</strong> — Palavras com 02 Sílabas
+          </li>
+          <li>
+            <span class="num">N2</span>
+            Atividades <strong>Nível 02</strong> — Palavras com 03 Sílabas
+          </li>
+          <li>
+            <span class="num">N3</span>
+            Atividades <strong>Nível 03</strong> — Palavras com 04 Sílabas
+          </li>
+          <li>
+            <span class="num">✍️</span>
+            Atividades de <strong>Grafismo na Letra Cursiva e Bastão</strong>
+          </li>
+        </ul>
       </div>
+
     </div>
   </section>
 
@@ -2263,6 +2408,53 @@
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Carousel ──────────────────────────────────────────────────
+    (function() {
+      var track   = document.getElementById('carouselTrack');
+      var dotsWrap = document.getElementById('carouselDots');
+      var prev    = document.getElementById('carouselPrev');
+      var next    = document.getElementById('carouselNext');
+      if (!track) return;
+
+      var slides  = track.querySelectorAll('img');
+      var total   = slides.length;
+      var current = 0;
+      var timer;
+
+      // build dots
+      slides.forEach(function(_, i) {
+        var btn = document.createElement('button');
+        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+        if (i === 0) btn.classList.add('active');
+        btn.addEventListener('click', function() { goTo(i); resetTimer(); });
+        dotsWrap.appendChild(btn);
+      });
+
+      function goTo(idx) {
+        current = (idx + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsWrap.querySelectorAll('button').forEach(function(b, i) {
+          b.classList.toggle('active', i === current);
+        });
+      }
+
+      function autoPlay() { goTo(current + 1); }
+      function resetTimer() { clearInterval(timer); timer = setInterval(autoPlay, 3200); }
+
+      prev.addEventListener('click', function() { goTo(current - 1); resetTimer(); });
+      next.addEventListener('click', function() { goTo(current + 1); resetTimer(); });
+
+      // touch swipe
+      var startX = 0;
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer(); }
+      }, { passive: true });
+
+      resetTimer();
+    })();
 
     // ── Smooth anchor scroll for nav-like links ─────────────────
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
