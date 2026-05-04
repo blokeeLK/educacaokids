@@ -24,24 +24,6 @@
     defer
   ></script>
 
-  <!-- ===== Meta Pixel (browser) — Pixel ID público, token nunca vai aqui ===== -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','903176232512825');
-    fbq('track','PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=903176232512825&ev=PageView&noscript=1"/>
-  </noscript>
-
   <style>
     /* =========================================================
        BASE RESET & VARIABLES
@@ -3098,34 +3080,6 @@
       }, { passive: true });
 
       resetTimer();
-    })();
-
-    // ── Meta Pixel events ────────────────────────────────────────
-    (function() {
-      if (typeof fbq !== 'function') return;
-      function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
-
-      // ViewContent ao carregar
-      fbq('track', 'ViewContent', {
-        content_name: 'Kit de Alfabetizacao Infantil',
-        content_category: 'educacao',
-        currency: 'BRL',
-        value: 19.90
-      }, { eventID: genId() });
-
-      // InitiateCheckout ao clicar em botão de checkout
-      ['https://pay.cakto.com.br/bub5qbq', 'https://pay.cakto.com.br/xumrbgf_872894'].forEach(function(url) {
-        document.querySelectorAll('a[href="' + url + '"]').forEach(function(el) {
-          el.addEventListener('click', function() {
-            var value = url.indexOf('xumrbgf') !== -1 ? 19.90 : 10.00;
-            fbq('track', 'InitiateCheckout', {
-              content_name: 'Kit de Alfabetizacao Infantil',
-              currency: 'BRL',
-              value: value
-            }, { eventID: genId() });
-          });
-        });
-      });
     })();
 
     // ── Smooth anchor scroll for nav-like links ─────────────────
