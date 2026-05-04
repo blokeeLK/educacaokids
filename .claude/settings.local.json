@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "PowerShell($content = Get-Content 'c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html' -Raw -Encoding UTF8; @\\('primeiros passos na leitura','QUERO AJUDAR MEU FILHO A LER','trava na hora de juntar as letras','Sem tempo para preparar exercícios','letras, sílabas e palavras','pintura e associação visual','Use no ritmo dela','Tudo isso por apenas','Caderno Alfabeto com Carinhas','SIM, QUERO RECEBER MEU KIT AGORA','confirmação da compra','Os 6 bônus exclusivos','Funciona no celular','COLOCAR_LINK_DO_CHECKOUT_AQUI','</html>'\\) | ForEach-Object { if \\($content -match [regex]::Escape\\($_\\)\\) { \"OK  — $_\" } else { \"FAIL — $_\" } })"
+    ]
+  }
+}
