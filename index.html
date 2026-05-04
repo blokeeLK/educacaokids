@@ -1510,6 +1510,95 @@
       .offer .security-row { display: none; }
       .section-label { font-size: .7rem; }
     }
+
+    /* =========================================================
+       MID-PAGE CTA BLOCK
+    ========================================================= */
+    .mid-cta-wrap {
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .mid-cta {
+      background: linear-gradient(135deg, #F0FAF4 0%, #E8F8EC 100%);
+      border: 2px solid #B7EBCA;
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .mid-cta h3 {
+      font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+      color: var(--brown);
+      margin-bottom: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .mid-cta p {
+      font-size: .95rem;
+      color: #5A4535;
+      margin-bottom: 24px;
+      line-height: 1.65;
+      max-width: 480px;
+      margin-inline: auto;
+      margin-bottom: 24px;
+    }
+
+    /* =========================================================
+       TRUST WHY SECTION
+    ========================================================= */
+    .trust-why {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .trust-why__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .trust-why__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .93rem;
+      line-height: 1.5;
+      padding: 10px 14px;
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+    }
+    .trust-why__list .twck {
+      color: var(--green);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .trust-why__note {
+      font-size: .88rem;
+      color: var(--gray);
+      font-style: italic;
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    /* Hero mobile improvements */
+    @media (max-width: 600px) {
+      .hero__text { text-align: center; }
+      .hero h1 { font-size: clamp(1.55rem, 6vw, 2rem); }
+      .hero__sub { font-size: .93rem; margin-inline: auto; text-align: center; }
+      .hero__eyebrow { margin: 0 auto 18px; }
+      .seals { justify-content: center; }
+      .btn-wrap { align-items: center !important; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-why { padding: 22px 16px; }
+      .mid-cta { padding: 24px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -1535,10 +1624,10 @@
           </div>
           <div class="offer-badge">⏰ Oferta especial por tempo limitado</div>
 
-          <h1>Ajude seu filho a dar os <em>primeiros passos na leitura</em> com atividades simples, coloridas e prontas para imprimir</h1>
+          <h1>Ajude seu filho a <em>começar a ler</em> com atividades simples, coloridas e prontas para imprimir</h1>
 
           <p class="hero__sub">
-            Um kit completo de alfabetização para usar em casa ou na escola, com exercícios organizados para praticar <strong>letras, sílabas e palavras</strong> de forma leve e divertida — sem precisar ser professora.
+            Receba um kit completo de alfabetização para praticar <strong>letras, sílabas e palavras</strong> em casa — mesmo sem experiência.
           </p>
 
           <!-- Seals -->
@@ -1553,7 +1642,7 @@
           <!-- CTA -->
           <div class="btn-wrap">
             <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary" id="hero-cta">
-              QUERO AJUDAR MEU FILHO A LER →
+              QUERO AJUDAR MEU FILHO A LER
             </a>
             <div class="microcopy">
               <span>⚡ Acesso imediato</span>
@@ -1679,7 +1768,7 @@
 
           <div class="btn-wrap" style="align-items:flex-start">
             <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
-              QUERO AJUDAR MEU FILHO A LER →
+              QUERO AJUDAR MEU FILHO A LER
             </a>
           </div>
         </div>
@@ -1732,6 +1821,32 @@
         <p class="why-footer">Tudo isso com apenas alguns minutos por dia — direto de casa, no ritmo natural da criança.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4B. MID-PAGE CTA BLOCK
+  ========================================================= -->
+  <section class="section section--green">
+    <div class="container">
+      <div class="mid-cta-wrap">
+        <div class="mid-cta">
+          <h3>Você já pode começar hoje mesmo</h3>
+          <p>Em poucos minutos você recebe o material no seu acesso digital, baixa os arquivos e já pode imprimir as primeiras atividades para usar com a criança.</p>
+          <div class="btn-wrap">
+            <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
+              QUERO AJUDAR MEU FILHO A LER
+            </a>
+            <div class="microcopy">
+              <span>📄 Material digital</span>
+              <span>•</span>
+              <span>⚡ Acesso imediato</span>
+              <span>•</span>
+              <span>💳 Pagamento único</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1790,7 +1905,7 @@
         <p class="proof-closing__sub">Comece a jornada de <strong>aprendizado do seu filho hoje</strong></p>
         <div class="btn-wrap">
           <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
-            📖 Quero meu filho(a) Lendo!
+            QUERO AJUDAR MEU FILHO A LER
           </a>
         </div>
       </div>
@@ -1909,53 +2024,52 @@
 
       <div class="test-grid">
 
-        <!-- ✏️ Substitua pelos depoimentos reais dos seus clientes -->
         <div class="test-card">
           <div class="test-card__header">
-            <div class="test-avatar">M</div>
+            <div class="test-avatar">C</div>
             <div>
-              <div class="test-card__name">Mariana S.</div>
-              <div class="test-card__role">Mãe do Pedro, 5 anos</div>
+              <div class="test-card__name">Camila</div>
+              <div class="test-card__role">Mãe do Pedro</div>
             </div>
           </div>
           <div class="stars">★★★★★</div>
-          <p class="test-card__text">Comprei para usar com meu filho em casa e gostei muito. As atividades são simples, bonitas e ele conseguiu fazer sem ficar cansado. A gente faz 15 minutos por dia e já vejo diferença no traço dele.</p>
+          <p class="test-card__text">Eu não sabia por onde começar para ajudar meu filho em casa. Com o kit ficou muito mais fácil, porque as atividades já vêm organizadas e prontas para imprimir.</p>
         </div>
 
         <div class="test-card">
           <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#FF7A2F,#E5651A)">C</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#FF7A2F,#E5651A)">R</div>
             <div>
-              <div class="test-card__name">Camila R.</div>
-              <div class="test-card__role">Professora da educação infantil</div>
+              <div class="test-card__name">Renata</div>
+              <div class="test-card__role">Mãe da Laura</div>
             </div>
           </div>
           <div class="stars">★★★★★</div>
-          <p class="test-card__text">Sou professora e achei o material muito prático. Já vem organizado por habilidade, economiza muito tempo na preparação das aulas. Indico para outras professoras sem hesitar.</p>
+          <p class="test-card__text">Minha filha tinha muita dificuldade para juntar as sílabas. Começamos usando algumas páginas por dia e ela ficou mais interessada nas atividades.</p>
         </div>
 
         <div class="test-card">
           <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#8E44AD,#6C3483)">R</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#8E44AD,#6C3483)">J</div>
             <div>
-              <div class="test-card__name">Renata M.</div>
-              <div class="test-card__role">Mãe da Júlia, 4 anos</div>
+              <div class="test-card__name">Juliana</div>
+              <div class="test-card__role">Professora</div>
             </div>
           </div>
           <div class="stars">★★★★★</div>
-          <p class="test-card__text">Minha filha gostou porque parece brincadeira, mas ao mesmo tempo trabalha letras, coordenação e atenção. Ela pede para fazer! Nunca pensei que seria tão fácil de aplicar.</p>
+          <p class="test-card__text">Uso como reforço depois da escola. O material é simples, bonito e ajuda muito na rotina.</p>
         </div>
 
         <div class="test-card">
           <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#E67E22,#CA6F1E)">P</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#E67E22,#CA6F1E)">F</div>
             <div>
-              <div class="test-card__name">Patrícia L.</div>
-              <div class="test-card__role">Mãe</div>
+              <div class="test-card__name">Fernanda</div>
+              <div class="test-card__role">Mãe do Miguel</div>
             </div>
           </div>
           <div class="stars">★★★★★</div>
-          <p class="test-card__text">Eu queria algo pronto para imprimir e usar em casa sem complicação. Chegou no meu e-mail em segundos, imprimi na hora e já comecei a usar no mesmo dia. Vale muito o investimento.</p>
+          <p class="test-card__text">Gostei porque não precisei ficar procurando atividade solta na internet. Já vem tudo em um lugar só.</p>
         </div>
 
         <div class="test-card">
@@ -2102,7 +2216,7 @@
 
       <div class="btn-wrap">
         <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--orange">
-          🎁 QUERO GARANTIR MEU ACESSO COM BÔNUS
+          SIM, QUERO RECEBER O KIT AGORA
         </a>
         <div class="microcopy">
           <span>🔒 Compra segura</span>
@@ -2199,6 +2313,27 @@
   <div class="divider">✦ ✦ ✦</div>
 
   <!-- =========================================================
+       10B. TRUST — POR QUE ESSE MATERIAL É IDEAL
+  ========================================================= -->
+  <section class="section section--white" id="por-que">
+    <div class="container text-center">
+      <div class="section-label">Antes de comprar</div>
+      <h2 class="section-title">Por que esse material é ideal para começar?</h2>
+
+      <div class="trust-why">
+        <ul class="trust-why__list">
+          <li><span class="twck">✅</span><span>Você não precisa preparar atividades do zero</span></li>
+          <li><span class="twck">✅</span><span>Pode imprimir e usar no ritmo da criança</span></li>
+          <li><span class="twck">✅</span><span>Ajuda a criar uma rotina simples de prática</span></li>
+          <li><span class="twck">✅</span><span>Organiza o reforço em casa ou na escola</span></li>
+          <li><span class="twck">✅</span><span>É visual, colorido e fácil de aplicar</span></li>
+        </ul>
+        <p class="trust-why__note">O objetivo é facilitar sua rotina e deixar o aprendizado mais leve, com atividades prontas para usar aos poucos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
        11. OFFER / PRICE
   ========================================================= -->
   <section class="section" id="oferta" style="background: var(--cream-dark);">
@@ -2211,18 +2346,13 @@
 
         <!-- Includes list -->
         <ul class="offer__includes">
-          <li><span class="icon">✅</span> Kit completo de alfabetização (100+ atividades)</li>
-          <li><span class="icon">✅</span> Formação de sílabas — 3 níveis de dificuldade</li>
-          <li><span class="icon">✅</span> Atividades de coordenação e traçado</li>
-          <li><span class="icon">✅</span> Material em PDF pronto para imprimir</li>
-          <li><span class="icon">🎁</span> Bônus 1 — Caderno Alfabeto com Carinhas</li>
-          <li><span class="icon">🎁</span> Bônus 2 — Caderno Quebra-Cabeça Alfabeto</li>
-          <li><span class="icon">🎁</span> Bônus 3 — Caderno Formando Palavras</li>
-          <li><span class="icon">🎁</span> Bônus 4 — Caderno Alfabeto com Relógio</li>
-          <li><span class="icon">🎁</span> Bônus 5 — Caderno Alfabeto Traçado</li>
-          <li><span class="icon">🎁</span> Bônus 6 — Caderno Alfabeto com Imagem</li>
-          <li><span class="icon">⚡</span> Acesso imediato após a compra</li>
-          <li><span class="icon">🛡️</span> Garantia incondicional de 7 dias</li>
+          <li><span class="icon">✅</span> Kit completo de alfabetização infantil</li>
+          <li><span class="icon">✅</span> Atividades prontas para imprimir</li>
+          <li><span class="icon">✅</span> Exercícios com letras, sílabas e palavras</li>
+          <li><span class="icon">🎁</span> 6 bônus complementares inclusos</li>
+          <li><span class="icon">⚡</span> Acesso digital imediato</li>
+          <li><span class="icon">💳</span> Pagamento único de R$19,90</li>
+          <li><span class="icon">🛡️</span> Garantia de 7 dias</li>
         </ul>
 
         <!-- Value stack -->
@@ -2258,9 +2388,9 @@
 
         <!-- Security row -->
         <div class="security-row">
-          <span>🔒 Pagamento seguro</span>
-          <span>🛡️ Dados protegidos</span>
-          <span>📧 Suporte por e-mail</span>
+          <span>🔒 Compra segura</span>
+          <span>⚡ Acesso imediato</span>
+          <span>📄 Material digital</span>
           <span>💳 Pix, cartão ou boleto</span>
         </div>
 
@@ -2322,7 +2452,7 @@
 
       <div class="btn-wrap" style="margin-top:36px">
         <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
-          ✅ QUERO GARANTIR MEU ACESSO AGORA
+          QUERO COMEÇAR HOJE
         </a>
       </div>
     </div>
@@ -2347,87 +2477,77 @@
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">É um material 100% digital em formato PDF. Após a compra, você recebe o link de acesso por e-mail e pode baixar, salvar e imprimir quantas vezes quiser. Nenhum produto físico será enviado.</div>
+            <div class="faq-a__inner">É um material digital. Você recebe o acesso para baixar e imprimir. Nenhum produto físico será enviado.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Recebo o acesso na hora?</span>
+            <span>Como recebo o kit?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">Sim! Assim que o pagamento é confirmado (geralmente em segundos no Pix e cartão), o acesso é enviado automaticamente para o e-mail informado no momento da compra. No boleto, o prazo pode ser de até 1 a 3 dias úteis.</div>
+            <div class="faq-a__inner">Após a confirmação da compra, você recebe as instruções de acesso ao material no e-mail informado. Pix e cartão têm confirmação imediata; boleto pode levar até 1 a 3 dias úteis.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Para qual idade é indicado?</span>
+            <span>Preciso imprimir?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">O material é indicado principalmente para crianças em fase inicial de alfabetização, geralmente entre <strong>3 e 7 anos</strong>. A faixa pode variar conforme o desenvolvimento individual de cada criança — o importante é observar o momento pedagógico dela.</div>
+            <div class="faq-a__inner">O ideal é imprimir para a criança fazer as atividades, mas você também pode visualizar os arquivos no celular, tablet ou computador.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Posso imprimir mais de uma vez?</span>
+            <span>Serve para qual idade?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">Sim! Você pode imprimir para uso pessoal, familiar ou da sua turma/atendimentos, conforme os termos de uso do produto. O arquivo fica salvo para sempre na sua conta, sem prazo de expiração.</div>
+            <div class="faq-a__inner">É indicado para crianças em fase inicial de alfabetização. A idade pode variar conforme o desenvolvimento da criança — geralmente entre 3 e 7 anos.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Serve para professores e terapeutas?</span>
+            <span>Preciso ser professora para usar?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">Com certeza! O material é amplamente utilizado por professoras da educação infantil, pedagogas, terapeutas ocupacionais e fonoaudiólogas como complemento nas sessões e nas aulas. Ele já vem organizado por habilidade, facilitando o planejamento.</div>
+            <div class="faq-a__inner">Não. O material foi pensado para ser simples e fácil de aplicar por pais, mães, responsáveis ou educadores — sem precisar de formação pedagógica.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Tem garantia?</span>
+            <span>O pagamento é único?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">Sim! Você tem <strong>7 dias de garantia incondicional</strong>. Se por qualquer motivo você não estiver satisfeito, basta solicitar o reembolso dentro do prazo pela plataforma de pagamento. Sem questionamentos.</div>
+            <div class="faq-a__inner">Sim. Você paga uma vez e recebe o acesso ao material. Sem mensalidade, sem cobrança recorrente.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Preciso saber ensinar para usar?</span>
+            <span>Posso usar mais de uma vez?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">Não! As atividades são simples e intuitivas, criadas para facilitar a aplicação por qualquer pessoa. Cada folha é autoexplicativa. Você não precisa de experiência pedagógica — basta imprimir e sentar com a criança.</div>
+            <div class="faq-a__inner">Sim. Você pode imprimir novamente para uso pessoal com a criança quantas vezes precisar.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Quais formas de pagamento são aceitas?</span>
+            <span>Quando posso começar?</span>
             <span class="arrow">▼</span>
           </button>
           <div class="faq-a">
-            <div class="faq-a__inner">São aceitos <strong>Pix</strong> (confirmação imediata), <strong>cartão de crédito</strong> (em até 12x, sujeito a juros da operadora) e <strong>boleto bancário</strong> (prazo de 1 a 3 dias úteis). Todas as formas são seguras e processadas por plataformas certificadas.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Funciona no celular?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Sim! Você pode acessar, visualizar e salvar o material direto pelo celular. Para imprimir, recomendamos usar um computador ou tablet conectado a uma impressora. O PDF é compatível com qualquer dispositivo — iOS, Android ou computador.</div>
+            <div class="faq-a__inner">Assim que receber o acesso, você já pode baixar e imprimir as primeiras atividades. O acesso é enviado automaticamente após a confirmação do pagamento.</div>
           </div>
         </div>
 
@@ -2435,9 +2555,9 @@
 
       <!-- Final CTA after FAQ -->
       <div class="btn-wrap" style="margin-top:48px">
-        <p style="font-size:1rem; font-weight:700; margin-bottom:12px; text-align:center">Ainda com dúvidas? Estamos aqui para ajudar.</p>
+        <p style="font-size:1rem; font-weight:700; margin-bottom:12px; text-align:center">Pronto para começar?</p>
         <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
-          🚀 QUERO GARANTIR MEU ACESSO AGORA
+          QUERO AJUDAR MEU FILHO A LER
         </a>
         <div class="microcopy">
           <span>🔒 Compra segura</span>
