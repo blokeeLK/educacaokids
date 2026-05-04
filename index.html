@@ -1838,6 +1838,13 @@
       background: #f5c842;
       color: #2a1a00;
     }
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,200,66,.6); }
+      50%       { transform: scale(1.07); box-shadow: 0 0 0 7px rgba(245,200,66,0); }
+    }
+    .badge--pulse {
+      animation: badgePulse 2s ease-in-out infinite;
+    }
     .pricing-card__title {
       font-size: 1.1rem;
       font-weight: 800;
@@ -2709,7 +2716,6 @@
 
           <!-- Card 1 – Oferta de entrada -->
           <div class="pricing-card pricing-card--entry">
-            <span class="pricing-card__badge">ACESSO INICIAL</span>
             <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
             <p class="pricing-card__price-intro">Por apenas</p>
             <p class="pricing-card__price"><small>R$</small> 10</p>
@@ -2726,7 +2732,7 @@
 
           <!-- Card 2 – Oferta principal -->
           <div class="pricing-card pricing-card--main">
-            <span class="pricing-card__badge">⭐ MAIS ESCOLHIDO</span>
+            <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
             <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
             <p class="pricing-card__price-intro">Tudo isso por apenas</p>
             <p class="pricing-card__price"><small>R$</small> 19,90</p>
@@ -2964,7 +2970,6 @@
         <p style="margin-top:16px; font-size:.75rem; color:#6B5A4A">
           <!-- ✏️ Troque pelo nome/CNPJ da sua empresa -->
           © 2024 Kit Educativo Infantil. Todos os direitos reservados.<br>
-          Este site não é afiliado ao Facebook, Instagram ou Google.
         </p>
       </div>
     </div>
