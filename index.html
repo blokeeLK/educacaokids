@@ -1732,6 +1732,217 @@
       .offer .btn--primary { font-size: .92rem !important; padding: 16px 20px !important; }
       .offer .microcopy { font-size: .72rem; }
     }
+
+    /* ── Two-card pricing section ── */
+    .offer-v2 {
+      background: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+      max-width: 900px !important;
+    }
+    .offer-v2-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .offer-v2-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #FF7A2F, #e05a10);
+      color: #fff;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .06em;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .offer-v2-headline {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      font-weight: 900;
+      color: var(--brown);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .offer-v2-sub {
+      font-size: clamp(.88rem, 2vw, 1rem);
+      color: #5a4535;
+      margin: 0 0 10px;
+      line-height: 1.5;
+    }
+    .offer-urgency {
+      display: inline-block;
+      background: #FFF3CD;
+      border: 1.5px solid #f0c040;
+      color: #7a5a00;
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 8px;
+      margin-top: 4px;
+    }
+    .offer-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.18fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .pricing-card {
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+    .pricing-card--entry {
+      background: #fff;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    }
+    .pricing-card--main {
+      background: linear-gradient(145deg, #1a6e30, #28A745);
+      border: 3px solid #f5c842;
+      box-shadow: 0 8px 36px rgba(40,167,69,.35);
+      color: #fff;
+    }
+    .pricing-card__badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      align-self: flex-start;
+    }
+    .pricing-card--entry .pricing-card__badge {
+      background: #f0f0f0;
+      color: #555;
+    }
+    .pricing-card--main .pricing-card__badge {
+      background: #f5c842;
+      color: #2a1a00;
+    }
+    .pricing-card__title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .pricing-card--entry .pricing-card__title { color: var(--brown); }
+    .pricing-card--main .pricing-card__title { color: #fff; }
+    .pricing-card__price-intro {
+      font-size: .8rem;
+      font-weight: 600;
+      opacity: .7;
+      margin: 0;
+    }
+    .pricing-card__price {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1;
+      margin: 0;
+    }
+    .pricing-card--entry .pricing-card__price { color: var(--brown); }
+    .pricing-card--main .pricing-card__price { color: #fff; }
+    .pricing-card__price small {
+      font-size: 1.1rem;
+      font-weight: 700;
+      vertical-align: super;
+    }
+    .pricing-card__desc {
+      font-size: .82rem;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .pricing-card--entry .pricing-card__desc { color: #666; }
+    .pricing-card--main .pricing-card__desc { color: rgba(255,255,255,.85); }
+    .pricing-card__benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .pricing-card__benefits li {
+      font-size: .85rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.4;
+    }
+    .pricing-card--entry .pricing-card__benefits li { color: #444; }
+    .pricing-card--main .pricing-card__benefits li { color: rgba(255,255,255,.95); }
+    .pricing-card__value-box {
+      background: rgba(0,0,0,.18);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: .8rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,.9);
+    }
+    .pricing-card__value-box s { opacity: .65; }
+    .pricing-card__value-box strong { color: #fff; font-size: .95rem; }
+    .pricing-card__note {
+      font-size: .72rem;
+      text-align: center;
+      margin: 0;
+    }
+    .pricing-card--entry .pricing-card__note { color: #888; }
+    .pricing-card--main .pricing-card__note { color: rgba(255,255,255,.7); }
+    .btn--entry {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #fff;
+      color: var(--brown);
+      border: 2px solid var(--brown);
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: .88rem;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn--entry:hover { background: var(--brown); color: #fff; }
+    .btn--main-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #1a1a1a;
+      padding: 16px 20px;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: .95rem;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(255,165,0,.45);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn--main-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(255,165,0,.55); }
+    .offer-footer-security {
+      text-align: center;
+      margin-top: 20px;
+      font-size: .8rem;
+      color: #777;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .offer-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card--main {
+        order: -1;
+      }
+      .pricing-card--main .pricing-card__price { font-size: 3rem; }
+      .btn--main-cta { font-size: 1rem; padding: 18px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -2472,50 +2683,64 @@
   <section class="section" id="oferta" style="background: var(--cream-dark);">
     <div class="container">
 
-      <div class="offer">
+      <div class="offer offer-v2">
 
-        <!-- Badge topo -->
-        <div class="offer-top-badge">🔥 OFERTA ESPECIAL DE HOJE</div>
-
-        <!-- Headline -->
-        <h2 class="offer-headline">Leve o Kit Completo de Alfabetização por Apenas R$19,90</h2>
-        <p class="offer-subheadline">Material pronto para imprimir, com atividades simples e organizadas para ajudar seu filho a começar a ler com mais facilidade.</p>
-
-        <!-- Benefit cards 2 colunas -->
-        <div class="offer-benefit-grid">
-          <div class="offer-benefit-card"><span class="bc-icon">✅</span>Kit completo de alfabetização infantil</div>
-          <div class="offer-benefit-card"><span class="bc-icon">✅</span>Atividades prontas para imprimir</div>
-          <div class="offer-benefit-card"><span class="bc-icon">✅</span>Exercícios com letras, sílabas e palavras</div>
-          <div class="offer-benefit-card"><span class="bc-icon">🎁</span>6 bônus complementares inclusos</div>
-          <div class="offer-benefit-card"><span class="bc-icon">⚡</span>Acesso digital imediato</div>
-          <div class="offer-benefit-card"><span class="bc-icon">🛡️</span>Garantia de 7 dias</div>
+        <!-- Cabeçalho da seção -->
+        <div class="offer-v2-header">
+          <div class="offer-v2-badge">🔥 OFERTA ESPECIAL LIBERADA HOJE</div>
+          <h2 class="offer-v2-headline">Escolha como você quer começar a transformar a alfabetização do seu filho</h2>
+          <p class="offer-v2-sub">Material digital, acesso imediato após o pagamento. Sem mensalidade. Para sempre seu.</p>
+          <div class="offer-urgency">⚠️ Preço promocional válido apenas hoje</div>
         </div>
 
-        <!-- Value stack -->
-        <div class="value-stack">
-          <p>📦 Valor total do kit + bônus:</p>
-          <p class="total"><s>R$ 147,00</s></p>
-          <p style="margin-top:6px">🔥 Hoje você paga somente:</p>
-          <p class="today">R$ 19,90</p>
-        </div>
+        <!-- Cards lado a lado -->
+        <div class="offer-cards-grid">
 
-        <!-- Price display -->
-        <div class="price-anchor">De R$ 47,00</div>
-        <div class="price-main"><small>R$</small> 19,90</div>
-        <div class="price-sub">Pagamento único • Sem mensalidade • Acesso vitalício</div>
-
-        <!-- CTA -->
-        <div class="btn-wrap">
-          <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn btn--primary">
-            SIM, QUERO RECEBER MEU KIT AGORA
-          </a>
-          <div class="microcopy" style="margin-top:8px">
-            <span>Acesso liberado logo após a confirmação do pagamento.</span>
+          <!-- Card 1 – Oferta de entrada -->
+          <div class="pricing-card pricing-card--entry">
+            <span class="pricing-card__badge">ACESSO INICIAL</span>
+            <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
+            <p class="pricing-card__price-intro">Por apenas</p>
+            <p class="pricing-card__price"><small>R$</small> 10</p>
+            <p class="pricing-card__desc">Ideal para começar e ver o método funcionando antes de avançar.</p>
+            <ul class="pricing-card__benefits">
+              <li><span>✅</span> Caderno de Letras e Sílabas</li>
+              <li><span>✅</span> Caderno de Palavras Simples</li>
+              <li><span>✅</span> Atividades prontas para imprimir</li>
+              <li><span>✅</span> Acesso digital imediato</li>
+            </ul>
+            <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn--entry">QUERO COMEÇAR POR R$10</a>
+            <p class="pricing-card__note">Pagamento único • Sem mensalidade</p>
           </div>
+
+          <!-- Card 2 – Oferta principal -->
+          <div class="pricing-card pricing-card--main">
+            <span class="pricing-card__badge">⭐ MAIS ESCOLHIDO</span>
+            <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
+            <p class="pricing-card__price-intro">Tudo isso por apenas</p>
+            <p class="pricing-card__price"><small>R$</small> 19,90</p>
+            <p class="pricing-card__desc">O kit completo com todos os materiais e bônus para uma alfabetização tranquila e eficaz.</p>
+            <ul class="pricing-card__benefits">
+              <li><span>✅</span> Kit completo de alfabetização infantil</li>
+              <li><span>✅</span> Atividades com letras, sílabas e palavras</li>
+              <li><span>✅</span> Exercícios de leitura e escrita</li>
+              <li><span>🎁</span> 6 bônus exclusivos inclusos</li>
+              <li><span>⚡</span> Acesso digital imediato</li>
+              <li><span>🛡️</span> Garantia de 7 dias</li>
+              <li><span>♾️</span> Acesso vitalício</li>
+            </ul>
+            <div class="pricing-card__value-box">
+              📦 Valor total do kit + bônus: <s>R$ 147,00</s><br>
+              🔥 Hoje você paga somente: <strong>R$ 19,90</strong>
+            </div>
+            <a href="COLOCAR_LINK_DO_CHECKOUT_AQUI" class="btn--main-cta">SIM, QUERO O KIT COMPLETO POR R$19,90</a>
+            <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após pagamento</p>
+          </div>
+
         </div>
 
-        <!-- Security footer -->
-        <div class="offer-security-footer">
+        <!-- Rodapé de segurança -->
+        <div class="offer-footer-security">
           <span>🔒 Compra segura</span>
           <span>•</span>
           <span>⚡ Acesso imediato</span>
