@@ -1955,8 +1955,17 @@
     }
 
     @media (max-width: 700px) {
-      .offer-cards-grid {
-        grid-template-columns: 1fr;
+      .offer-cards-grid { grid-template-columns: 1fr; }
+      .pricing-card--entry {
+        border: 2.5px solid var(--green);
+        box-shadow: 0 6px 24px rgba(40,167,69,.22);
+      }
+      .btn--entry {
+        background: linear-gradient(135deg, #2DB84B, #1E9E3E);
+        color: #fff;
+        border-color: transparent;
+        font-size: 1rem;
+        padding: 16px 20px;
       }
       .pricing-card--main .pricing-card__price { font-size: 3rem; }
       .btn--main-cta { font-size: 1rem; padding: 18px 20px; }
@@ -1965,363 +1974,115 @@
 </head>
 <body>
 
-  <!-- =========================================================
-       TOP BAR
-  ========================================================= -->
   <div class="topbar">
-    ⚡ <strong>Oferta especial por tempo limitado</strong> — Bônus exclusivos incluso na compra de hoje!
+    ⚡ <strong>Oferta especial por tempo limitado</strong> — 6 bônus exclusivos inclusos na compra de hoje!
   </div>
 
-  <!-- =========================================================
-       1. HERO SECTION
-  ========================================================= -->
+  <!-- 1. HERO -->
   <section class="hero" id="inicio">
     <div class="container">
       <div class="hero__inner">
-
-        <!-- TEXT SIDE -->
         <div class="hero__text">
-          <div class="hero__eyebrow">
-            🎯 Material educativo infantil
-          </div>
-          <div class="offer-badge">⏰ Oferta especial por tempo limitado</div>
-
-          <h1>Ajude seu filho a <em>começar a ler</em> com atividades simples, coloridas e prontas para imprimir</h1>
-
-          <p class="hero__sub">
-            Receba um kit completo de alfabetização para praticar <strong>letras, sílabas e palavras</strong> em casa — mesmo sem experiência.
-          </p>
-
-          <!-- Seals -->
+          <div class="hero__eyebrow">🎯 Material educativo infantil</div>
+          <h1>Seu filho ainda tem dificuldade para <em>começar a ler?</em></h1>
+          <p class="hero__sub">Com atividades simples e prontas para imprimir, você pode ajudar na alfabetização dele em casa — mesmo sem ser professora.</p>
           <div class="seals">
             <div class="seal"><span class="seal-icon">⚡</span> Acesso imediato</div>
             <div class="seal"><span class="seal-icon">🖨️</span> Pronto para imprimir</div>
-            <div class="seal"><span class="seal-icon">🏠</span> Casa ou escola</div>
+            <div class="seal"><span class="seal-icon">👶</span> 3 a 7 anos</div>
             <div class="seal"><span class="seal-icon">🛡️</span> Garantia 7 dias</div>
-            <div class="seal"><span class="seal-icon">💰</span> Por apenas R$19,90</div>
           </div>
-
-          <!-- CTA -->
           <div class="btn-wrap">
-            <a href="#oferta" class="btn btn--primary" id="hero-cta">
-              QUERO AJUDAR MEU FILHO A LER
-            </a>
+            <a href="#oferta" class="btn btn--primary" id="hero-cta">QUERO AJUDAR MEU FILHO A LER</a>
             <div class="microcopy">
-              <span>⚡ Acesso imediato</span>
-              <span>•</span>
-              <span>📄 Material digital</span>
-              <span>•</span>
+              <span>⚡ Acesso imediato</span><span>•</span>
+              <span>📄 Material digital</span><span>•</span>
               <span>🔒 Compra segura</span>
             </div>
           </div>
         </div>
-
-        <!-- VISUAL SIDE -->
         <div class="hero__visual">
-          <!-- ✏️ Substitua pelo mockup real do produto -->
           <div class="hero__mockup">
-            <img src="fotoprincipal.png" alt="Kit de Atividades Educativas — mockup" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       2. PAIN / IDENTIFICATION
-  ========================================================= -->
-  <section class="section section--white" id="dores">
-    <div class="container">
-      <div class="section-label">Você se identifica?</div>
-      <h2 class="section-title">Seu filho trava na hora de juntar as letras?</h2>
-      <p class="section-sub" style="margin-bottom:36px">Muitos pais querem ajudar, mas acabam sem saber por onde começar. O problema não é falta de vontade — é falta de um material simples, organizado e fácil de usar no dia a dia.</p>
-
-      <div class="pain__grid">
-        <div class="pain-card">
-          <div class="pain-card__icon">🔤</div>
-          <div>
-            <h3>Dificuldade para reconhecer letras</h3>
-            <p>A criança confunde letras parecidas ou ainda não consegue identificar todas do alfabeto.</p>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="pain-card__icon">✏️</div>
-          <div>
-            <h3>Trava na hora de juntar sílabas</h3>
-            <p>Ela reconhece as letras separadas, mas não consegue uni-las para formar palavras.</p>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="pain-card__icon">😴</div>
-          <div>
-            <h3>Pouco interesse pela leitura</h3>
-            <p>Atividades de leitura cansam rápido e a criança para no meio sem querer continuar.</p>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="pain-card__icon">🧠</div>
-          <div>
-            <h3>Falta de atenção nas atividades</h3>
-            <p>Não consegue terminar uma folha simples sem se distrair ou pedir para parar.</p>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="pain-card__icon">⏰</div>
-          <div>
-            <h3>Sem tempo para preparar exercícios</h3>
-            <p>Você quer ajudar, mas não tem tempo de pesquisar e montar atividades toda semana.</p>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="pain-card__icon">🗂️</div>
-          <div>
-            <h3>Não sabe por onde começar</h3>
-            <p>Você acha coisas soltas na internet, mas falta um material organizado com progressão clara.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="pain__bridge">
-        💡 Foi pensando exatamente nisso que criamos um kit <strong>prático, colorido e pronto para usar</strong> — para que qualquer pai, mãe ou professor possa ajudar a criança a dar os primeiros passos na leitura, sem precisar de formação especializada.
-      </div>
-    </div>
-  </section>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <!-- =========================================================
-       3. PRODUCT PRESENTATION
-  ========================================================= -->
-  <section class="section section--alt" id="produto">
-    <div class="container">
-      <div class="product__inner">
-
-        <!-- VSL VIDEO -->
-        <div class="product__video" id="vslWrap">
-          <video
-            id="vslVideo"
-            src="vsl.mp4"
-            playsinline
-            preload="metadata"
-            aria-label="Vídeo de apresentação do Kit de Atividades Educativas"
-          ></video>
-          <div class="video-overlay" id="vslOverlay">
-            <div class="video-overlay__btn"></div>
-            <span class="video-overlay__text">▶ Clique para assistir ao vídeo</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="section-label">O produto</div>
-          <h2>Conheça o <span class="text-green">Kit de Atividades Educativas</span></h2>
-          <p style="margin: 14px 0 4px; color: #5A4535;">Um conjunto completo de atividades prontas para imprimir, criado para estimular habilidades essenciais da alfabetização de forma simples, organizada e divertida.</p>
-
-          <ul class="check-list">
-            <li><span class="icon">✅</span> Atividades para praticar letras, sílabas e palavras</li>
-            <li><span class="icon">✅</span> Formação de palavras de forma lúdica e colorida</li>
-            <li><span class="icon">✅</span> Exercícios de coordenação e traçado</li>
-            <li><span class="icon">✅</span> Atividades de atenção e percepção visual</li>
-            <li><span class="icon">✅</span> Progressão organizada por nível de dificuldade</li>
-            <li><span class="icon">✅</span> Exercícios simples — 10 a 15 minutos por dia</li>
-            <li><span class="icon">✅</span> PDF para imprimir quantas vezes quiser</li>
-            <li><span class="icon">✅</span> Indicado para crianças em fase de alfabetização (3 a 7 anos)</li>
-          </ul>
-
-          <div class="btn-wrap" style="align-items:flex-start">
-            <a href="#oferta" class="btn btn--primary">
-              QUERO AJUDAR MEU FILHO A LER
-            </a>
+            <img src="fotoprincipal.png" alt="Kit de Atividades Educativas" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       4. PAIN BRIDGE + WHY THE KIT (estilo imagem 2)
-  ========================================================= -->
-  <section class="section section--white" id="desenvolvimento">
+  <!-- 2. VÍDEO -->
+  <section class="section section--alt" id="video">
     <div class="container text-center">
-
-      <!-- Bloco de alerta -->
-      <div class="warn-block">
-        <div class="warn-icon">⚠️</div>
-        <div class="warn-box">
-          <h3>Entenda o que realmente<br><em>atrasa a leitura do seu filho...</em></h3>
-          <p>A falta de estímulo fonético na fase certa pode tornar o processo de alfabetização mais lento, frustrante e confuso — tanto para a criança quanto para você.</p>
+      <div class="section-label">Veja como funciona</div>
+      <h2 class="section-title">Veja como o Kit de Atividades funciona na prática</h2>
+      <div class="product__video" style="max-width:560px; margin:28px auto 0;" id="vslWrap">
+        <video id="vslVideo" src="vsl.mp4" playsinline preload="metadata"
+          aria-label="Vídeo de apresentação do Kit de Atividades Educativas"></video>
+        <div class="video-overlay" id="vslOverlay">
+          <div class="video-overlay__btn"></div>
+          <span class="video-overlay__text">▶ Clique para assistir ao vídeo</span>
         </div>
       </div>
-
-      <!-- Texto de transição -->
-      <div class="calm-text">
-        Mas calma, <strong>você não tem culpa disso...</strong> É que ninguém te ensinou como ajudar seu filho a despertar a leitura de forma leve, divertida e no tempo certo.
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <h2 class="section-title" style="margin-bottom:32px">Por isso você precisa do Kit...</h2>
-
-      <!-- Fotos lado a lado -->
-      <div class="why-photos-row">
-        <img src="images/1_MOCKUP-PRINCIPAL-GRAFISMO-FONETICO-768x421.webp"
-             alt="Kit de Grafismo Fonético — mockup completo" loading="lazy" />
-        <img src="images/JcDcvm3874423-643x1024.webp"
-             alt="Criança aprendendo com as atividades do kit" loading="lazy" />
-      </div>
-
-      <!-- Checklist abaixo das fotos -->
-      <div class="why-checklist-below">
-        <p class="why-intro">Cada atividade do Kit de Grafismo Fonético foi cuidadosamente criada para:</p>
-        <ul class="why-checks">
-          <li><span class="wck">✅</span><span>Desenvolver a <strong>coordenação motora fina</strong></span></li>
-          <li><span class="wck">✅</span><span>Estimular a <strong>criatividade e a atenção</strong> da criança</span></li>
-          <li><span class="wck">✅</span><span>Fortalecer as <strong>conexões cerebrais</strong> que facilitam a leitura</span></li>
-          <li><span class="wck">✅</span><span>Despertar o <strong>interesse pelas palavras e pelos sons</strong></span></li>
-          <li><span class="wck">✅</span><span>Tornar o processo de <strong>alfabetização leve, divertido e eficaz!</strong></span></li>
-        </ul>
-        <p class="why-footer">Tudo isso com apenas alguns minutos por dia — direto de casa, no ritmo natural da criança.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================
-       4B. MID-PAGE CTA BLOCK
-  ========================================================= -->
-  <section class="section section--green">
-    <div class="container">
-      <div class="mid-cta-wrap">
-        <div class="mid-cta">
-          <h3>Você já pode começar hoje mesmo</h3>
-          <p>Em poucos minutos você recebe o material no seu acesso digital, baixa os arquivos e já pode imprimir as primeiras atividades para usar com a criança.</p>
-          <div class="btn-wrap">
-            <a href="#oferta" class="btn btn--primary">
-              QUERO AJUDAR MEU FILHO A LER
-            </a>
-            <div class="microcopy">
-              <span>📄 Material digital</span>
-              <span>•</span>
-              <span>⚡ Acesso imediato</span>
-              <span>•</span>
-              <span>💳 Pagamento único</span>
-            </div>
-          </div>
+      <div class="btn-wrap" style="margin-top:28px">
+        <a href="#oferta" class="btn btn--primary">QUERO ACESSAR O KIT AGORA</a>
+        <div class="microcopy">
+          <span>📄 Material digital</span><span>•</span>
+          <span>⚡ Acesso imediato</span><span>•</span>
+          <span>💳 Pagamento único</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       5. POR QUE FUNCIONA — proof blocks estilo referência
-  ========================================================= -->
-  <section class="section section--white" id="transformacao">
+  <!-- 3. BENEFÍCIOS -->
+  <section class="section section--white" id="beneficios">
     <div class="container text-center">
-
-      <h2 class="section-title">Por que as atividades de<br><span class="text-green">Grafismo Fonético funcionam?</span></h2>
-      <div class="section-deco-lines">
-        <span></span><span></span><span></span><span></span>
-      </div>
-
-      <!-- Bloco 1 — azul -->
-      <div class="proof-block proof-block--blue">
-        <div class="proof-block__img">
-          <img
-            src="crianca.avif"
-            alt="Criança aprendendo a ler"
-            loading="lazy"
-          />
+      <div class="section-label">Por que funciona</div>
+      <h2 class="section-title">O que você vai ter nas mãos</h2>
+      <div class="dev-grid">
+        <div class="dev-card">
+          <div class="dev-card__icon">🖨️</div>
+          <h3>Atividades prontas para imprimir</h3>
+          <p>Baixe, imprima e comece a usar no mesmo dia. Sem precisar preparar nada.</p>
         </div>
-        <div class="proof-block__text" style="text-align:left">
-          <h3>Antes de aprender a ler, o cérebro da criança precisa reconhecer padrões, sons e movimentos.</h3>
-          <p>As atividades de grafismo fonético desenvolvem a <strong>consciência fonológica e visual</strong> — habilidades essenciais para que a criança reconheça sílabas, sons e estruturas das palavras de forma natural.</p>
-          <p>Ao traçar linhas, curvas e padrões fonéticos, isso fortalece as <strong>conexões cerebrais responsáveis pela leitura</strong>, acelerando o processo de alfabetização de forma divertida e sem pressão.</p>
+        <div class="dev-card">
+          <div class="dev-card__icon">🔤</div>
+          <h3>Ajuda no reconhecimento das letras</h3>
+          <p>Exercícios coloridos que associam sons e letras de forma lúdica e visual.</p>
         </div>
-      </div>
-
-      <!-- Bloco 2 — verde -->
-      <div class="proof-block proof-block--green">
-        <div class="proof-block__img">
-          <img
-            src="familia.avif"
-            alt="Mãe e filho estudando juntos"
-            loading="lazy"
-          />
+        <div class="dev-card">
+          <div class="dev-card__icon">🏠</div>
+          <h3>Ideal para usar em casa</h3>
+          <p>Não precisa ser professora. O material é simples e fácil de aplicar.</p>
         </div>
-        <div class="proof-block__text" style="text-align:left">
-          <h3>E em poucos dias você vai notar a diferença na leitura do seu filho:</h3>
-          <ul class="proof-checklist">
-            <li><span class="ck">✓</span><span>Vai reconhecer sílabas e sons com mais <strong>facilidade</strong></span></li>
-            <li><span class="ck">✓</span><span>Vai se sentir mais <strong>confiante</strong> ao tentar ler palavras novas</span></li>
-            <li><span class="ck">✓</span><span>Vai mostrar mais <strong>interesse</strong> por livros e histórias</span></li>
-            <li><span class="ck">✓</span><span>Vai aprender no <strong>ritmo dele</strong>, sem frustração ou comparação</span></li>
-            <li><span class="ck">✓</span><span>E o melhor: vai começar a <strong>gostar do momento de leitura em casa</strong></span></li>
-          </ul>
+        <div class="dev-card">
+          <div class="dev-card__icon">⚡</div>
+          <h3>Acesso imediato após a compra</h3>
+          <p>Pagou, acessou. O material é entregue automaticamente por e-mail.</p>
+        </div>
+        <div class="dev-card">
+          <div class="dev-card__icon">👶</div>
+          <h3>Para crianças de 3 a 7 anos</h3>
+          <p>Progressão organizada por nível — do mais simples ao mais avançado.</p>
+        </div>
+        <div class="dev-card">
+          <div class="dev-card__icon">🎨</div>
+          <h3>Material colorido e lúdico</h3>
+          <p>A criança aprende brincando com atividades que prendem a atenção.</p>
         </div>
       </div>
-
-      <!-- Fechamento + CTA -->
-      <div class="proof-closing">
-        <p>Com o <strong>Kit de Grafismo Fonético</strong>, seu filho desenvolve o cérebro para aprender a ler com leveza, no tempo dele — e com resultados visíveis em poucos dias.</p>
-        <div class="proof-pencil">✏️</div>
-        <p class="proof-closing__sub">Comece a jornada de <strong>aprendizado do seu filho hoje</strong></p>
-        <div class="btn-wrap">
-          <a href="#oferta" class="btn btn--primary">
-            QUERO AJUDAR MEU FILHO A LER
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================
-       5B. O QUE SEU FILHO VAI APRENDER
-  ========================================================= -->
-  <section class="section section--yellow" id="vai-aprender">
-    <div class="container text-center">
-      <h2 class="section-title">📚 O Que Seu Filho<br>Vai Aprender 📚</h2>
-
-      <div class="learn-grid">
-
-        <div class="learn-card">
-          <div class="learn-card__icon-fallback">🔤</div>
-          <h3>Reconhecimento de Sons e Letras</h3>
-          <p>Cada som é associado ao símbolo visual, <strong>fortalecendo as conexões cerebrais</strong> de forma sólida e duradoura.</p>
-        </div>
-
-        <div class="learn-card">
-          <div class="learn-card__icon-fallback">🧩</div>
-          <h3>Formação de Palavras</h3>
-          <p>Atividades dinâmicas que transformam a <strong>construção de palavras</strong> numa experiência divertida e intuitiva.</p>
-        </div>
-
-        <div class="learn-card">
-          <div class="learn-card__icon-fallback">📖</div>
-          <h3>Compreensão e Leitura Fluente</h3>
-          <p>Exercícios práticos que aprimoram a compreensão do texto, ajudando seu filho a <strong>ganhar fluência e confiança.</strong></p>
-        </div>
-
-        <div class="learn-card">
-          <div class="learn-card__icon-fallback">🗺️</div>
-          <h3>Guia Passo a Passo com Ilustrações</h3>
-          <p>Instruções visuais e detalhadas para que cada fase do aprendizado seja clara e <strong>tranquila, sem complicações.</strong></p>
-        </div>
-
+      <div class="btn-wrap" style="margin-top:36px">
+        <a href="#oferta" class="btn btn--primary">QUERO O KIT AGORA</a>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       6. CARROSSEL + CONTEÚDO DO KIT
-  ========================================================= -->
+  <!-- 4. CONTEÚDO DO KIT -->
   <section class="section carousel-section" id="autoridade">
     <div class="container">
-
       <div class="section-label">O que está incluído</div>
       <h2 class="section-title">Veja tudo que você vai receber<br>no <span class="text-green">kit de atividades</span></h2>
 
-      <!-- Carrossel -->
       <div class="carousel-wrap" id="carousel">
         <div class="carousel-track" id="carouselTrack">
           <img src="1.webp" alt="Atividade 1 do kit" loading="eager" />
@@ -2335,256 +2096,101 @@
         <button class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Anterior">&#8249;</button>
         <button class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Próximo">&#8250;</button>
       </div>
-
-      <!-- Dots -->
       <div class="carousel-dots" id="carouselDots"></div>
 
-      <!-- Conteúdo do kit -->
       <div class="kit-contents">
         <div class="kit-contents__title">📋 O que você recebe no kit:</div>
         <ul class="kit-contents__list">
-          <li>
-            <span class="num">+100</span>
-            Mais de <strong>100 atividades prontas para imprimir</strong>
-          </li>
-          <li>
-            <span class="num">🔤</span>
-            Atividades com <strong>vogais e alfabeto completo</strong>
-          </li>
-          <li>
-            <span class="num">N1</span>
-            <strong>Formação de sílabas</strong> — do mais simples ao mais complexo
-          </li>
-          <li>
-            <span class="num">📖</span>
-            <strong>Palavras simples</strong> para praticar leitura
-          </li>
-          <li>
-            <span class="num">✍️</span>
-            <strong>Coordenação motora e traçado</strong> — cursivo e bastão
-          </li>
-          <li>
-            <span class="num">🎨</span>
-            <strong>Atividades de pintura e associação visual</strong>
-          </li>
+          <li><span class="num">+100</span> Mais de <strong>100 atividades prontas para imprimir</strong></li>
+          <li><span class="num">🔤</span> Atividades com <strong>vogais e alfabeto completo</strong></li>
+          <li><span class="num">N1</span> <strong>Formação de sílabas</strong> — do mais simples ao mais complexo</li>
+          <li><span class="num">📖</span> <strong>Palavras simples</strong> para praticar leitura</li>
+          <li><span class="num">✍️</span> <strong>Coordenação motora e traçado</strong> — cursivo e bastão</li>
+          <li><span class="num">🎨</span> <strong>Atividades de pintura e associação visual</strong></li>
         </ul>
       </div>
-
     </div>
   </section>
 
   <div class="divider">✦ ✦ ✦</div>
 
-  <!-- =========================================================
-       7. TESTIMONIALS
-  ========================================================= -->
-  <section class="section testimonials" id="depoimentos">
-    <div class="container">
-      <div class="section-label">Prova social</div>
-      <h2 class="section-title">Veja o que outras famílias estão dizendo</h2>
-      <p class="section-sub">Pais, mães e professores que já utilizaram o material em casa e na sala de aula.</p>
-
-      <div class="test-grid">
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar">C</div>
-            <div>
-              <div class="test-card__name">Camila</div>
-              <div class="test-card__role">Mãe do Pedro</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Eu não sabia por onde começar para ajudar meu filho em casa. Com o kit ficou muito mais fácil, porque as atividades já vêm organizadas e prontas para imprimir.</p>
-        </div>
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#FF7A2F,#E5651A)">R</div>
-            <div>
-              <div class="test-card__name">Renata</div>
-              <div class="test-card__role">Mãe da Laura</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Minha filha tinha muita dificuldade para juntar as sílabas. Começamos usando algumas páginas por dia e ela ficou mais interessada nas atividades.</p>
-        </div>
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#8E44AD,#6C3483)">J</div>
-            <div>
-              <div class="test-card__name">Juliana</div>
-              <div class="test-card__role">Professora</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Uso como reforço depois da escola. O material é simples, bonito e ajuda muito na rotina.</p>
-        </div>
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#E67E22,#CA6F1E)">F</div>
-            <div>
-              <div class="test-card__name">Fernanda</div>
-              <div class="test-card__role">Mãe do Miguel</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Gostei porque não precisei ficar procurando atividade solta na internet. Já vem tudo em um lugar só.</p>
-        </div>
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#1ABC9C,#148F77)">A</div>
-            <div>
-              <div class="test-card__name">Andressa F.</div>
-              <div class="test-card__role">Mãe do Caio, 6 anos</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Meu filho estava com dificuldade na escola, a professora sugeriu exercícios de coordenação. Esse kit atendeu perfeitamente. Em poucas semanas já percebi evolução significativa.</p>
-        </div>
-
-        <div class="test-card">
-          <div class="test-card__header">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#2980B9,#1F618D)">F</div>
-            <div>
-              <div class="test-card__name">Fernanda A.</div>
-              <div class="test-card__role">Terapeuta ocupacional</div>
-            </div>
-          </div>
-          <div class="stars">★★★★★</div>
-          <p class="test-card__text">Uso como complemento nas sessões com crianças. O material é bem estruturado, com progressão de dificuldade adequada. Os pais adoram porque conseguem continuar em casa.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       8. BONUS SECTION
-  ========================================================= -->
+  <!-- 5. BÔNUS -->
   <section class="section bonuses" id="bonus">
     <div class="container text-center">
       <div class="bonus-header-badge">🎁 Bônus exclusivos</div>
-      <h2 class="section-title">Comprando hoje, você também recebe <span class="text-orange">bônus exclusivos</span></h2>
+      <h2 class="section-title">Comprando hoje, você também recebe <span class="text-orange">6 bônus exclusivos</span></h2>
       <p class="section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
 
-      <!-- Grade de caixinhas dos bônus reais (estilo imagem 1) -->
       <div class="bonus-box-grid">
-
-        <!-- Bônus 1 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-CARINHAS.webp"
-                 alt="Caderno Alfabeto com Carinhas" loading="lazy" />
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-CARINHAS.webp" alt="Caderno Alfabeto com Carinhas" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 1</div>
           <h3 class="bonus-box-name">Caderno Alfabeto<br>com Carinhas</h3>
-          <p class="bonus-box-desc">Caderno divertido que apresenta cada letra do alfabeto, ajudando a criança a aprender e adquirir autonomia com leveza.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 19,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <p class="bonus-box-desc">Cada letra do alfabeto apresentada de forma divertida para estimular o reconhecimento fonético.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 19,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
-        <!-- Bônus 2 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-QUEBRA-CABECA-COM-ALFABETO.webp"
-                 alt="Caderno Quebra-Cabeça Alfabeto" loading="lazy" />
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-QUEBRA-CABECA-COM-ALFABETO.webp" alt="Quebra-Cabeça Alfabeto" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 2</div>
-          <h3 class="bonus-box-name">Caderno Quebra-Cabeça<br>Alfabeto</h3>
-          <p class="bonus-box-desc">Atividades de quebra-cabeça com o alfabeto para desenvolver o raciocínio lógico e reconhecimento das letras de forma lúdica.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 17,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <h3 class="bonus-box-name">Quebra-Cabeça<br>do Alfabeto</h3>
+          <p class="bonus-box-desc">Atividades lúdicas que desenvolvem raciocínio lógico e fixação das letras.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 17,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
-        <!-- Bônus 3 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-FORMANDO-PALAVRAS.webp"
-                 alt="Caderno Formando Palavras" loading="lazy" />
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-FORMANDO-PALAVRAS.webp" alt="Caderno Formando Palavras" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 3</div>
-          <h3 class="bonus-box-name">Caderno<br>Formando Palavras</h3>
-          <p class="bonus-box-desc">Exercícios de formação de palavras que ajudam a criança a conectar letras e sons, acelerando o processo de leitura.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 17,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <h3 class="bonus-box-name">Formando<br>Palavras</h3>
+          <p class="bonus-box-desc">Exercícios que conectam letras e sons para acelerar a leitura.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 17,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
-        <!-- Bônus 4 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-RELOGIO.webp"
-                 alt="Caderno Alfabeto com Relógio" loading="lazy" />
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-RELOGIO.webp" alt="Caderno Alfabeto com Relógio" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 4</div>
-          <h3 class="bonus-box-name">Caderno Alfabeto<br>com Relógio</h3>
-          <p class="bonus-box-desc">Caderno interativo que usa o relógio para ensinar o alfabeto e noções de tempo, tornando o aprendizado ainda mais rico.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 14,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <h3 class="bonus-box-name">Alfabeto<br>com Relógio</h3>
+          <p class="bonus-box-desc">Aprende letras e noções de tempo de forma integrada e visual.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 14,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
-        <!-- Bônus 5 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-TRACADO.webp"
-                 alt="Caderno Alfabeto Traçado" loading="lazy" />
+            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-TRACADO.webp" alt="Caderno Alfabeto Traçado" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 5</div>
-          <h3 class="bonus-box-name">Caderno Alfabeto<br>Traçado</h3>
-          <p class="bonus-box-desc">Caderno com o alfabeto traçado para a criança percorrer e internalizar cada letra, aprimorando a caligrafia com diversão.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 14,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <h3 class="bonus-box-name">Alfabeto<br>Traçado</h3>
+          <p class="bonus-box-desc">Exercícios de caligrafia para internalizar cada letra com diversão.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 14,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
-        <!-- Bônus 6 -->
         <div class="bonus-box-card">
           <div class="bonus-box-img-wrap">
-            <img src="https://i.ibb.co/WNVXttxg/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png"
-                 alt="Caderno Alfabeto com Imagem" loading="lazy" />
+            <img src="https://i.ibb.co/WNVXttxg/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
             <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
           <div class="bonus-box-num">Bônus 6</div>
-          <h3 class="bonus-box-name">Caderno Alfabeto<br>com Imagem</h3>
-          <p class="bonus-box-desc">Cada letra do alfabeto associada a uma imagem ilustrada, facilitando a memorização fonética de forma visual e divertida.</p>
-          <div class="bonus-box-value">
-            <span class="old-price">R$ 19,90</span>
-            <span class="free-tag">✅ Grátis</span>
-          </div>
+          <h3 class="bonus-box-name">Alfabeto<br>com Imagem</h3>
+          <p class="bonus-box-desc">Letra + imagem ilustrada para memorização fonética visual e divertida.</p>
+          <div class="bonus-box-value"><span class="old-price">R$ 19,90</span><span class="free-tag">✅ Grátis</span></div>
         </div>
-
       </div>
 
-      <div class="bonus-total">
-        🎁 Valor total dos bônus: <s>R$ 104,40</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!
-      </div>
+      <div class="bonus-total">🎁 Valor total dos bônus: <s>R$ 104,40</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!</div>
 
-      <div class="btn-wrap">
-        <a href="#oferta" class="btn btn--orange">
-          SIM, QUERO RECEBER O KIT AGORA
-        </a>
+      <div class="btn-wrap" style="margin-top:20px">
+        <a href="#oferta" class="btn btn--orange">SIM, QUERO RECEBER O KIT AGORA</a>
         <div class="microcopy">
-          <span>🔒 Compra segura</span>
-          <span>•</span>
-          <span>⚡ Acesso imediato</span>
-          <span>•</span>
+          <span>🔒 Compra segura</span><span>•</span>
+          <span>⚡ Acesso imediato</span><span>•</span>
           <span>🛡️ Garantia de 7 dias</span>
         </div>
       </div>
@@ -2593,131 +2199,21 @@
 
   <div class="divider">✦ ✦ ✦</div>
 
-  <!-- =========================================================
-       9. FOR WHOM
-  ========================================================= -->
-  <section class="section section--alt" id="para-quem">
-    <div class="container">
-      <div class="section-label">Público ideal</div>
-      <h2 class="section-title">Esse material é ideal para:</h2>
-
-      <div class="forwho__grid">
-        <div class="forwho-block forwho-block--yes">
-          <h3><span class="icon">✅</span> É para você que:</h3>
-          <ul>
-            <li><span class="icon">✅</span> É pai ou mãe que quer ajudar o filho a aprender em casa</li>
-            <li><span class="icon">✅</span> Tem filhos em fase de alfabetização (3 a 7 anos)</li>
-            <li><span class="icon">✅</span> É professora ou professora da educação infantil</li>
-            <li><span class="icon">✅</span> Trabalha com reforço escolar ou atividades complementares</li>
-            <li><span class="icon">✅</span> É terapeuta e busca material prático para as sessões</li>
-            <li><span class="icon">✅</span> Quer reduzir o tempo improdutivo da criança no celular</li>
-            <li><span class="icon">✅</span> Procura uma solução simples, acessível e pronta para usar</li>
-          </ul>
-        </div>
-
-        <div class="forwho-block forwho-block--no">
-          <h3><span class="icon">❌</span> Não é para você que:</h3>
-          <ul>
-            <li><span class="icon">❌</span> Procura uma solução milagrosa sem acompanhar a criança</li>
-            <li><span class="icon">❌</span> Não pretende imprimir ou aplicar as atividades</li>
-            <li><span class="icon">❌</span> Quer substituir completamente a escola ou acompanhamento profissional</li>
-            <li><span class="icon">❌</span> Espera resultado sem nenhuma consistência na aplicação</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       10. HOW IT WORKS
-  ========================================================= -->
-  <section class="section section--white" id="como-funciona">
-    <div class="container">
-      <div class="section-label">Processo simples</div>
-      <h2 class="section-title">Como você vai usar o material</h2>
-      <p class="section-sub">Em 5 passos simples você já está com o material nas mãos. Você não precisa ser professora para começar.</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step__num">1</div>
-          <div class="step__icon">🛒</div>
-          <h3>Faça sua compra</h3>
-          <p>Clique no botão e pague com segurança via cartão, Pix ou boleto em apenas 1 minuto.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">2</div>
-          <div class="step__icon">📧</div>
-          <h3>Receba no e-mail</h3>
-          <p>O acesso é enviado automaticamente para o e-mail informado, assim que o pagamento é confirmado.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">3</div>
-          <div class="step__icon">⬇️</div>
-          <h3>Baixe o PDF</h3>
-          <p>Acesse o material no seu computador, tablet ou celular e salve para sempre na sua nuvem.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">4</div>
-          <div class="step__icon">🖨️</div>
-          <h3>Imprima as atividades</h3>
-          <p>Imprima as páginas que quiser — pode imprimir tudo de uma vez ou ir imprimindo aos poucos.</p>
-        </div>
-        <div class="step">
-          <div class="step__num">5</div>
-          <div class="step__icon">🌱</div>
-          <h3>Use no ritmo dela</h3>
-          <p>Sente com a criança e aplique as atividades com leveza, sem pressão, no tempo certo de cada uma.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <!-- =========================================================
-       10B. TRUST — POR QUE ESSE MATERIAL É IDEAL
-  ========================================================= -->
-  <section class="section section--white" id="por-que">
-    <div class="container text-center">
-      <div class="section-label">Antes de comprar</div>
-      <h2 class="section-title">Por que esse material é ideal para começar?</h2>
-
-      <div class="trust-why">
-        <ul class="trust-why__list">
-          <li><span class="twck">✅</span><span>Você não precisa preparar atividades do zero</span></li>
-          <li><span class="twck">✅</span><span>Pode imprimir e usar no ritmo da criança</span></li>
-          <li><span class="twck">✅</span><span>Ajuda a criar uma rotina simples de prática</span></li>
-          <li><span class="twck">✅</span><span>Organiza o reforço em casa ou na escola</span></li>
-          <li><span class="twck">✅</span><span>É visual, colorido e fácil de aplicar</span></li>
-        </ul>
-        <p class="trust-why__note">O objetivo é facilitar sua rotina e deixar o aprendizado mais leve, com atividades prontas para usar aos poucos.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       11. OFFER / PRICE
-  ========================================================= -->
+  <!-- 6. OFERTA -->
   <section class="section" id="oferta" style="background: var(--cream-dark);">
     <div class="container">
-
       <div class="offer offer-v2">
-
-        <!-- Cabeçalho da seção -->
         <div class="offer-v2-header">
           <div class="offer-v2-badge">🔥 OFERTA ESPECIAL LIBERADA HOJE</div>
           <h2 class="offer-v2-headline">Escolha como você quer começar a transformar a alfabetização do seu filho</h2>
           <p class="offer-v2-sub">Material digital, acesso imediato após o pagamento. Sem mensalidade. Para sempre seu.</p>
-          <div class="offer-urgency">⚠️ Preço promocional válido apenas hoje</div>
+          <div class="offer-urgency">⚠️ Preço promocional disponível hoje — depois pode voltar ao normal</div>
         </div>
 
-        <!-- Cards lado a lado -->
         <div class="offer-cards-grid">
-
-          <!-- Card 1 – Oferta de entrada -->
           <div class="pricing-card pricing-card--entry">
             <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
-            <p class="pricing-card__price-intro">Por apenas</p>
+            <p class="pricing-card__price-intro">Comece agora por apenas</p>
             <p class="pricing-card__price"><small>R$</small> 10</p>
             <p class="pricing-card__desc">Ideal para começar e ver o método funcionando antes de avançar.</p>
             <ul class="pricing-card__benefits">
@@ -2726,11 +2222,10 @@
               <li><span>✅</span> Atividades prontas para imprimir</li>
               <li><span>✅</span> Acesso digital imediato</li>
             </ul>
-            <a href="https://pay.cakto.com.br/bub5qbq" class="btn--entry" target="_blank" rel="noopener">QUERO COMEÇAR POR R$10</a>
+            <a href="https://pay.cakto.com.br/bub5qbq" class="btn--entry" target="_blank" rel="noopener">LIBERAR MEU ACESSO POR R$10</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade</p>
           </div>
 
-          <!-- Card 2 – Oferta principal -->
           <div class="pricing-card pricing-card--main">
             <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
             <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
@@ -2753,29 +2248,76 @@
             <a href="https://pay.cakto.com.br/xumrbgf_872894" class="btn--main-cta" target="_blank" rel="noopener">SIM, QUERO O KIT COMPLETO POR R$19,90</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após pagamento</p>
           </div>
-
         </div>
 
-        <!-- Rodapé de segurança -->
         <div class="offer-footer-security">
-          <span>🔒 Compra segura</span>
-          <span>•</span>
-          <span>⚡ Acesso imediato</span>
-          <span>•</span>
+          <span>🔒 Compra segura</span><span>•</span>
+          <span>⚡ Acesso imediato</span><span>•</span>
           <span>🛡️ Garantia de 7 dias</span>
         </div>
-
       </div>
-
-      <!-- ✏️ Insira badges/logos de pagamento seguro abaixo -->
-      <!-- <img src="IMAGEM_SELOS_PAGAMENTO.png" alt="Pagamento seguro" style="margin:24px auto 0; max-width:320px" /> -->
-
     </div>
   </section>
 
-  <!-- =========================================================
-       12. GUARANTEE
-  ========================================================= -->
+  <!-- 7. DEPOIMENTOS -->
+  <section class="section testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-label">Prova social</div>
+      <h2 class="section-title">O que outras famílias estão dizendo</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar">C</div>
+            <div><div class="test-card__name">Camila</div><div class="test-card__role">Mãe do Pedro</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Eu não sabia por onde começar para ajudar meu filho em casa. Com o kit ficou muito mais fácil, porque as atividades já vêm organizadas e prontas para imprimir.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#FF7A2F,#E5651A)">R</div>
+            <div><div class="test-card__name">Renata</div><div class="test-card__role">Mãe da Laura</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Minha filha tinha muita dificuldade para juntar as sílabas. Começamos usando algumas páginas por dia e ela ficou mais interessada nas atividades.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#8E44AD,#6C3483)">J</div>
+            <div><div class="test-card__name">Juliana</div><div class="test-card__role">Professora</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Uso como reforço depois da escola. O material é simples, bonito e ajuda muito na rotina.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#E67E22,#CA6F1E)">F</div>
+            <div><div class="test-card__name">Fernanda</div><div class="test-card__role">Mãe do Miguel</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Gostei porque não precisei ficar procurando atividade solta na internet. Já vem tudo em um lugar só.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#1ABC9C,#148F77)">A</div>
+            <div><div class="test-card__name">Andressa F.</div><div class="test-card__role">Mãe do Caio, 6 anos</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Meu filho estava com dificuldade na escola. Esse kit atendeu perfeitamente. Em poucas semanas já percebi evolução significativa.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#2980B9,#1F618D)">F</div>
+            <div><div class="test-card__name">Fernanda A.</div><div class="test-card__role">Terapeuta ocupacional</div></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="test-card__text">Uso como complemento nas sessões com crianças. O material é bem estruturado e os pais conseguem continuar em casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. GARANTIA -->
   <section class="section section--white" id="garantia">
     <div class="container">
       <div class="guarantee__inner">
@@ -2786,175 +2328,72 @@
         </div>
         <div class="guarantee__text">
           <h3>Garantia de satisfação de 7 dias</h3>
-          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso conforme as regras da plataforma de pagamento. Sem perguntas, sem burocracia.</p>
-          <p style="margin-top:10px; font-size:.85rem; color: var(--gray);">Queremos que você tenha a melhor experiência possível. Sua satisfação é nossa prioridade.</p>
+          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso. Sem perguntas, sem burocracia.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       13. URGENCY (soft)
-  ========================================================= -->
-  <section class="section urgency" id="urgencia">
-    <div class="container">
-      <div class="section-label">⏰ Por que agir agora?</div>
-      <h2 class="section-title">Por que garantir o seu acesso hoje?</h2>
-      <p class="section-sub">Não há pressão, apenas motivos reais para não adiar.</p>
-
-      <div class="urgency__grid">
-        <div class="urgency-item">
-          <div class="icon">💰</div>
-          <p><strong>Preço promocional:</strong> O valor de R$ 19,90 é especial e pode ser reajustado a qualquer momento sem aviso prévio.</p>
-        </div>
-        <div class="urgency-item">
-          <div class="icon">🎁</div>
-          <p><strong>Bônus por tempo limitado:</strong> Os 6 bônus exclusivos são inclusos apenas para compras realizadas durante esta oferta.</p>
-        </div>
-        <div class="urgency-item">
-          <div class="icon">⚡</div>
-          <p><strong>Começa hoje mesmo:</strong> O acesso é imediato — você já pode imprimir e usar as primeiras atividades ainda hoje.</p>
-        </div>
-        <div class="urgency-item">
-          <div class="icon">🌱</div>
-          <p><strong>O desenvolvimento não espera:</strong> Quanto antes começar, mais tempo a criança tem para desenvolver essas habilidades com leveza.</p>
-        </div>
-      </div>
-
-      <div class="btn-wrap" style="margin-top:36px">
-        <a href="#oferta" class="btn btn--primary">
-          QUERO COMEÇAR HOJE
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider">✦ ✦ ✦</div>
-
-  <!-- =========================================================
-       14. FAQ
-  ========================================================= -->
+  <!-- 9. FAQ -->
   <section class="section section--alt" id="faq">
     <div class="container">
       <div class="section-label">Dúvidas frequentes</div>
       <h2 class="section-title">Perguntas e Respostas</h2>
-      <p class="section-sub">Respondemos as dúvidas mais comuns para você comprar com total segurança.</p>
 
       <div class="faq-list">
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O material é físico ou digital?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">É um material digital. Você recebe o acesso para baixar e imprimir. Nenhum produto físico será enviado.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>O acesso é imediato?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Sim. Assim que o pagamento é confirmado (Pix e cartão são instantâneos), você recebe o acesso por e-mail e já pode baixar e imprimir as atividades.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Como recebo o kit?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Após a confirmação da compra, você recebe as instruções de acesso ao material no e-mail informado. Pix e cartão têm confirmação imediata; boleto pode levar até 1 a 3 dias úteis.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Preciso imprimir o material?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">O ideal é imprimir para a criança fazer as atividades, mas você também pode visualizar no celular, tablet ou computador.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Preciso imprimir?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">O ideal é imprimir para a criança fazer as atividades, mas você também pode visualizar os arquivos no celular, tablet ou computador.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Serve para qual idade?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">É indicado para crianças em fase inicial de alfabetização — geralmente entre 3 e 7 anos.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Serve para qual idade?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">É indicado para crianças em fase inicial de alfabetização. A idade pode variar conforme o desenvolvimento da criança — geralmente entre 3 e 7 anos.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Preciso ser professora para usar?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Não. O material foi pensado para ser simples e fácil de aplicar por pais, mães e responsáveis — sem precisar de formação pedagógica.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Preciso ser professora para usar?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Não. O material foi pensado para ser simples e fácil de aplicar por pais, mães, responsáveis ou educadores — sem precisar de formação pedagógica.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Como recebo o material?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Após a confirmação da compra, você recebe as instruções de acesso no e-mail informado. Pix e cartão têm confirmação imediata; boleto pode levar até 3 dias úteis.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O pagamento é único?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Sim. Você paga uma vez e recebe o acesso ao material. Sem mensalidade, sem cobrança recorrente.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>O pagamento é seguro?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Sim. O pagamento é processado pela plataforma Cakto, com criptografia e ambiente 100% seguro.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Posso usar mais de uma vez?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Sim. Você pode imprimir novamente para uso pessoal com a criança quantas vezes precisar.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Funciona no celular?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Sim. Você pode acessar e visualizar o material pelo celular. Para imprimir, recomendamos usar um computador conectado a uma impressora.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Quando posso começar?</span>
-            <span class="arrow">▼</span>
-          </button>
-          <div class="faq-a">
-            <div class="faq-a__inner">Assim que receber o acesso, você já pode baixar e imprimir as primeiras atividades. O acesso é enviado automaticamente após a confirmação do pagamento.</div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Tem garantia?</span><span class="arrow">▼</span></button>
+          <div class="faq-a"><div class="faq-a__inner">Sim. 7 dias de garantia. Se não ficar satisfeita, basta solicitar o reembolso conforme as regras da plataforma — sem perguntas.</div></div>
         </div>
-
       </div>
 
-      <!-- Final CTA after FAQ -->
-      <div class="btn-wrap" style="margin-top:48px">
-        <p style="font-size:1rem; font-weight:700; margin-bottom:12px; text-align:center">Pronto para começar?</p>
-        <a href="#oferta" class="btn btn--primary">
-          QUERO AJUDAR MEU FILHO A LER
-        </a>
+      <div class="btn-wrap" style="margin-top:40px">
+        <a href="#oferta" class="btn btn--primary">QUERO AJUDAR MEU FILHO A LER</a>
         <div class="microcopy">
-          <span>🔒 Compra segura</span>
-          <span>•</span>
-          <span>⚡ Acesso imediato</span>
-          <span>•</span>
+          <span>🔒 Compra segura</span><span>•</span>
+          <span>⚡ Acesso imediato</span><span>•</span>
           <span>🛡️ Garantia de 7 dias</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================
-       15. FOOTER
-  ========================================================= -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <!-- ✏️ Troque pelo nome real do seu produto/empresa -->
         <div class="footer__logo">📚 Kit Educativo Infantil</div>
         <div class="footer__links">
-          <!-- ✏️ Substitua # pelos links reais das páginas legais -->
           <a href="#">Termos de Uso</a>
           <a href="#">Política de Privacidade</a>
           <a href="#">Suporte</a>
-          <!-- ✏️ Adicione link de contato/WhatsApp/e-mail de suporte -->
         </div>
       </div>
       <div class="footer__bottom">
@@ -2968,16 +2407,12 @@
           📄 Produto 100% digital. Nenhum material físico será enviado. O acesso é entregue imediatamente por e-mail após a confirmação do pagamento.
         </div>
         <p style="margin-top:16px; font-size:.75rem; color:#6B5A4A">
-          <!-- ✏️ Troque pelo nome/CNPJ da sua empresa -->
-          © 2024 Kit Educativo Infantil. Todos os direitos reservados.<br>
+          © 2024 Kit Educativo Infantil. Todos os direitos reservados.
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- =========================================================
-       STICKY MOBILE CTA (aparece após rolar)
-  ========================================================= -->
   <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Oferta rápida">
     <a href="https://pay.cakto.com.br/xumrbgf_872894" target="_blank" rel="noopener">
       🚀 ACESSAR AGORA POR R$ 19,90
