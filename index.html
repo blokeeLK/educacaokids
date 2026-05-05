@@ -1970,6 +1970,172 @@
       .pricing-card--main .pricing-card__price { font-size: 3rem; }
       .btn--main-cta { font-size: 1rem; padding: 18px 20px; }
     }
+
+    /* ═══════════════════════════════════════════════════════
+       UPSELL POPUP — Kit Intermediário
+    ═══════════════════════════════════════════════════════ */
+    .upsell-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 9900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+    .upsell-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .upsell-modal {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      max-width: 560px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 32px 28px 28px;
+      position: relative;
+      transform: translateY(20px) scale(.97);
+      transition: transform .35s cubic-bezier(.22,.61,.36,1);
+    }
+    .upsell-overlay.active .upsell-modal {
+      transform: translateY(0) scale(1);
+    }
+    .upsell-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: #aaa;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .upsell-close:hover { background: #f0f0f0; color: #333; }
+    .upsell-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF6B2B, #E5521A);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 14px;
+    }
+    .upsell-title {
+      font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+      font-weight: 800;
+      color: var(--brown);
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+    .upsell-subtitle {
+      font-size: .88rem;
+      color: var(--gray);
+      margin: 0 0 20px;
+      line-height: 1.5;
+    }
+    .upsell-card {
+      background: #F0FBF2;
+      border: 2px solid var(--green);
+      border-radius: 14px;
+      padding: 18px 20px 14px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .upsell-card__from {
+      font-size: .8rem;
+      color: var(--gray);
+      margin: 0 0 2px;
+    }
+    .upsell-card__from s { text-decoration: line-through; }
+    .upsell-card__price {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin: 0 0 4px;
+    }
+    .upsell-card__price small {
+      font-size: 1.15rem;
+      font-weight: 700;
+      vertical-align: super;
+    }
+    .upsell-card__note {
+      font-size: .76rem;
+      color: var(--gray);
+      margin: 0 0 16px;
+    }
+    .upsell-card__items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .upsell-card__items li {
+      font-size: .84rem;
+      color: #333;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(40,167,69,.12);
+      line-height: 1.4;
+    }
+    .upsell-card__items li:last-child { border-bottom: none; }
+    .upsell-btn-yes {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #2DB84B, #1E9E3E);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 17px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(30,158,62,.32);
+      transition: transform .2s, box-shadow .2s;
+      margin-bottom: 14px;
+      box-sizing: border-box;
+    }
+    .upsell-btn-yes:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(30,158,62,.45);
+    }
+    .upsell-btn-no {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--gray);
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px 0 2px;
+    }
+    .upsell-btn-no:hover { color: var(--brown); }
+    @media (max-width: 480px) {
+      .upsell-modal { padding: 28px 18px 22px; }
+      .upsell-card__price { font-size: 2.2rem; }
+      .upsell-btn-yes { font-size: .88rem; padding: 15px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -2413,6 +2579,37 @@
     </div>
   </footer>
 
+  <!-- ═══════════ UPSELL POPUP — Kit Intermediário ═══════════ -->
+  <div class="upsell-overlay" id="upsellOverlay" role="dialog" aria-modal="true" aria-labelledby="upsellTitle">
+    <div class="upsell-modal">
+      <button class="upsell-close" id="upsellClose" aria-label="Fechar">✕</button>
+      <div style="text-align:center">
+        <span class="upsell-badge">🔥 OFERTA ESPECIAL PARA VOCÊ</span>
+        <h2 class="upsell-title" id="upsellTitle">Espera! Antes de finalizar, veja essa opção melhor</h2>
+        <p class="upsell-subtitle">Por apenas R$9,90 a mais, você leva um kit mais completo para ajudar seu filho a praticar letras, sílabas e leitura em casa.</p>
+      </div>
+      <div class="upsell-card">
+        <p class="upsell-card__from">De <s>R$29,90</s> por apenas:</p>
+        <p class="upsell-card__price"><small>R$</small> 19,90</p>
+        <p class="upsell-card__note">Pagamento único • Acesso imediato</p>
+        <ul class="upsell-card__items">
+          <li>✅ Kit Básico de Alfabetização incluso</li>
+          <li>✅ Caderno de Letras e Sílabas</li>
+          <li>✅ Caderno de Palavras Simples</li>
+          <li>✅ Atividades prontas para imprimir</li>
+          <li>✅ Bônus: Caderno Alfabeto Traçado</li>
+          <li>✅ Bônus: Caderno Formando Palavras</li>
+          <li>✅ Bônus: Alfabeto com Imagens</li>
+          <li>✅ Acesso digital imediato</li>
+          <li>✅ Material em PDF</li>
+          <li>✅ Sem mensalidade</li>
+        </ul>
+      </div>
+      <a href="https://pay.cakto.com.br/xumrbgf_872894" class="upsell-btn-yes" target="_blank" rel="noopener" id="upsellBtnYes">SIM, QUERO O KIT INTERMEDIÁRIO POR R$19,90</a>
+      <button class="upsell-btn-no" id="upsellBtnNo">Não, quero continuar apenas com o Kit Básico de R$10,00</button>
+    </div>
+  </div>
+
   <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Oferta rápida">
     <a href="https://pay.cakto.com.br/xumrbgf_872894" target="_blank" rel="noopener">
       🚀 ACESSAR AGORA POR R$ 19,90
@@ -2532,6 +2729,44 @@
         }
       });
     });
+
+    // ── Upsell Popup — Kit Intermediário ─────────────────────────
+    (function() {
+      var overlay   = document.getElementById('upsellOverlay');
+      var closeBtn  = document.getElementById('upsellClose');
+      var btnNo     = document.getElementById('upsellBtnNo');
+      var basicUrl  = 'https://pay.cakto.com.br/bub5qbq';
+
+      function openPopup(e) {
+        e.preventDefault();
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePopup() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.btn--entry').forEach(function(btn) {
+        btn.addEventListener('click', openPopup);
+      });
+
+      closeBtn.addEventListener('click', closePopup);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closePopup();
+      });
+
+      btnNo.addEventListener('click', function() {
+        closePopup();
+        window.open(basicUrl, '_blank', 'noopener');
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup();
+      });
+    })();
   </script>
 
 </body>
