@@ -2110,16 +2110,25 @@
     .upsell-btn-no {
       display: block;
       width: 100%;
+      background: linear-gradient(135deg, #7B5E3A, #5C4020);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 17px 20px;
+      border-radius: 12px;
       text-align: center;
-      font-size: .8rem;
-      color: var(--gray);
-      text-decoration: underline;
-      cursor: pointer;
-      background: none;
       border: none;
-      padding: 6px 0 2px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(92,64,32,.28);
+      transition: transform .2s, box-shadow .2s;
+      box-sizing: border-box;
     }
-    .upsell-btn-no:hover { color: var(--brown); }
+    .upsell-btn-no:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(92,64,32,.4);
+    }
     @media (max-width: 480px) {
       .upsell-modal { padding: 28px 18px 22px; }
       .upsell-card__price { font-size: 2.2rem; }
