@@ -161,10 +161,10 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow-md);
-      max-width: 640px;
+      max-width: 360px;
       margin: 28px auto 0;
       background: #000;
-      aspect-ratio: 16/9;
+      aspect-ratio: 9/16;
     }
     .vsl-wrap video {
       width: 100%;
@@ -266,52 +266,34 @@
     .kit-list li span { flex-shrink: 0; }
 
     /* ─── CAROUSEL ───────────────────────────────── */
-    .carousel-wrap {
-      position: relative;
+    .marquee-wrap {
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: var(--shadow-md);
       margin: 32px auto 0;
-      max-width: 500px;
       background: #fff;
+      padding: 12px 0;
     }
-    .carousel-track {
+    .marquee-track {
       display: flex;
-      transition: transform .9s cubic-bezier(.4,0,.2,1);
+      gap: 14px;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
     }
-    .carousel-track img {
-      min-width: 100%;
-      width: 100%;
-      height: 340px;
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    .marquee-track img {
+      height: 220px;
+      width: auto;
       object-fit: contain;
+      border-radius: 10px;
       flex-shrink: 0;
       background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
     }
-    .carousel-btn {
-      position: absolute;
-      top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,.9);
-      border: none; cursor: pointer;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: var(--shadow);
-      z-index: 10;
-      transition: background .2s;
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .carousel-btn:hover { background: #fff; }
-    .carousel-btn--prev { left: 10px; }
-    .carousel-btn--next { right: 10px; }
-    .carousel-dots {
-      display: flex; justify-content: center; gap: 6px; margin-top: 14px;
-    }
-    .carousel-dots button {
-      width: 8px; height: 8px; border-radius: 50%; border: none;
-      background: #d1d5db; cursor: pointer; padding: 0;
-      transition: background .2s, transform .2s;
-    }
-    .carousel-dots button.active { background: var(--green); transform: scale(1.4); }
 
     /* ─── ATIVIDADES ─────────────────────────────── */
     .activity-grid {
@@ -588,6 +570,83 @@
       letter-spacing: .03em;
     }
 
+    /* ─── CTA BOX (screenshot-style) ────────────── */
+    .cta-box {
+      background: linear-gradient(160deg, #eaf4ff 0%, #f0fff4 100%);
+      border: 2px solid #bfdbfe;
+      border-radius: 24px;
+      padding: 36px 32px 32px;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .cta-box__img {
+      max-width: 320px;
+      margin: 0 auto 24px;
+      border-radius: 12px;
+    }
+    .cta-checklist {
+      text-align: left;
+      margin: 0 0 24px;
+    }
+    .cta-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .9rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      color: var(--text);
+      font-weight: 500;
+    }
+    .cta-checklist li:last-child { border-bottom: none; }
+    .cta-checklist li span { flex-shrink: 0; }
+    .cta-price-total {
+      font-size: .88rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .cta-price-total s { color: #ef4444; font-weight: 700; }
+    .cta-price-label {
+      font-size: .9rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cta-price-main {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--green-dark);
+      line-height: 1;
+      margin: 4px 0 12px;
+    }
+    .cta-price-main small { font-size: 1.8rem; vertical-align: super; font-weight: 900; }
+    .cta-access-tag {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 22px;
+    }
+    .cta-badges {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .cta-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: .7rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+    .cta-badge span:first-child { font-size: 1.4rem; }
+
     /* ─── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 768px) {
       .section { padding: 48px 0; }
@@ -603,7 +662,7 @@
       .offer-box      { padding: 28px 20px; }
       .offer-box__price { font-size: 3rem; }
       .summary-card   { padding: 24px 18px; }
-      .carousel-track img { height: 240px; }
+      .marquee-track img { height: 160px; }
       .sticky-cta     { display: block; }
     }
     @media (max-width: 480px) {
@@ -776,8 +835,9 @@
         <li><span>✅</span> Ideal para complementar a alfabetização</li>
       </ul>
 
-      <div class="carousel-wrap" id="carousel">
-        <div class="carousel-track" id="carouselTrack2">
+      <div class="marquee-wrap">
+        <div class="marquee-track" aria-hidden="true">
+          <!-- set 1 -->
           <img src="carrossel2/XlHLrS9570975.jpg"   alt="Atividade 1" loading="eager" />
           <img src="carrossel2/tfokiB9570975.jpg"   alt="Atividade 2" loading="lazy" />
           <img src="carrossel2/pCNsaD1394579-1.jpg" alt="Atividade 3" loading="lazy" />
@@ -786,11 +846,17 @@
           <img src="carrossel2/JQsrdq9570975.jpg"   alt="Atividade 6" loading="lazy" />
           <img src="carrossel2/jBIgre1343796.jpg"   alt="Atividade 7" loading="lazy" />
           <img src="carrossel2/gIhMKA9570975.jpg"   alt="Atividade 8" loading="lazy" />
+          <!-- set 2 — duplicado para loop contínuo -->
+          <img src="carrossel2/XlHLrS9570975.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/tfokiB9570975.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/pCNsaD1394579-1.jpg" alt="" loading="lazy" />
+          <img src="carrossel2/MrCoBM9570975.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/JzohEa9570975.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/JQsrdq9570975.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/jBIgre1343796.jpg"   alt="" loading="lazy" />
+          <img src="carrossel2/gIhMKA9570975.jpg"   alt="" loading="lazy" />
         </div>
-        <button class="carousel-btn carousel-btn--prev" id="carouselPrev2" aria-label="Anterior">&#8249;</button>
-        <button class="carousel-btn carousel-btn--next" id="carouselNext2" aria-label="Próximo">&#8250;</button>
       </div>
-      <div class="carousel-dots" id="carouselDots2"></div>
     </div>
   </section>
 
@@ -1079,6 +1145,44 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       CTA BOX — estilo screenshot
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <div class="cta-box">
+        <img src="assets/promo/banner.png" alt="Kit Grafomotricidade Infantil" class="cta-box__img" />
+
+        <ul class="cta-checklist">
+          <li><span>✅</span> +350 Atividades de Grafomotricidade</li>
+          <li><span>✅</span> <strong>Bônus 01:</strong> Plano de Aula Personalizado</li>
+          <li><span>✅</span> <strong>Bônus 02:</strong> Caderno dos Números</li>
+          <li><span>✅</span> <strong>Bônus 03:</strong> Caderno das Cores</li>
+          <li><span>✅</span> <strong>Bônus 04:</strong> Livro Trabalhar Pré-Escrita</li>
+          <li><span>✅</span> <strong>Bônus 05:</strong> 100 Exercícios Extras de Grafomotricidade</li>
+          <li><span>✅</span> <strong>Bônus 06:</strong> Fichas de Coordenação Motora</li>
+          <li><span>✅</span> <strong>Bônus 07:</strong> Fichas de Identificação</li>
+          <li><span>✅</span> <strong>Bônus 08:</strong> Certificado Personalizado</li>
+          <li><span>✅</span> Suporte Profissional</li>
+          <li><span>✅</span> Garantia Incondicional</li>
+        </ul>
+
+        <p class="cta-price-total">No total tudo deveria custar <s>R$ 453,00</s></p>
+        <p class="cta-price-label">Mas hoje você vai ter acesso completo por</p>
+        <p class="cta-price-main"><small>R$</small> 37,90</p>
+        <p class="cta-access-tag">Acesso Vitalício &nbsp;|&nbsp; Acesso Imediato</p>
+
+        <a href="https://pay.cakto.com.br/qsigy5w_877646" class="btn btn--lg" target="_blank" rel="noopener" style="max-width:100%;border-radius:14px;">QUERO GARANTIR O MEU KIT AGORA!</a>
+
+        <div class="cta-badges">
+          <div class="cta-badge"><span>🔒</span><span>Compra Segura</span></div>
+          <div class="cta-badge"><span>✅</span><span>Satisfação Garantida</span></div>
+          <div class="cta-badge"><span>🛡️</span><span>Privacidade Protegida</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        17. FAQ
   ═══════════════════════════════════════════ -->
   <section class="section section--blue">
@@ -1173,49 +1277,6 @@
       });
     });
 
-    /* ─── Carousel ───────────────────────────────── */
-    (function() {
-      var track    = document.getElementById('carouselTrack2');
-      var dotsWrap = document.getElementById('carouselDots2');
-      var prev     = document.getElementById('carouselPrev2');
-      var next     = document.getElementById('carouselNext2');
-      if (!track) return;
-
-      var slides  = track.querySelectorAll('img');
-      var total   = slides.length;
-      var current = 0;
-      var timer;
-
-      slides.forEach(function(_, i) {
-        var btn = document.createElement('button');
-        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
-        if (i === 0) btn.classList.add('active');
-        btn.addEventListener('click', function() { goTo(i); resetTimer(); });
-        dotsWrap.appendChild(btn);
-      });
-
-      function goTo(idx) {
-        current = (idx + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dotsWrap.querySelectorAll('button').forEach(function(b, i) {
-          b.classList.toggle('active', i === current);
-        });
-      }
-      function autoPlay()   { goTo(current + 1); }
-      function resetTimer() { clearInterval(timer); timer = setInterval(autoPlay, 5000); }
-
-      prev.addEventListener('click', function() { goTo(current - 1); resetTimer(); });
-      next.addEventListener('click', function() { goTo(current + 1); resetTimer(); });
-
-      var startX = 0;
-      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend',   function(e) {
-        var diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer(); }
-      }, { passive: true });
-
-      resetTimer();
-    })();
 
     /* ─── Sticky CTA mobile ──────────────────────── */
     var sticky = document.getElementById('stickyCta');
