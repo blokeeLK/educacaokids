@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kit Grafomotricidade Infantil | Oferta Especial</title>
+  <meta name="description" content="Adicione o Kit Grafomotricidade Infantil ao seu pedido e ajude seu filho a desenvolver coordenação motora, controle do lápis e preparação para escrita." />
+  <style>
+    /* ─── VARIÁVEIS ──────────────────────────────── */
+    :root {
+      --green:       #22c55e;
+      --green-dark:  #16a34a;
+      --green-light: #dcfce7;
+      --blue-light:  #eaf4ff;
+      --blue:        #2563eb;
+      --yellow:      #fff3bf;
+      --yellow-dark: #f59e0b;
+      --orange:      #fb923c;
+      --text:        #1f2937;
+      --text-light:  #6b7280;
+      --bg:          #f6fbff;
+      --white:       #ffffff;
+      --radius:      16px;
+      --shadow:      0 4px 20px rgba(0,0,0,.08);
+      --shadow-md:   0 8px 32px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── LAYOUT ─────────────────────────────────── */
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .section    { padding: 64px 0; }
+    .section--white  { background: var(--white); }
+    .section--blue   { background: var(--blue-light); }
+    .section--green  { background: var(--green-light); }
+    .section--yellow { background: var(--yellow); }
+    .section--grad   { background: linear-gradient(135deg, #f0fff4, #eaf4ff); }
+    .text-center { text-align: center; }
+    .text-green  { color: var(--green-dark); }
+
+    .section-label {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-light);
+      padding: 4px 14px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.4rem, 4vw, 2.1rem);
+      font-weight: 900;
+      line-height: 1.22;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: clamp(.9rem, 2.5vw, 1.05rem);
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .highlight-box {
+      background: var(--yellow);
+      border-left: 4px solid var(--yellow-dark);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: .95rem;
+      color: #92400e;
+    }
+
+    /* ─── BOTÕES ─────────────────────────────────── */
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 19px 28px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(34,197,94,.4);
+      transition: transform .2s, box-shadow .2s;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,.52); }
+    .btn--lg    { font-size: 1.1rem; padding: 21px 32px; }
+    .btn-note   { font-size: .8rem; color: var(--text-light); text-align: center; margin-top: 8px; }
+    .btn-decline {
+      display: block;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-light);
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+    .btn-decline:hover { color: var(--text); }
+    .btn-wrap { display: flex; flex-direction: column; align-items: center; }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #eaf4ff 0%, #f0fff4 100%);
+      padding: 52px 0 44px;
+      text-align: center;
+    }
+    .hero__tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+    }
+    .hero__headline {
+      font-size: clamp(1.55rem, 5vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .hero__sub {
+      font-size: clamp(.95rem, 2.5vw, 1.1rem);
+      color: #374151;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .hero__img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin: 28px auto 32px;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    /* ─── VSL ────────────────────────────────────── */
+    .vsl-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      max-width: 640px;
+      margin: 28px auto 0;
+      background: #000;
+      aspect-ratio: 16/9;
+    }
+    .vsl-wrap video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ─── DOR ────────────────────────────────────── */
+    .strong-box {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #92400e;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      font-size: .9rem;
+    }
+    .pain-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .pain-img  {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin: 32px auto 0;
+      max-width: 340px;
+      width: 100%;
+    }
+
+    /* ─── COMPARAÇÃO ─────────────────────────────── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .compare-card {
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .compare-card--blue  { background: var(--blue-light);  border: 2px solid #bfdbfe; }
+    .compare-card--green { background: var(--green-light); border: 2px solid #bbf7d0; }
+    .compare-card__icon  { font-size: 2.2rem; margin-bottom: 12px; }
+    .compare-card h3     { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .compare-card p      { font-size: .88rem; color: var(--text-light); }
+
+    /* ─── BENEFÍCIOS ─────────────────────────────── */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .benefit-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .benefit-card__icon { font-size: 2rem; margin-bottom: 10px; }
+    .benefit-card h3    { font-size: .92rem; font-weight: 800; margin-bottom: 6px; }
+    .benefit-card p     { font-size: .82rem; color: var(--text-light); }
+
+    /* ─── KIT LIST ───────────────────────────────── */
+    .kit-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .kit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .9rem;
+      background: var(--white);
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .kit-list li span { flex-shrink: 0; }
+
+    /* ─── CAROUSEL ───────────────────────────────── */
+    .carousel-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      margin: 32px auto 0;
+      max-width: 500px;
+      background: #fff;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform .9s cubic-bezier(.4,0,.2,1);
+    }
+    .carousel-track img {
+      min-width: 100%;
+      width: 100%;
+      height: 340px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: #fff;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.9);
+      border: none; cursor: pointer;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+      z-index: 10;
+      transition: background .2s;
+    }
+    .carousel-btn:hover { background: #fff; }
+    .carousel-btn--prev { left: 10px; }
+    .carousel-btn--next { right: 10px; }
+    .carousel-dots {
+      display: flex; justify-content: center; gap: 6px; margin-top: 14px;
+    }
+    .carousel-dots button {
+      width: 8px; height: 8px; border-radius: 50%; border: none;
+      background: #d1d5db; cursor: pointer; padding: 0;
+      transition: background .2s, transform .2s;
+    }
+    .carousel-dots button.active { background: var(--green); transform: scale(1.4); }
+
+    /* ─── ATIVIDADES ─────────────────────────────── */
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .activity-card {
+      background: var(--white);
+      border: 2px dashed #d1d5db;
+      border-radius: 14px;
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .activity-card__icon { font-size: 2rem; margin-bottom: 10px; }
+    .activity-card h4    { font-size: .8rem; font-weight: 700; color: var(--text); }
+
+    /* ─── BÔNUS ──────────────────────────────────── */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .bonus-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      transition: transform .2s;
+    }
+    .bonus-card:hover { transform: translateY(-4px); }
+    .bonus-card__badge {
+      position: absolute;
+      top: 8px; left: 8px;
+      background: var(--yellow-dark);
+      color: #fff;
+      font-size: .62rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .bonus-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      padding: 12px;
+      background: #fafafa;
+    }
+    .bonus-card__body   { padding: 10px 12px 16px; }
+    .bonus-card h4      { font-size: .82rem; font-weight: 700; line-height: 1.35; margin-bottom: 5px; }
+    .bonus-card__free   { font-size: .72rem; color: var(--green-dark); font-weight: 700; }
+
+    /* ─── OFERTA BOX ─────────────────────────────── */
+    .offer-box {
+      background: linear-gradient(135deg, #fff, #f0fff4);
+      border: 3px solid var(--green);
+      border-radius: 24px;
+      padding: 44px 36px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(34,197,94,.16);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .offer-box__name  { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 10px; }
+    .offer-box__from  { font-size: .9rem; color: var(--text-light); margin-bottom: 4px; }
+    .offer-box__price {
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: var(--green-dark);
+      line-height: 1;
+      margin: 4px 0 10px;
+    }
+    .offer-box__price small { font-size: 1.7rem; vertical-align: super; font-weight: 900; }
+    .offer-box__note  { font-size: .82rem; color: var(--text-light); margin-bottom: 28px; }
+    .offer-seals {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .seal {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--blue-light);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    /* ─── URGÊNCIA ───────────────────────────────── */
+    .urgency-box {
+      background: linear-gradient(135deg, #fff7ed, #fef3c7);
+      border: 2px solid var(--yellow-dark);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .urgency-box h3 { font-size: 1.15rem; font-weight: 800; color: #92400e; margin-bottom: 10px; }
+    .urgency-box p  { font-size: .9rem; color: #78350f; margin-bottom: 22px; line-height: 1.6; }
+
+    /* ─── PASSOS ─────────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .step-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 12px rgba(34,197,94,.35);
+    }
+    .step-card h3 { font-size: .95rem; font-weight: 800; margin-bottom: 6px; }
+    .step-card p  { font-size: .82rem; color: var(--text-light); }
+
+    /* ─── DEPOIMENTOS ────────────────────────────── */
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .test-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 18px;
+      box-shadow: var(--shadow);
+    }
+    .test-card__header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .test-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      font-weight: 800; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .test-name  { font-weight: 700; font-size: .9rem; }
+    .test-role  { font-size: .78rem; color: var(--text-light); }
+    .test-stars { color: #f59e0b; font-size: 1rem; margin-bottom: 8px; }
+    .test-card p { font-size: .85rem; color: #374151; line-height: 1.55; }
+
+    /* ─── PARA QUEM ──────────────────────────────── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .who-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    /* ─── RESUMO FINAL ───────────────────────────── */
+    .summary-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      padding: 38px 34px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .summary-card h3     { font-size: 1.1rem; font-weight: 800; margin-bottom: 22px; }
+    .summary-list li     {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: .9rem;
+    }
+    .summary-list li:last-child { border-bottom: none; }
+    .summary-price {
+      border-top: 2px dashed #e5e7eb;
+      margin-top: 24px; padding-top: 24px;
+      text-align: center;
+    }
+    .summary-price .old   { font-size: .9rem; color: var(--text-light); text-decoration: line-through; }
+    .summary-price .price {
+      font-size: 3rem; font-weight: 900;
+      color: var(--green-dark); line-height: 1;
+      margin: 6px 0 22px;
+    }
+    .summary-price .price small { font-size: 1.4rem; vertical-align: super; }
+
+    /* ─── FAQ ────────────────────────────────────── */
+    .faq-list { margin-top: 28px; }
+    .faq-item {
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none; border: none;
+      padding: 18px 20px;
+      text-align: left;
+      font-size: .95rem; font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; transition: transform .3s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-a p { padding: 0 20px 18px; font-size: .9rem; color: var(--text-light); line-height: 1.65; }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 44px 20px 90px;
+      font-size: .82rem;
+      line-height: 1.9;
+    }
+    footer strong { color: #fff; }
+
+    /* ─── STICKY CTA MOBILE ──────────────────────── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      padding: 13px 20px;
+      z-index: 9999;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.2);
+    }
+    .sticky-cta a {
+      display: block;
+      color: #fff;
+      font-weight: 900;
+      font-size: .95rem;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: .03em;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 768px) {
+      .section { padding: 48px 0; }
+      .pain-grid      { grid-template-columns: 1fr; }
+      .compare-grid   { grid-template-columns: 1fr; gap: 14px; }
+      .benefit-grid   { grid-template-columns: 1fr 1fr; }
+      .activity-grid  { grid-template-columns: repeat(2, 1fr); }
+      .bonus-grid     { grid-template-columns: 1fr 1fr; }
+      .steps-grid     { grid-template-columns: 1fr; gap: 14px; }
+      .test-grid      { grid-template-columns: 1fr; }
+      .who-grid       { grid-template-columns: 1fr; }
+      .kit-list       { grid-template-columns: 1fr; }
+      .offer-box      { padding: 28px 20px; }
+      .offer-box__price { font-size: 3rem; }
+      .summary-card   { padding: 24px 18px; }
+      .carousel-track img { height: 240px; }
+      .sticky-cta     { display: block; }
+    }
+    @media (max-width: 480px) {
+      .benefit-grid { grid-template-columns: 1fr; }
+      .hero__headline { font-size: 1.45rem; }
+      .offer-box__price { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__tag">🎯 Oferta especial liberada para completar o aprendizado do seu filho</span>
+      <h1 class="hero__headline">Antes do seu filho escrever bem,<br>ele precisa <span class="text-green">treinar a mãozinha do jeito certo</span></h1>
+      <p class="hero__sub">Adicione agora o <strong>Kit Grafomotricidade Infantil</strong> ao seu pedido e ajude seu filho a desenvolver firmeza no lápis, coordenação motora, concentração e traçados com atividades prontas para imprimir.</p>
+
+      <div class="highlight-box" style="max-width:560px;margin:0 auto 28px;">
+        ⚠️ Essa oferta foi liberada somente agora e pode não aparecer novamente.
+      </div>
+
+      <img src="assets/promo/banner.png" alt="Kit Grafomotricidade Infantil" class="hero__img" />
+
+      <div class="btn-wrap" style="margin-top:28px;">
+        <a href="COLOCAR_LINK_AQUI" class="btn btn--lg cta-btn" target="_blank" rel="noopener">🖊️ SIM, QUERO ADICIONAR AO MEU PEDIDO</a>
+        <p class="btn-note">Você só verá essa condição uma vez.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       2. VSL
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">Veja como funciona</span>
+      <h2 class="section-title">Assista e entenda por que esse<br>material faz diferença</h2>
+      <div class="vsl-wrap">
+        <video controls preload="metadata">
+          <source src="assets/promo/vsl.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="btn-wrap" style="margin-top:32px;">
+        <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">ADICIONAR AO MEU PEDIDO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       3. DOR / ALERTA
+  ═══════════════════════════════════════════ -->
+  <section class="section section--blue">
+    <div class="container text-center">
+      <span class="section-label">⚠️ Atenção</span>
+      <h2 class="section-title">Talvez o problema não seja<br>só aprender as letras…</h2>
+      <p class="section-sub">Muitas crianças até reconhecem letras e números, mas travam quando precisam escrever, cobrir pontilhados ou controlar o lápis.</p>
+
+      <div class="strong-box">
+        "Às vezes a criança sabe o que precisa fazer… mas a mãozinha ainda não está preparada para acompanhar."
+      </div>
+
+      <div class="pain-grid" style="max-width:620px;margin:0 auto;">
+        <div class="pain-item"><span class="pain-icon">✋</span><span>Pega o lápis com dificuldade</span></div>
+        <div class="pain-item"><span class="pain-icon">😓</span><span>Cansa rápido ao pintar ou escrever</span></div>
+        <div class="pain-item"><span class="pain-icon">〰️</span><span>Faz traços muito fracos, tortos ou descontrolados</span></div>
+        <div class="pain-item"><span class="pain-icon">📝</span><span>Tem dificuldade para cobrir pontilhados</span></div>
+        <div class="pain-item"><span class="pain-icon">😤</span><span>Se irrita ou perde o interesse porque acha difícil</span></div>
+        <div class="pain-item"><span class="pain-icon">🎯</span><span>Não consegue manter atenção nas atividades de escrita</span></div>
+      </div>
+
+      <img src="assets/promo/kit-precisa.webp" alt="Por que este kit é necessário" class="pain-img" />
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       4. POR QUE COMPLEMENTA
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">Material complementar</span>
+      <h2 class="section-title">Alfabetização e grafomotricidade<br>trabalham juntas</h2>
+
+      <div class="compare-grid" style="max-width:580px;margin:28px auto;">
+        <div class="compare-card compare-card--blue">
+          <div class="compare-card__icon">📚</div>
+          <h3>O kit de alfabetização ensina</h3>
+          <p>Letras, sons, sílabas, palavras e leitura.</p>
+        </div>
+        <div class="compare-card compare-card--green">
+          <div class="compare-card__icon">✏️</div>
+          <h3>A grafomotricidade prepara</h3>
+          <p>A mão, o controle do lápis, os traçados e a coordenação para escrever.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="max-width:580px;margin:0 auto;">
+        💡 Alfabetização ensina <em>o que</em> escrever. Grafomotricidade prepara a criança para <em>conseguir</em> escrever melhor.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       5. O QUE A CRIANÇA DESENVOLVE
+  ═══════════════════════════════════════════ -->
+  <section class="section section--green">
+    <div class="container text-center">
+      <span class="section-label">Benefícios reais</span>
+      <h2 class="section-title">O que seu filho começa a desenvolver<br>com pequenas atividades diárias</h2>
+
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🖐️</div>
+          <h3>Coordenação motora fina</h3>
+          <p>Ajuda nos movimentos pequenos e precisos das mãos e dedos.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card__icon">✏️</div>
+          <h3>Controle do lápis</h3>
+          <p>Treina firmeza, direção e pressão ao escrever ou pintar.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card__icon">〰️</div>
+          <h3>Traçados mais firmes</h3>
+          <p>Ajuda a criança a seguir linhas, curvas, zigue-zagues e pontilhados.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🎯</div>
+          <h3>Atenção e concentração</h3>
+          <p>Atividades curtas que mantêm a criança envolvida.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🔤</div>
+          <h3>Preparação para letras</h3>
+          <p>Base importante antes de formar letras e números com mais segurança.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card__icon">⭐</div>
+          <h3>Mais confiança para escrever</h3>
+          <p>Quando a criança percebe que consegue, ela participa com mais vontade.</p>
+        </div>
+      </div>
+
+      <div class="btn-wrap" style="margin-top:36px;">
+        <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">✅ QUERO COMPLETAR O APRENDIZADO DO MEU FILHO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       6. KIT CONTENTS + CAROUSEL
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">O que vem dentro</span>
+      <h2 class="section-title">O que vem dentro do<br><span class="text-green">Kit Grafomotricidade Infantil</span></h2>
+      <p class="section-sub">Um material simples, visual e pronto para imprimir, pensado para ajudar a criança a treinar a pré-escrita de forma leve e divertida.</p>
+
+      <ul class="kit-list">
+        <li><span>✅</span> Atividades de linhas retas, curvas e zigue-zague</li>
+        <li><span>✅</span> Pontilhados para cobrir</li>
+        <li><span>✅</span> Caminhos e labirintos educativos</li>
+        <li><span>✅</span> Exercícios de coordenação olho-mão</li>
+        <li><span>✅</span> Atividades para pintar, circular e completar</li>
+        <li><span>✅</span> Exercícios de pré-escrita</li>
+        <li><span>✅</span> Folhas em PDF prontas para imprimir</li>
+        <li><span>✅</span> Pode usar em casa, na escola ou no reforço</li>
+        <li><span>✅</span> Ideal para complementar a alfabetização</li>
+      </ul>
+
+      <div class="carousel-wrap" id="carousel">
+        <div class="carousel-track" id="carouselTrack2">
+          <img src="carrossel2/XlHLrS9570975.jpg"   alt="Atividade 1" loading="eager" />
+          <img src="carrossel2/tfokiB9570975.jpg"   alt="Atividade 2" loading="lazy" />
+          <img src="carrossel2/pCNsaD1394579-1.jpg" alt="Atividade 3" loading="lazy" />
+          <img src="carrossel2/MrCoBM9570975.jpg"   alt="Atividade 4" loading="lazy" />
+          <img src="carrossel2/JzohEa9570975.jpg"   alt="Atividade 5" loading="lazy" />
+          <img src="carrossel2/JQsrdq9570975.jpg"   alt="Atividade 6" loading="lazy" />
+          <img src="carrossel2/jBIgre1343796.jpg"   alt="Atividade 7" loading="lazy" />
+          <img src="carrossel2/gIhMKA9570975.jpg"   alt="Atividade 8" loading="lazy" />
+        </div>
+        <button class="carousel-btn carousel-btn--prev" id="carouselPrev2" aria-label="Anterior">&#8249;</button>
+        <button class="carousel-btn carousel-btn--next" id="carouselNext2" aria-label="Próximo">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots2"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       7. ATIVIDADES
+  ═══════════════════════════════════════════ -->
+  <section class="section section--blue">
+    <div class="container text-center">
+      <span class="section-label">Atividades incluídas</span>
+      <h2 class="section-title">Algumas atividades que seu filho poderá fazer</h2>
+
+      <div class="activity-grid">
+        <div class="activity-card"><div class="activity-card__icon">🛤️</div><h4>Cubra o caminho</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">🚗</div><h4>Leve o carrinho até a garagem</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">✏️</div><h4>Complete os traços</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">🎨</div><h4>Pinte seguindo a linha</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">〰️</div><h4>Trace as curvas</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">🔵</div><h4>Ligue os pontinhos</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">⭐</div><h4>Coordenação com formas</h4></div>
+        <div class="activity-card"><div class="activity-card__icon">📝</div><h4>Pré-escrita divertida</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       8. EMOCIONAL
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <h2 class="section-title">Seu filho não precisa se frustrar<br><span class="text-green">para aprender a escrever</span></h2>
+      <p class="section-sub">Quando a criança ainda não tem firmeza na mão, escrever pode parecer difícil demais. Com atividades certas, curtas e guiadas, ela começa a ganhar controle, segurança e confiança para avançar.</p>
+      <p class="section-sub" style="margin-top:-16px;">E você não precisa criar nada do zero. É só imprimir, separar alguns minutinhos por dia e acompanhar a evolução.</p>
+
+      <div class="highlight-box" style="max-width:580px;margin:0 auto 32px;">
+        ⏱️ Poucos minutos por dia podem fazer diferença na forma como seu filho segura o lápis, segue os traços e se sente diante das atividades.
+      </div>
+
+      <div class="btn-wrap">
+        <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">ADICIONAR AO MEU PEDIDO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       9. BENEFÍCIOS RÁPIDOS
+  ═══════════════════════════════════════════ -->
+  <section class="section section--green">
+    <div class="container">
+      <div style="max-width:560px;margin:0 auto;text-align:center;">
+        <h2 class="section-title">Por que adicionar esse kit agora?</h2>
+        <ul style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Complementa perfeitamente o que você acabou de comprar</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Ajuda a criança antes e durante a alfabetização</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Atividades simples para fazer em casa</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Pode usar 10 a 15 minutos por dia</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Material digital, sem frete e com acesso rápido</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Pronto para imprimir</li>
+          <li style="display:flex;align-items:center;gap:10px;background:#fff;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)">✅ Ajuda a transformar a escrita em algo mais leve</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       10. BÔNUS
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">🎁 Adicionando agora</span>
+      <h2 class="section-title">Você também recebe estes bônus</h2>
+      <p class="section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
+
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/100-Exercicios-extras-de-Grafomotricidade.webp" alt="100 Exercícios extras" loading="lazy" />
+          <div class="bonus-card__body"><h4>100 Exercícios Extras de Grafomotricidade</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/Livro-para-Trabalhar-Pre-Escrita.webp" alt="Livro Pré-Escrita" loading="lazy" />
+          <div class="bonus-card__body"><h4>Livro para Trabalhar Pré-Escrita</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/Fichas-de-Cordenacao-Motora-Recorte.webp" alt="Fichas Coordenação" loading="lazy" />
+          <div class="bonus-card__body"><h4>Fichas de Coordenação Motora com Recorte</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/16-Fichas-com-Identificacao.webp" alt="16 Fichas" loading="lazy" />
+          <div class="bonus-card__body"><h4>16 Fichas com Identificação</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/Caderno-com-Numeros.webp" alt="Caderno com Números" loading="lazy" />
+          <div class="bonus-card__body"><h4>Caderno com Números</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/Caderno-com-Cores.webp" alt="Caderno com Cores" loading="lazy" />
+          <div class="bonus-card__body"><h4>Caderno com Cores</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/Plano-de-Aula-Kids.webp" alt="Plano de Aula" loading="lazy" />
+          <div class="bonus-card__body"><h4>Plano de Aula Kids</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-card__badge">GRÁTIS</span>
+          <img src="bonus2/certificado.webp" alt="Certificado" loading="lazy" />
+          <div class="bonus-card__body"><h4>Certificado de Participação</h4><p class="bonus-card__free">✅ Incluso grátis</p></div>
+        </div>
+      </div>
+
+      <div class="btn-wrap" style="margin-top:36px;">
+        <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">🎁 QUERO OS BÔNUS + KIT AGORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       11. OFERTA PRINCIPAL
+  ═══════════════════════════════════════════ -->
+  <section class="section section--grad">
+    <div class="container text-center">
+      <span class="section-label">🔥 Oferta especial liberada somente agora</span>
+      <h2 class="section-title">Complete o aprendizado do seu filho<br>adicionando ao seu pedido</h2>
+      <p class="section-sub">Material digital, acesso imediato após o pagamento. Sem frete. Para sempre seu.</p>
+
+      <div class="offer-box">
+        <p class="offer-box__name">Kit Grafomotricidade Infantil</p>
+        <p class="offer-box__from">De <s>R$ 37,90</s> por apenas:</p>
+        <p class="offer-box__price"><small>R$</small> 10,00</p>
+        <p class="offer-box__note">Pagamento único • Acesso imediato • Material digital em PDF</p>
+
+        <a href="COLOCAR_LINK_AQUI" class="btn btn--lg cta-btn" target="_blank" rel="noopener">ADICIONAR KIT AO MEU PEDIDO</a>
+
+        <div class="offer-seals">
+          <span class="seal">⚡ Acesso imediato</span>
+          <span class="seal">🖨️ PDF para imprimir</span>
+          <span class="seal">🚚 Sem frete</span>
+          <span class="seal">🔒 Compra segura</span>
+        </div>
+
+        <a href="COLOCAR_RECUSA_AQUI" class="btn-decline cta-decline" style="margin-top:18px;display:block;">Não, quero continuar sem este material complementar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       12. URGÊNCIA
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="urgency-box">
+        <h3>⚠️ Atenção: essa condição aparece apenas nesta etapa</h3>
+        <p>Se você sair desta página, poderá perder a chance de adicionar o Kit Grafomotricidade Infantil por esse valor especial. Essa oferta é liberada somente para quem acabou de comprar o produto principal.</p>
+        <div class="btn-wrap">
+          <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">QUERO APROVEITAR AGORA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       13. COMO FUNCIONA / GARANTIA
+  ═══════════════════════════════════════════ -->
+  <section class="section section--blue">
+    <div class="container text-center">
+      <span class="section-label">Como funciona</span>
+      <h2 class="section-title">Simples, prático e imediato</h2>
+      <p class="section-sub">Você recebe acesso ao material digital, baixa o PDF, imprime as atividades e já pode começar a usar com seu filho.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Comprou</h3>
+          <p>Finalize o pedido com segurança em segundos.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Recebeu acesso</h3>
+          <p>Acesso imediato entregue por e-mail após a confirmação.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Imprimiu e usou</h3>
+          <p>Imprima as atividades e comece a usar com seu filho hoje mesmo.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:24px;font-size:.85rem;color:var(--text-light);">📄 Material digital complementar. Não há envio físico.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       14. DEPOIMENTOS
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">O que dizem as mães</span>
+      <h2 class="section-title">Famílias que usaram o kit</h2>
+
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar">C</div>
+            <div><p class="test-name">Camila R.</p><p class="test-role">Mãe do Lucas</p></div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+          <p>Meu filho reconhecia algumas letras, mas tinha muita dificuldade para cobrir os pontilhados. As atividades ajudaram ele a pegar mais firmeza.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706)">J</div>
+            <div><p class="test-name">Juliana M.</p><p class="test-role">Mãe do Miguel</p></div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+          <p>Usei antes das atividades de letras e percebi que ele ficou mais paciente para escrever. Gostei porque é bem simples de aplicar.</p>
+        </div>
+        <div class="test-card">
+          <div class="test-card__header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">P</div>
+            <div><p class="test-name">Patrícia A.</p><p class="test-role">Mãe da Sofia</p></div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+          <p>As folhas chamaram a atenção da minha filha. Ela achou que era brincadeira, mas estava treinando os movimentos da escrita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       15. PARA QUEM É
+  ═══════════════════════════════════════════ -->
+  <section class="section section--green">
+    <div class="container text-center">
+      <span class="section-label">Público ideal</span>
+      <h2 class="section-title">Esse kit é ideal para…</h2>
+
+      <div class="who-grid">
+        <div class="who-item">✅ Crianças que estão começando a escrever</div>
+        <div class="who-item">✅ Crianças que têm dificuldade com lápis</div>
+        <div class="who-item">✅ Crianças que cansam rápido nas atividades</div>
+        <div class="who-item">✅ Crianças em fase de pré-escrita</div>
+        <div class="who-item">✅ Mães que querem ajudar em casa</div>
+        <div class="who-item">✅ Professoras que precisam de atividades prontas</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       16. RESUMO FINAL
+  ═══════════════════════════════════════════ -->
+  <section class="section section--white">
+    <div class="container text-center">
+      <span class="section-label">Resumo da oferta</span>
+      <h2 class="section-title" style="margin-bottom:32px;">O que você vai receber hoje</h2>
+
+      <div class="summary-card">
+        <h3>📦 Kit Grafomotricidade Infantil — completo</h3>
+        <ul class="summary-list">
+          <li><span>✅</span> Kit Grafomotricidade Infantil em PDF</li>
+          <li><span>✅</span> Atividades de traçado e pré-escrita</li>
+          <li><span>✅</span> Exercícios de coordenação motora fina</li>
+          <li><span>✅</span> Atividades de atenção e concentração</li>
+          <li><span>🎁</span> 100 Exercícios Extras de Grafomotricidade</li>
+          <li><span>🎁</span> Livro para Trabalhar Pré-Escrita</li>
+          <li><span>🎁</span> Fichas de Coordenação Motora com Recorte</li>
+          <li><span>🎁</span> 16 Fichas com Identificação</li>
+          <li><span>🎁</span> Caderno com Números</li>
+          <li><span>🎁</span> Caderno com Cores</li>
+          <li><span>🎁</span> Plano de Aula Kids</li>
+          <li><span>🎁</span> Certificado de Participação</li>
+          <li><span>⚡</span> Acesso digital imediato</li>
+          <li><span>🖨️</span> Material pronto para imprimir</li>
+        </ul>
+        <div class="summary-price">
+          <p class="old">De R$ 37,90</p>
+          <p class="price"><small>R$</small> 10,00</p>
+          <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">SIM, ADICIONAR AO MEU PEDIDO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       17. FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="section section--blue">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:8px;">
+        <span class="section-label">Dúvidas frequentes</span>
+        <h2 class="section-title">Perguntas e respostas</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">O material é físico ou digital?</button>
+          <div class="faq-a"><p>É um material digital em PDF. Você recebe acesso para baixar e imprimir quantas vezes quiser.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Preciso pagar frete?</button>
+          <div class="faq-a"><p>Não. Como o material é digital, não existe cobrança de frete.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Serve para qual idade?</button>
+          <div class="faq-a"><p>É indicado para crianças em fase de pré-escrita e alfabetização, geralmente de 3 a 7 anos, dependendo do desenvolvimento da criança.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Recebo na hora?</button>
+          <div class="faq-a"><p>Sim. Após a confirmação do pagamento, você recebe acesso ao material digital imediatamente.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Posso imprimir mais de uma vez?</button>
+          <div class="faq-a"><p>Sim. Você pode imprimir as atividades quantas vezes quiser para uso pessoal.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Esse kit substitui o material principal?</button>
+          <div class="faq-a"><p>Não. Ele complementa o material principal, ajudando a criança a desenvolver a base motora para escrever melhor.</p></div>
+        </div>
+      </div>
+
+      <div class="btn-wrap" style="margin-top:36px;">
+        <a href="COLOCAR_LINK_AQUI" class="btn cta-btn" target="_blank" rel="noopener">ADICIONAR AO MEU PEDIDO</a>
+        <a href="COLOCAR_RECUSA_AQUI" class="btn-decline cta-decline">Não, quero continuar sem este material</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <strong>Kit Grafomotricidade Infantil</strong><br>
+    Material digital complementar<br>
+    Todos os direitos reservados<br><br>
+    <em>Esta é uma oferta especial disponível apenas nesta página.</em>
+  </footer>
+
+  <!-- STICKY CTA MOBILE -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="COLOCAR_LINK_AQUI" class="cta-btn" target="_blank" rel="noopener">
+      ➕ Adicionar por R$ 10,00
+    </a>
+  </div>
+
+  <script>
+    /* ─── CONFIGURAÇÃO — edite aqui ─────────────── */
+    var CHECKOUT_LINK = "COLOCAR_LINK_AQUI";
+    var DECLINE_LINK  = "COLOCAR_RECUSA_AQUI";
+    var PRICE         = "R$ 10,00";
+    var OLD_PRICE     = "R$ 37,90";
+
+    /* ─── Aplica links ───────────────────────────── */
+    document.querySelectorAll('.cta-btn').forEach(function(el) {
+      if (el.tagName === 'A') el.href = CHECKOUT_LINK;
+    });
+    document.querySelectorAll('.cta-decline').forEach(function(el) {
+      el.href = DECLINE_LINK;
+    });
+
+    /* ─── FAQ ────────────────────────────────────── */
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item   = btn.closest('.faq-item');
+        var answer = item.querySelector('.faq-a');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-a').style.maxHeight = null;
+          el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ─── Carousel ───────────────────────────────── */
+    (function() {
+      var track    = document.getElementById('carouselTrack2');
+      var dotsWrap = document.getElementById('carouselDots2');
+      var prev     = document.getElementById('carouselPrev2');
+      var next     = document.getElementById('carouselNext2');
+      if (!track) return;
+
+      var slides  = track.querySelectorAll('img');
+      var total   = slides.length;
+      var current = 0;
+      var timer;
+
+      slides.forEach(function(_, i) {
+        var btn = document.createElement('button');
+        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+        if (i === 0) btn.classList.add('active');
+        btn.addEventListener('click', function() { goTo(i); resetTimer(); });
+        dotsWrap.appendChild(btn);
+      });
+
+      function goTo(idx) {
+        current = (idx + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsWrap.querySelectorAll('button').forEach(function(b, i) {
+          b.classList.toggle('active', i === current);
+        });
+      }
+      function autoPlay()   { goTo(current + 1); }
+      function resetTimer() { clearInterval(timer); timer = setInterval(autoPlay, 5000); }
+
+      prev.addEventListener('click', function() { goTo(current - 1); resetTimer(); });
+      next.addEventListener('click', function() { goTo(current + 1); resetTimer(); });
+
+      var startX = 0;
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer(); }
+      }, { passive: true });
+
+      resetTimer();
+    })();
+
+    /* ─── Sticky CTA mobile ──────────────────────── */
+    var sticky = document.getElementById('stickyCta');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) sticky.style.display = 'block';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
