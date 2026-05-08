@@ -581,95 +581,61 @@
     ========================================================= */
     .bonus-box-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
       margin: 36px 0 28px;
     }
-
     .bonus-box-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 0 0 20px;
       box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
       overflow: hidden;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .bonus-box-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,.15); }
-
-    .bonus-box-img-wrap {
       position: relative;
-      width: 100%;
-      background: #EEF6FF;
-      padding: 20px 16px 12px;
+      text-align: center;
+      transition: transform .2s;
     }
-    .bonus-box-img-wrap img {
-      width: 100%;
-      max-width: 220px;
-      margin: 0 auto;
-      display: block;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,.18));
-      transition: transform .25s ease;
-    }
-    .bonus-box-card:hover .bonus-box-img-wrap img { transform: scale(1.04); }
+    .bonus-box-card:hover { transform: translateY(-4px); }
 
     .bonus-box-free {
       position: absolute;
-      top: 10px; right: 10px;
-      background: var(--green);
+      top: 8px; left: 8px;
+      background: var(--orange);
       color: #fff;
-      font-size: .68rem;
+      font-size: .62rem;
       font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: .05em;
       text-transform: uppercase;
-      letter-spacing: .06em;
-      padding: 4px 10px;
-      border-radius: 50px;
+      z-index: 2;
     }
-
-    .bonus-box-num {
-      font-size: .72rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin: 14px 0 4px;
+    .bonus-box-img-wrap img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      padding: 12px;
+      background: #fafafa;
+      display: block;
     }
-
+    .bonus-box-body { padding: 10px 12px 16px; }
     .bonus-box-name {
-      font-size: .95rem;
-      font-weight: 800;
+      font-size: .82rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 5px;
       color: var(--brown);
-      line-height: 1.3;
-      padding: 0 14px;
-      margin-bottom: 8px;
     }
-
-    .bonus-box-desc {
-      font-size: .78rem;
-      color: var(--gray);
-      padding: 0 14px;
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    .bonus-box-value {
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 0 14px;
+    .bonus-box-free-tag {
+      font-size: .72rem;
+      color: var(--green);
+      font-weight: 700;
     }
 
     @media (max-width: 768px) {
-      .bonus-box-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .bonus-box-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     }
     @media (max-width: 480px) {
-      .bonus-box-grid { grid-template-columns: 1fr; max-width: 300px; margin-inline: auto; }
+      .bonus-box-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     }
 
     /* =========================================================
@@ -2254,64 +2220,64 @@
 
       <div class="bonus-box-grid">
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-CARINHAS.png" alt="Caderno Alfabeto com Carinhas" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 1</div>
-          <h3 class="bonus-box-name">Caderno Alfabeto<br>com Carinhas</h3>
-          <p class="bonus-box-desc">Cada letra do alfabeto apresentada de forma divertida para estimular o reconhecimento fonético.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 19,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Caderno Alfabeto com Carinhas</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-QUEBRA-CABECA-COM-ALFABETO.png" alt="Quebra-Cabeça Alfabeto" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 2</div>
-          <h3 class="bonus-box-name">Quebra-Cabeça<br>do Alfabeto</h3>
-          <p class="bonus-box-desc">Atividades lúdicas que desenvolvem raciocínio lógico e fixação das letras.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 17,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Quebra-Cabeça do Alfabeto</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-FORMANDO-PALAVRAS.png" alt="Caderno Formando Palavras" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 3</div>
-          <h3 class="bonus-box-name">Formando<br>Palavras</h3>
-          <p class="bonus-box-desc">Exercícios que conectam letras e sons para acelerar a leitura.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 17,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Caderno Formando Palavras</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-RELOGIO.png" alt="Caderno Alfabeto com Relógio" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 4</div>
-          <h3 class="bonus-box-name">Alfabeto<br>com Relógio</h3>
-          <p class="bonus-box-desc">Aprende letras e noções de tempo de forma integrada e visual.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 14,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Alfabeto com Relógio</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-TRACADO.png" alt="Caderno Alfabeto Traçado" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 5</div>
-          <h3 class="bonus-box-name">Alfabeto<br>Traçado</h3>
-          <p class="bonus-box-desc">Exercícios de caligrafia para internalizar cada letra com diversão.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 14,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Alfabeto Traçado</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
         <div class="bonus-box-card">
+          <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
             <img src="https://i.ibb.co/chXw5KMk/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
-            <span class="bonus-box-free">INCLUSO GRÁTIS</span>
           </div>
-          <div class="bonus-box-num">Bônus 6</div>
-          <h3 class="bonus-box-name">Alfabeto<br>com Imagem</h3>
-          <p class="bonus-box-desc">Letra + imagem ilustrada para memorização fonética visual e divertida.</p>
-          <div class="bonus-box-value"><span class="old-price">R$ 19,90</span><span class="free-tag">✅ Grátis</span></div>
+          <div class="bonus-box-body">
+            <p class="bonus-box-name">Alfabeto com Imagem</p>
+            <p class="bonus-box-free-tag">✅ Incluso grátis</p>
+          </div>
         </div>
       </div>
 
