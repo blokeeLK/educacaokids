@@ -551,24 +551,6 @@
     footer strong { color: #fff; }
 
     /* ─── STICKY CTA MOBILE ──────────────────────── */
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(135deg, var(--green), var(--green-dark));
-      padding: 13px 20px;
-      z-index: 9999;
-      box-shadow: 0 -4px 20px rgba(0,0,0,.2);
-    }
-    .sticky-cta a {
-      display: block;
-      color: #fff;
-      font-weight: 900;
-      font-size: .95rem;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: .03em;
-    }
 
     /* ─── CTA BOX (screenshot-style) ────────────── */
     .cta-box {
@@ -663,7 +645,6 @@
       .offer-box__price { font-size: 3rem; }
       .summary-card   { padding: 24px 18px; }
       .marquee-track img { height: 160px; }
-      .sticky-cta     { display: block; }
     }
     @media (max-width: 480px) {
       .benefit-grid { grid-template-columns: 1fr; }
@@ -1147,7 +1128,7 @@
   <!-- ═══════════════════════════════════════════
        CTA BOX — estilo screenshot
   ═══════════════════════════════════════════ -->
-  <section class="section section--white">
+  <section class="section section--white" id="cta-principal">
     <div class="container text-center">
       <div class="cta-box">
         <img src="assets/promo/banner.png" alt="Kit Grafomotricidade Infantil" class="cta-box__img" />
@@ -1236,23 +1217,21 @@
     <em>Esta é uma oferta especial disponível apenas nesta página.</em>
   </footer>
 
-  <!-- STICKY CTA MOBILE -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="COLOCAR_LINK_AQUI" class="cta-btn" target="_blank" rel="noopener">
-      ➕ Adicionar por R$ 10,00
-    </a>
-  </div>
 
   <script>
-    /* ─── CONFIGURAÇÃO — edite aqui ─────────────── */
-    var CHECKOUT_LINK = "COLOCAR_LINK_AQUI";
-    var DECLINE_LINK  = "COLOCAR_RECUSA_AQUI";
-    var PRICE         = "R$ 10,00";
-    var OLD_PRICE     = "R$ 37,90";
+    var DECLINE_LINK = "COLOCAR_RECUSA_AQUI";
 
-    /* ─── Aplica links ───────────────────────────── */
+    /* ─── Todos os botões .cta-btn rolam para o CTA principal ── */
     document.querySelectorAll('.cta-btn').forEach(function(el) {
-      if (el.tagName === 'A') el.href = CHECKOUT_LINK;
+      el.removeAttribute('href');
+      el.removeAttribute('target');
+      el.removeAttribute('rel');
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var dest = document.getElementById('cta-principal');
+        if (dest) dest.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
     document.querySelectorAll('.cta-decline').forEach(function(el) {
       el.href = DECLINE_LINK;
@@ -1278,11 +1257,6 @@
     });
 
 
-    /* ─── Sticky CTA mobile ──────────────────────── */
-    var sticky = document.getElementById('stickyCta');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 500) sticky.style.display = 'block';
-    }, { passive: true });
   </script>
 
 </body>
