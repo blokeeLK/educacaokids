@@ -880,10 +880,10 @@
       min-width: 100%;
       width: 100%;
       height: 300px;
-      object-fit: cover;
-      object-position: center;
+      object-fit: contain;
       flex-shrink: 0;
       display: block;
+      background: #fff;
     }
 
     .carousel-btn {
@@ -970,7 +970,7 @@
 
     @media (max-width: 768px) {
       .carousel-wrap { max-width: 260px; }
-      .carousel-track img { height: 220px; }
+      .carousel-track img { height: 220px; object-fit: contain; }
     }
 
     /* =========================================================
