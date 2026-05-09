@@ -841,7 +841,7 @@
       width: max-content;
       animation: marqueeScroll 28s linear infinite;
     }
-    .carousel-wrap:hover .carousel-track { animation-play-state: paused; }
+    /* carrossel nunca pausa — nem em hover nem em toque */
     .carousel-track img {
       height: 220px;
       width: auto;
@@ -903,7 +903,9 @@
 
     @media (max-width: 768px) {
       .carousel-track img { height: 160px; }
+      .carousel-track { animation-duration: 12s; } /* mais rápido no mobile */
     }
+
 
     /* =========================================================
        TESTIMONIALS
@@ -2187,12 +2189,18 @@
           <img src="images/carousel-3.png" alt="Atividade 3 do kit" loading="lazy" />
           <img src="images/carousel-4.png" alt="Atividade 4 do kit" loading="lazy" />
           <img src="images/carousel-5.png" alt="Atividade 5 do kit" loading="lazy" />
+          <img src="images/nivel1.png" alt="Nível 1" loading="lazy" />
+          <img src="images/nivel2.png" alt="Nível 2" loading="lazy" />
+          <img src="images/nivel3.png" alt="Nível 3" loading="lazy" />
           <!-- set 2 — duplicado para loop contínuo -->
           <img src="images/carousel-1.png" alt="" loading="lazy" />
           <img src="images/carousel-2.png" alt="" loading="lazy" />
           <img src="images/carousel-3.png" alt="" loading="lazy" />
           <img src="images/carousel-4.png" alt="" loading="lazy" />
           <img src="images/carousel-5.png" alt="" loading="lazy" />
+          <img src="images/nivel1.png" alt="" loading="lazy" />
+          <img src="images/nivel2.png" alt="" loading="lazy" />
+          <img src="images/nivel3.png" alt="" loading="lazy" />
         </div>
       </div>
 
