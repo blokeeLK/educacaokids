@@ -901,9 +901,51 @@
       flex-shrink: 0;
     }
 
+    /* mobile grid escondido no desktop */
+    .carousel-mobile { display: none; }
+
+    /* ── MOBILE: 2 linhas empilhadas em loop ── */
     @media (max-width: 768px) {
-      .carousel-track img { height: 160px; }
-      .carousel-track { animation-duration: 20s; } /* um pouco mais rápido no mobile */
+      /* esconde o track horizontal do desktop */
+      .carousel-track { display: none !important; }
+
+      .carousel-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        padding: 4px 0;
+      }
+      .carousel-mobile-row {
+        overflow: hidden;
+        width: 100%;
+      }
+      .carousel-mobile-inner {
+        display: flex;
+        gap: 10px;
+        width: max-content;
+      }
+      .carousel-mobile-row:nth-child(1) .carousel-mobile-inner {
+        animation: mRow 22s linear infinite;
+      }
+      .carousel-mobile-row:nth-child(2) .carousel-mobile-inner {
+        animation: mRow 22s linear infinite;
+        animation-delay: -11s;
+      }
+      .carousel-mobile-inner img {
+        height: 130px;
+        width: auto;
+        border-radius: 8px;
+        flex-shrink: 0;
+        object-fit: contain;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,.08);
+        display: block;
+      }
+      @keyframes mRow {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
     }
 
 
@@ -2202,6 +2244,39 @@
           <img src="images/nivel2.png" alt="" loading="eager" />
           <img src="images/nivel3.png" alt="" loading="eager" />
         </div>
+
+        <!-- MOBILE: 2 linhas em loop — visível só no celular -->
+        <div class="carousel-mobile">
+          <!-- linha 1: fotos 1,2,3,4 + duplicadas -->
+          <div class="carousel-mobile-row">
+            <div class="carousel-mobile-inner">
+              <img src="images/carousel-1.png" alt="Atividade 1" loading="eager" />
+              <img src="images/carousel-2.png" alt="Atividade 2" loading="eager" />
+              <img src="images/carousel-3.png" alt="Atividade 3" loading="eager" />
+              <img src="images/carousel-4.png" alt="Atividade 4" loading="eager" />
+              <!-- duplicadas para loop -->
+              <img src="images/carousel-1.png" alt="" loading="eager" />
+              <img src="images/carousel-2.png" alt="" loading="eager" />
+              <img src="images/carousel-3.png" alt="" loading="eager" />
+              <img src="images/carousel-4.png" alt="" loading="eager" />
+            </div>
+          </div>
+          <!-- linha 2: fotos 5, nivel1, nivel2, nivel3 + duplicadas -->
+          <div class="carousel-mobile-row">
+            <div class="carousel-mobile-inner">
+              <img src="images/carousel-5.png" alt="Atividade 5" loading="eager" />
+              <img src="images/nivel1.png" alt="Nível 1" loading="eager" />
+              <img src="images/nivel2.png" alt="Nível 2" loading="eager" />
+              <img src="images/nivel3.png" alt="Nível 3" loading="eager" />
+              <!-- duplicadas para loop -->
+              <img src="images/carousel-5.png" alt="" loading="eager" />
+              <img src="images/nivel1.png" alt="" loading="eager" />
+              <img src="images/nivel2.png" alt="" loading="eager" />
+              <img src="images/nivel3.png" alt="" loading="eager" />
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="kit-contents">
