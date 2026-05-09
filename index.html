@@ -912,15 +912,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 8px;
         margin: 14px auto 0;
-        width: 44px; height: 44px;
-        border-radius: 50%;
+        width: auto;
+        padding: 10px 20px;
+        border-radius: 30px;
         background: var(--green);
         border: none;
         cursor: pointer;
         box-shadow: 0 3px 10px rgba(0,0,0,.18);
-        font-size: 1.5rem;
+        font-size: .85rem;
+        font-weight: 700;
         color: #fff;
+        letter-spacing: .02em;
         -webkit-tap-highlight-color: transparent;
       }
     }
@@ -2223,7 +2227,9 @@
       </div>
 
       <!-- seta avançar foto — só aparece no mobile -->
-      <button class="carousel-next-btn" id="carouselNext" aria-label="Próxima foto">&#8250;</button>
+      <button class="carousel-next-btn" id="carouselNext" aria-label="Próxima foto">
+        Toque para ver as fotos &#8250;
+      </button>
 
       <div class="kit-contents">
         <div class="kit-contents__title">📋 O que você recebe no kit:</div>
