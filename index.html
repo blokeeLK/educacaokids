@@ -841,7 +841,7 @@
       width: max-content;
       animation: marqueeScroll 28s linear infinite;
     }
-    /* carrossel nunca pausa — nem em hover nem em toque */
+    .carousel-wrap:hover .carousel-track { animation-play-state: paused; }
     .carousel-track img {
       height: 220px;
       width: auto;
@@ -901,53 +901,29 @@
       flex-shrink: 0;
     }
 
-    /* mobile grid escondido no desktop */
-    .carousel-mobile { display: none; }
-
-    /* ── MOBILE: 2 linhas empilhadas em loop ── */
     @media (max-width: 768px) {
-      /* esconde o track horizontal do desktop */
-      .carousel-track { display: none !important; }
-
-      .carousel-mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        overflow: hidden;
-        padding: 4px 0;
-      }
-      .carousel-mobile-row {
-        overflow: hidden;
-        width: 100%;
-      }
-      .carousel-mobile-inner {
-        display: flex;
-        gap: 10px;
-        width: max-content;
-      }
-      .carousel-mobile-row:nth-child(1) .carousel-mobile-inner {
-        animation: mRow 22s linear infinite;
-      }
-      .carousel-mobile-row:nth-child(2) .carousel-mobile-inner {
-        animation: mRow 22s linear infinite;
-        animation-delay: -11s;
-      }
-      .carousel-mobile-inner img {
-        height: 130px;
-        width: auto;
-        border-radius: 8px;
-        flex-shrink: 0;
-        object-fit: contain;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,.08);
-        display: block;
-      }
-      @keyframes mRow {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
+      .carousel-track img { height: 160px; }
     }
 
+    /* seta avançar — só mobile */
+    .carousel-next-btn { display: none; }
+    @media (max-width: 768px) {
+      .carousel-next-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 14px auto 0;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        background: var(--green);
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba(0,0,0,.18);
+        font-size: 1.5rem;
+        color: #fff;
+        -webkit-tap-highlight-color: transparent;
+      }
+    }
 
     /* =========================================================
        TESTIMONIALS
@@ -2227,57 +2203,27 @@
         <div class="carousel-track" aria-hidden="true">
           <!-- set 1 -->
           <img src="images/carousel-1.png" alt="Atividade 1 do kit" loading="eager" />
-          <img src="images/carousel-2.png" alt="Atividade 2 do kit" loading="eager" />
-          <img src="images/carousel-3.png" alt="Atividade 3 do kit" loading="eager" />
-          <img src="images/carousel-4.png" alt="Atividade 4 do kit" loading="eager" />
-          <img src="images/carousel-5.png" alt="Atividade 5 do kit" loading="eager" />
-          <img src="images/nivel1.png" alt="Nível 1" loading="eager" />
-          <img src="images/nivel2.png" alt="Nível 2" loading="eager" />
-          <img src="images/nivel3.png" alt="Nível 3" loading="eager" />
+          <img src="images/carousel-2.png" alt="Atividade 2 do kit" loading="lazy" />
+          <img src="images/carousel-3.png" alt="Atividade 3 do kit" loading="lazy" />
+          <img src="images/carousel-4.png" alt="Atividade 4 do kit" loading="lazy" />
+          <img src="images/carousel-5.png" alt="Atividade 5 do kit" loading="lazy" />
+          <img src="images/nivel1.png" alt="Nível 1" loading="lazy" />
+          <img src="images/nivel2.png" alt="Nível 2" loading="lazy" />
+          <img src="images/nivel3.png" alt="Nível 3" loading="lazy" />
           <!-- set 2 — duplicado para loop contínuo -->
-          <img src="images/carousel-1.png" alt="" loading="eager" />
-          <img src="images/carousel-2.png" alt="" loading="eager" />
-          <img src="images/carousel-3.png" alt="" loading="eager" />
-          <img src="images/carousel-4.png" alt="" loading="eager" />
-          <img src="images/carousel-5.png" alt="" loading="eager" />
-          <img src="images/nivel1.png" alt="" loading="eager" />
-          <img src="images/nivel2.png" alt="" loading="eager" />
-          <img src="images/nivel3.png" alt="" loading="eager" />
+          <img src="images/carousel-1.png" alt="" loading="lazy" />
+          <img src="images/carousel-2.png" alt="" loading="lazy" />
+          <img src="images/carousel-3.png" alt="" loading="lazy" />
+          <img src="images/carousel-4.png" alt="" loading="lazy" />
+          <img src="images/carousel-5.png" alt="" loading="lazy" />
+          <img src="images/nivel1.png" alt="" loading="lazy" />
+          <img src="images/nivel2.png" alt="" loading="lazy" />
+          <img src="images/nivel3.png" alt="" loading="lazy" />
         </div>
-
-        <!-- MOBILE: 2 linhas em loop — visível só no celular -->
-        <div class="carousel-mobile">
-          <!-- linha 1: fotos 1,2,3,4 + duplicadas -->
-          <div class="carousel-mobile-row">
-            <div class="carousel-mobile-inner">
-              <img src="images/carousel-1.png" alt="Atividade 1" loading="eager" />
-              <img src="images/carousel-2.png" alt="Atividade 2" loading="eager" />
-              <img src="images/carousel-3.png" alt="Atividade 3" loading="eager" />
-              <img src="images/carousel-4.png" alt="Atividade 4" loading="eager" />
-              <!-- duplicadas para loop -->
-              <img src="images/carousel-1.png" alt="" loading="eager" />
-              <img src="images/carousel-2.png" alt="" loading="eager" />
-              <img src="images/carousel-3.png" alt="" loading="eager" />
-              <img src="images/carousel-4.png" alt="" loading="eager" />
-            </div>
-          </div>
-          <!-- linha 2: fotos 5, nivel1, nivel2, nivel3 + duplicadas -->
-          <div class="carousel-mobile-row">
-            <div class="carousel-mobile-inner">
-              <img src="images/carousel-5.png" alt="Atividade 5" loading="eager" />
-              <img src="images/nivel1.png" alt="Nível 1" loading="eager" />
-              <img src="images/nivel2.png" alt="Nível 2" loading="eager" />
-              <img src="images/nivel3.png" alt="Nível 3" loading="eager" />
-              <!-- duplicadas para loop -->
-              <img src="images/carousel-5.png" alt="" loading="eager" />
-              <img src="images/nivel1.png" alt="" loading="eager" />
-              <img src="images/nivel2.png" alt="" loading="eager" />
-              <img src="images/nivel3.png" alt="" loading="eager" />
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- seta avançar foto — só aparece no mobile -->
+      <button class="carousel-next-btn" id="carouselNext" aria-label="Próxima foto">&#8250;</button>
 
       <div class="kit-contents">
         <div class="kit-contents__title">📋 O que você recebe no kit:</div>
@@ -2734,6 +2680,38 @@
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup();
+      });
+    })();
+
+    // ── Seta mobile carrossel ─────────────────────────────────────
+    (function() {
+      var btn   = document.getElementById('carouselNext');
+      var track = document.querySelector('.carousel-track');
+      if (!btn || !track) return;
+      var gap = 14;
+
+      btn.addEventListener('click', function() {
+        var firstImg = track.querySelector('img');
+        if (!firstImg) return;
+        var step = firstImg.offsetWidth + gap;
+
+        var matrix = new WebKitCSSMatrix(window.getComputedStyle(track).transform);
+        var currentX = matrix.m41;
+        var newOffset = currentX - step;
+
+        var halfW = track.scrollWidth / 2;
+        if (Math.abs(newOffset) >= halfW) newOffset = newOffset + halfW;
+
+        track.style.animation = 'none';
+        track.style.transform = 'translateX(' + newOffset + 'px)';
+
+        clearTimeout(btn._t);
+        btn._t = setTimeout(function() {
+          var delay = 28 * Math.abs(newOffset) / (track.scrollWidth / 2);
+          track.style.transform = '';
+          track.style.animationDelay = '-' + delay + 's';
+          track.style.animation = 'marqueeScroll 28s linear infinite';
+        }, 1200);
       });
     })();
   </script>
