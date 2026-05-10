@@ -2704,28 +2704,39 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       if (!btn || !track) return;
       var gap = 14;
 
+      function getTranslateX(el) {
+        var t = window.getComputedStyle(el).transform;
+        if (!t || t === 'none') return 0;
+        var m = t.match(/matrix\([^,]+,[^,]+,[^,]+,[^,]+,\s*([-\d.]+)/);
+        return m ? parseFloat(m[1]) : 0;
+      }
+
       btn.addEventListener('click', function() {
         var firstImg = track.querySelector('img');
         if (!firstImg) return;
-        var step = firstImg.offsetWidth + gap;
 
-        var matrix = new WebKitCSSMatrix(window.getComputedStyle(track).transform);
-        var currentX = matrix.m41;
+        var currentX = getTranslateX(track);
+        var step     = firstImg.offsetWidth + gap;
+        var halfW    = track.scrollWidth / 2;
         var newOffset = currentX - step;
-
-        var halfW = track.scrollWidth / 2;
         if (Math.abs(newOffset) >= halfW) newOffset = newOffset + halfW;
 
-        track.style.animation = 'none';
-        track.style.transform = 'translateX(' + newOffset + 'px)';
+        // Congela na posição visual atual antes de remover a animação
+        track.style.animation  = 'none';
+        track.style.transform  = 'translateX(' + currentX + 'px)';
+        void track.offsetWidth; // força reflow
+
+        track.style.transition = 'transform 0.35s ease';
+        track.style.transform  = 'translateX(' + newOffset + 'px)';
 
         clearTimeout(btn._t);
         btn._t = setTimeout(function() {
-          var delay = 28 * Math.abs(newOffset) / (track.scrollWidth / 2);
-          track.style.transform = '';
+          track.style.transition    = '';
+          track.style.transform     = '';
+          var delay = 28 * Math.abs(newOffset) / halfW;
           track.style.animationDelay = '-' + delay + 's';
-          track.style.animation = 'marqueeScroll 28s linear infinite';
-        }, 1200);
+          track.style.animation      = 'marqueeScroll 28s linear infinite';
+        }, 1500);
       });
     })();
   </script>
