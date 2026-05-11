@@ -2710,6 +2710,18 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           <span>🛡️ Garantia de 7 dias</span>
         </div>
       </div>
+
+      <div class="guarantee__inner" style="margin-top:28px;">
+        <div class="guarantee__seal">
+          <div class="num">7</div>
+          <div class="unit">dias de</div>
+          <div class="word">garantia</div>
+        </div>
+        <div class="guarantee__text">
+          <h3>Garantia de satisfação de 7 dias</h3>
+          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso. Sem perguntas, sem burocracia.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2771,6 +2783,22 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           <span>🔒 Compra segura</span><span>•</span>
           <span>⚡ Acesso imediato</span><span>•</span>
           <span>🛡️ Garantia de 7 dias</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="guarantee__inner">
+        <div class="guarantee__seal">
+          <div class="num">7</div>
+          <div class="unit">dias de</div>
+          <div class="word">garantia</div>
+        </div>
+        <div class="guarantee__text">
+          <h3>Garantia de satisfação de 7 dias</h3>
+          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso. Sem perguntas, sem burocracia.</p>
         </div>
       </div>
     </div>
@@ -3201,25 +3229,22 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       var agora = new Date();
       var tipo  = Math.random();
 
-      if (tipo < 0.18) {
+      if (tipo < 0.25) {
         return 'agora mesmo';
-      } else if (tipo < 0.45) {
-        var mins = Math.floor(Math.random() * 12) + 1;
+      } else if (tipo < 0.55) {
+        var mins = Math.floor(Math.random() * 14) + 1;
         return 'há ' + mins + ' minuto' + (mins > 1 ? 's' : '');
-      } else if (tipo < 0.70) {
-        var horas = Math.floor(Math.random() * 5) + 1;
-        var h = new Date(agora.getTime() - horas * 3600000);
-        var hStr = h.getHours().toString().padStart(2,'0') + ':' + h.getMinutes().toString().padStart(2,'0');
-        return 'hoje às ' + hStr;
       } else {
-        var diasAtras = Math.floor(Math.random() * 3) + 1;
-        var d = new Date(agora.getTime() - diasAtras * 86400000);
-        var dh = (Math.floor(Math.random() * 13) + 8).toString().padStart(2,'0');
-        var dm = (Math.floor(Math.random() * 60)).toString().padStart(2,'0');
-        var dia = d.getDate().toString().padStart(2,'0');
-        var mes = (d.getMonth() + 1).toString().padStart(2,'0');
-        if (diasAtras === 1) return 'ontem às ' + dh + ':' + dm;
-        return dia + '/' + mes + ' às ' + dh + ':' + dm;
+        // Horário aleatório dentro do dia de hoje, antes do horário atual
+        var horaAtual = agora.getHours();
+        var minAtual  = agora.getMinutes();
+        var totalMins = horaAtual * 60 + minAtual;
+        // Gera um horário entre 08:00 e agora
+        var minBase   = Math.max(totalMins - 1, 8 * 60);
+        var minAleatorio = Math.floor(Math.random() * (minBase - 8 * 60)) + 8 * 60;
+        var h = Math.floor(minAleatorio / 60).toString().padStart(2, '0');
+        var m = (minAleatorio % 60).toString().padStart(2, '0');
+        return 'hoje às ' + h + ':' + m;
       }
     }
 
