@@ -3,6 +3,7 @@
 <head>
   <script>if(location.hostname==='educacaokids-4s5h.onrender.com'){location.replace('https://aeducacaokids.com.br'+location.pathname+location.search+location.hash);}</script>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/webp" href="logo.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- ✏️ Troque o título abaixo pelo nome do seu produto -->
   <title>Kit de Atividades Educativas — Alfabetização Infantil</title>
@@ -2736,6 +2737,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
               <li><span>✅</span> Caderno de Palavras Simples</li>
               <li><span>✅</span> Atividades prontas para imprimir</li>
               <li><span>✅</span> Acesso digital imediato</li>
+              <li><span>🛡️</span> Garantia de 7 dias</li>
             </ul>
             <a href="https://pay.cakto.com.br/bub5qbq" class="btn--entry" target="_blank" rel="noopener">COMPRAR MEU ACESSO POR R$10</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade</p>
@@ -2832,23 +2834,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- 8. GARANTIA -->
-  <section class="section section--white" id="garantia">
-    <div class="container">
-      <div class="guarantee__inner">
-        <div class="guarantee__seal">
-          <div class="num">7</div>
-          <div class="unit">dias de</div>
-          <div class="word">garantia</div>
-        </div>
-        <div class="guarantee__text">
-          <h3>Garantia de satisfação de 7 dias</h3>
-          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso. Sem perguntas, sem burocracia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 9. FAQ -->
   <section class="section section--alt" id="faq">
     <div class="container">
@@ -2896,6 +2881,18 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           <span>🔒 Compra segura</span><span>•</span>
           <span>⚡ Acesso imediato</span><span>•</span>
           <span>🛡️ Garantia de 7 dias</span>
+        </div>
+      </div>
+
+      <div class="guarantee__inner" style="margin-top:32px;">
+        <div class="guarantee__seal">
+          <div class="num">7</div>
+          <div class="unit">dias de</div>
+          <div class="word">garantia</div>
+        </div>
+        <div class="guarantee__text">
+          <h3>Garantia de satisfação de 7 dias</h3>
+          <p>Você pode acessar o material com total tranquilidade. Se dentro de <strong>7 dias</strong> entender que ele não é para você, por qualquer motivo, basta solicitar o reembolso. Sem perguntas, sem burocracia.</p>
         </div>
       </div>
     </div>
@@ -3129,6 +3126,150 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       goTo(0);
       startTimer();
     })();
+  </script>
+
+  <!-- ── Popup prova social ── -->
+  <div id="socialProof" style="
+    position:fixed; bottom:20px; left:20px; z-index:9999;
+    background:#fff; border-radius:14px;
+    box-shadow:0 6px 28px rgba(0,0,0,.18);
+    padding:14px 16px 14px 14px;
+    display:flex; align-items:center; gap:12px;
+    max-width:290px; width:calc(100vw - 40px);
+    transform:translateY(120px); opacity:0;
+    transition:transform .45s cubic-bezier(.4,0,.2,1), opacity .45s;
+    pointer-events:none;
+  ">
+    <div id="spAvatar" style="
+      width:44px; height:44px; border-radius:50%; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; font-weight:800; color:#fff;
+    "></div>
+    <div style="flex:1; min-width:0;">
+      <p id="spName"  style="font-size:.82rem; font-weight:800; color:#1a1a1a; margin:0 0 2px;"></p>
+      <p id="spMsg"   style="font-size:.75rem; color:#444; margin:0; line-height:1.4;"></p>
+      <p id="spTime"  style="font-size:.68rem; color:#28A745; font-weight:700; margin:4px 0 0; display:flex; align-items:center; gap:4px;">
+        <span style="width:7px;height:7px;background:#28A745;border-radius:50%;display:inline-block;"></span>
+        <span id="spTimeText"></span>
+      </p>
+    </div>
+    <button onclick="document.getElementById('socialProof').style.opacity=0;document.getElementById('socialProof').style.transform='translateY(120px)'" style="
+      background:none; border:none; cursor:pointer; color:#aaa;
+      font-size:1rem; line-height:1; padding:0; flex-shrink:0; align-self:flex-start;
+    ">✕</button>
+  </div>
+
+  <script>
+  (function() {
+    var nomes = [
+      // femininos
+      { nome: 'Ana Beatriz S.',    cor: '#e91e63', ini: 'A' },
+      { nome: 'Juliana Moreira',   cor: '#9c27b0', ini: 'J' },
+      { nome: 'Camila Rodrigues',  cor: '#e64a19', ini: 'C' },
+      { nome: 'Fernanda Lima',     cor: '#d81b60', ini: 'F' },
+      { nome: 'Mariana Souza',     cor: '#6a1b9a', ini: 'M' },
+      { nome: 'Patrícia Nunes',    cor: '#ad1457', ini: 'P' },
+      { nome: 'Larissa Costa',     cor: '#c62828', ini: 'L' },
+      { nome: 'Renata Alves',      cor: '#558b2f', ini: 'R' },
+      { nome: 'Tatiane Ferreira',  cor: '#00695c', ini: 'T' },
+      { nome: 'Simone Barbosa',    cor: '#37474f', ini: 'S' },
+      { nome: 'Gisele Cardoso',    cor: '#4527a0', ini: 'G' },
+      { nome: 'Vanessa Pereira',   cor: '#283593', ini: 'V' },
+      // masculinos
+      { nome: 'Carlos Eduardo M.', cor: '#1565c0', ini: 'C' },
+      { nome: 'André Oliveira',    cor: '#0277bd', ini: 'A' },
+      { nome: 'Roberto Silva',     cor: '#00695c', ini: 'R' },
+      { nome: 'Marcos Antônio',    cor: '#2e7d32', ini: 'M' },
+      { nome: 'Felipe Mendes',     cor: '#4e342e', ini: 'F' },
+      { nome: 'Gustavo Ramos',     cor: '#37474f', ini: 'G' },
+      { nome: 'Diego Nascimento',  cor: '#1a237e', ini: 'D' },
+      { nome: 'Leandro Castro',    cor: '#bf360c', ini: 'L' },
+      { nome: 'Bruno Araujo',      cor: '#4a148c', ini: 'B' },
+      { nome: 'Thiago Carvalho',   cor: '#006064', ini: 'T' },
+      { nome: 'Paulo Henrique S.', cor: '#33691e', ini: 'P' },
+      { nome: 'Rodrigo Freitas',   cor: '#880e4f', ini: 'R' }
+    ];
+
+    var produtos = [
+      'Kit Completo de Alfabetização + 6 Bônus',
+      'Kit Completo de Alfabetização + 6 Bônus',
+      'Kit Completo de Alfabetização + 6 Bônus',
+      'Kit Básico de Alfabetização'
+    ];
+
+    function gerarTempo() {
+      var agora = new Date();
+      var tipo  = Math.random();
+
+      if (tipo < 0.18) {
+        return 'agora mesmo';
+      } else if (tipo < 0.45) {
+        var mins = Math.floor(Math.random() * 12) + 1;
+        return 'há ' + mins + ' minuto' + (mins > 1 ? 's' : '');
+      } else if (tipo < 0.70) {
+        var horas = Math.floor(Math.random() * 5) + 1;
+        var h = new Date(agora.getTime() - horas * 3600000);
+        var hStr = h.getHours().toString().padStart(2,'0') + ':' + h.getMinutes().toString().padStart(2,'0');
+        return 'hoje às ' + hStr;
+      } else {
+        var diasAtras = Math.floor(Math.random() * 3) + 1;
+        var d = new Date(agora.getTime() - diasAtras * 86400000);
+        var dh = (Math.floor(Math.random() * 13) + 8).toString().padStart(2,'0');
+        var dm = (Math.floor(Math.random() * 60)).toString().padStart(2,'0');
+        var dia = d.getDate().toString().padStart(2,'0');
+        var mes = (d.getMonth() + 1).toString().padStart(2,'0');
+        if (diasAtras === 1) return 'ontem às ' + dh + ':' + dm;
+        return dia + '/' + mes + ' às ' + dh + ':' + dm;
+      }
+    }
+
+    var popup   = document.getElementById('socialProof');
+    var avatar  = document.getElementById('spAvatar');
+    var nameEl  = document.getElementById('spName');
+    var msgEl   = document.getElementById('spMsg');
+    var timeEl  = document.getElementById('spTimeText');
+    var used    = [];
+
+    function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function nextPessoa() {
+      if (used.length === nomes.length) used = [];
+      var disponiveis = nomes.filter(function(n) { return used.indexOf(n) === -1; });
+      var p = rand(disponiveis);
+      used.push(p);
+      return p;
+    }
+
+    function show() {
+      var pessoa  = nextPessoa();
+      var produto = rand(produtos);
+
+      avatar.style.background = pessoa.cor;
+      avatar.textContent      = pessoa.ini;
+      nameEl.textContent      = pessoa.nome;
+      msgEl.textContent       = 'acabou de comprar ' + produto;
+      timeEl.textContent      = gerarTempo();
+
+      popup.style.pointerEvents = 'auto';
+      popup.style.opacity       = '1';
+      popup.style.transform     = 'translateY(0)';
+
+      setTimeout(hide, 5000);
+    }
+
+    function hide() {
+      popup.style.opacity   = '0';
+      popup.style.transform = 'translateY(120px)';
+      popup.style.pointerEvents = 'none';
+    }
+
+    // Primeira aparição após 6s, depois a cada 18-30s aleatório
+    setTimeout(function loop() {
+      show();
+      var prox = 18000 + Math.random() * 12000;
+      setTimeout(loop, prox + 5500);
+    }, 6000);
+  })();
   </script>
 
 </body>
