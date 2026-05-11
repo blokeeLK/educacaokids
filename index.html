@@ -1077,9 +1077,9 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       }
       .carousel-track img {
         scroll-snap-align: start;
-        height: 170px;
-        width: auto;
-        max-width: 80vw;
+        height: auto;
+        width: calc(50vw - 21px);
+        max-width: none;
       }
       .carousel-arr {
         display: flex;
@@ -2933,6 +2933,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
       var imgs  = track.querySelectorAll('img');
       var half  = Math.floor(imgs.length / 2); // 8 imagens reais
+      var step  = 2; // 2 fotos por vez
       var gap   = 14;
       var idx   = 0;
       var busy  = false;
@@ -2948,13 +2949,12 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
       function advance() {
         if (busy) return;
-        idx++;
+        idx += step;
         if (idx >= half) {
-          // Avança suavemente até o duplicado (visualmente igual à img 0)
+          // Avança suavemente até os duplicados (visualmente iguais a 0,1)
           scrollTo(idx, true);
           busy = true;
           setTimeout(function() {
-            // Pulo invisível de volta ao set original
             wrap.scrollLeft = 0;
             idx = 0;
             busy = false;
@@ -2966,7 +2966,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
       function prev() {
         if (busy) return;
-        idx = (idx - 1 + half) % half;
+        idx = (idx - step + half) % half;
         scrollTo(idx, true);
       }
 
