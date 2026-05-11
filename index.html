@@ -984,47 +984,94 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     ========================================================= */
     .carousel-section { background: var(--cream-dark); }
 
-    .carousel-wrap {
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
+    /* ── Novo carrossel estilo showcase ── */
+    .nc-outer {
+      position: relative;
+      border: 3px solid #C9A227;
+      border-radius: 20px;
+      background: #faf7f2;
+      padding: 20px 52px;
       margin: 28px auto 0;
-      background: #fff;
-      padding: 12px 0;
+      max-width: 960px;
     }
-    .carousel-track {
+    .nc-viewport { overflow: hidden; }
+    .nc-track {
       display: flex;
-      gap: 14px;
-      width: max-content;
-      animation: marqueeScroll 28s linear infinite;
+      gap: 12px;
+      transition: transform 0.42s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
     }
-    .carousel-wrap:hover .carousel-track { animation-play-state: paused; }
-    .carousel-track img {
-      height: 220px;
-      width: auto;
-      object-fit: contain;
-      border-radius: 10px;
+    .nc-slide {
       flex-shrink: 0;
+      width: calc(33.333% - 8px);
+      border-radius: 12px;
+      overflow: hidden;
       background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      box-shadow: 0 3px 14px rgba(0,0,0,.1);
     }
-    @keyframes marqueeScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .nc-slide img {
+      width: 100%;
+      height: 210px;
+      object-fit: contain;
+      display: block;
+      background: #fff;
     }
-
-    .kit-contents {
-      margin-top: 28px;
-    }
-    .kit-contents__title {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--brown);
-      margin-bottom: 16px;
+    .nc-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 34px;
+      height: 34px;
+      background: #fff;
+      border: 2px solid #C9A227;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #C9A227;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+      -webkit-tap-highlight-color: transparent;
     }
+    .nc-arrow--prev { left: 10px; }
+    .nc-arrow--next { right: 10px; }
+    .nc-arrow:active { transform: translateY(-50%) scale(.9); }
+    .nc-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 14px;
+    }
+    .nc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ddd;
+      transition: background .25s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+    .nc-dot.active { background: #C9A227; }
+
+    @media (max-width: 768px) {
+      .nc-outer { padding: 14px 42px; }
+      .nc-slide { width: calc(50% - 6px); }
+      .nc-slide img { height: 160px; }
+      .nc-arrow { width: 28px; height: 28px; font-size: 1rem; }
+      .nc-arrow--prev { left: 6px; }
+      .nc-arrow--next { right: 6px; }
+    }
+    @media (max-width: 480px) {
+      .nc-slide { width: calc(50% - 6px); }
+      .nc-slide img { height: 130px; }
+    }
+
+    .kit-contents { margin-top: 28px; }
     .kit-contents__list {
       display: flex;
       flex-direction: column;
@@ -1051,60 +1098,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     .kit-pill-5 { background: #1565C0; }
     @media (max-width: 600px) {
       .kit-contents__list li { font-size: .82rem; padding: 12px 18px; }
-    }
-
-    @media (max-width: 768px) {
-      .carousel-track img { height: 160px; }
-    }
-
-    /* setas do carrossel — só mobile */
-    .carousel-arr { display: none; }
-    @media (max-width: 768px) {
-      .carousel-wrap {
-        position: relative;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-      .carousel-wrap::-webkit-scrollbar { display: none; }
-      .carousel-track {
-        animation: none !important;
-        transform: none !important;
-        transition: none !important;
-        width: max-content;
-      }
-      .carousel-track img {
-        scroll-snap-align: start;
-        height: auto;
-        width: calc(50vw - 21px);
-        max-width: none;
-      }
-      .carousel-arr {
-        display: flex;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 30px;
-        height: 30px;
-        background: rgba(255,255,255,.88);
-        border: none;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,.22);
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--brown);
-        line-height: 1;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .carousel-arr--prev { left: 6px; }
-      .carousel-arr--next { right: 6px; }
-      .carousel-arr:active { background: #fff; transform: translateY(-50%) scale(.9); }
     }
 
     /* ── Depoimentos estilo Facebook ── */
@@ -2592,29 +2585,24 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       <div class="section-label">O que está incluído</div>
       <h2 class="section-title">Veja tudo que você vai receber<br>no <span class="text-green">kit de atividades</span></h2>
 
-      <div class="carousel-wrap">
-        <button class="carousel-arr carousel-arr--prev" id="carouselPrev" aria-label="Anterior">&#8249;</button>
-        <div class="carousel-track" aria-hidden="true">
-          <!-- set 1 -->
-          <img src="images/carousel-1.png" alt="Atividade 1 do kit" loading="eager" />
-          <img src="images/carousel-2.png" alt="Atividade 2 do kit" loading="lazy" />
-          <img src="images/carousel-3.png" alt="Atividade 3 do kit" loading="lazy" />
-          <img src="images/carousel-4.png" alt="Atividade 4 do kit" loading="lazy" />
-          <img src="images/carousel-5.png" alt="Atividade 5 do kit" loading="lazy" />
-          <img src="images/nivel1.png" alt="Nível 1" loading="lazy" />
-          <img src="images/nivel2.png" alt="Nível 2" loading="lazy" />
-          <img src="images/nivel3.png" alt="Nível 3" loading="lazy" />
-          <!-- set 2 — duplicado para loop contínuo -->
-          <img src="images/carousel-1.png" alt="" loading="lazy" />
-          <img src="images/carousel-2.png" alt="" loading="lazy" />
-          <img src="images/carousel-3.png" alt="" loading="lazy" />
-          <img src="images/carousel-4.png" alt="" loading="lazy" />
-          <img src="images/carousel-5.png" alt="" loading="lazy" />
-          <img src="images/nivel1.png" alt="" loading="lazy" />
-          <img src="images/nivel2.png" alt="" loading="lazy" />
-          <img src="images/nivel3.png" alt="" loading="lazy" />
+      <div class="nc-outer">
+        <button class="nc-arrow nc-arrow--prev" id="ncPrev" aria-label="Anterior">&#8249;</button>
+        <div class="nc-viewport">
+          <div class="nc-track" id="ncTrack">
+            <div class="nc-slide"><img src="carrosel/1.avif"  alt="Atividade 1"  loading="eager" /></div>
+            <div class="nc-slide"><img src="carrosel/2.avif"  alt="Atividade 2"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/3.avif"  alt="Atividade 3"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/4.avif"  alt="Atividade 4"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/5.avif"  alt="Atividade 5"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/6.avif"  alt="Atividade 6"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/7.avif"  alt="Atividade 7"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/8.png"   alt="Atividade 8"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/9.png"   alt="Atividade 9"  loading="lazy" /></div>
+            <div class="nc-slide"><img src="carrosel/10.png"  alt="Atividade 10" loading="lazy" /></div>
+          </div>
         </div>
-        <button class="carousel-arr carousel-arr--next" id="carouselNext" aria-label="Próxima">&#8250;</button>
+        <button class="nc-arrow nc-arrow--next" id="ncNext" aria-label="Próxima">&#8250;</button>
+        <div class="nc-dots" id="ncDots"></div>
       </div>
 
       <div class="kit-contents">
@@ -3085,64 +3073,63 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       });
     })();
 
-    // ── Carrossel mobile — setas + loop contínuo ─────────────────
+    // ── Novo carrossel showcase ───────────────────────────────────
     (function() {
-      if (window.innerWidth > 768) return;
+      var track  = document.getElementById('ncTrack');
+      var dotsWrap = document.getElementById('ncDots');
+      var btnP   = document.getElementById('ncPrev');
+      var btnN   = document.getElementById('ncNext');
+      if (!track || !btnP || !btnN) return;
 
-      var wrap  = document.querySelector('.carousel-wrap');
-      var track = document.querySelector('.carousel-track');
-      var btnP  = document.getElementById('carouselPrev');
-      var btnN  = document.getElementById('carouselNext');
-      if (!wrap || !track || !btnP || !btnN) return;
-
-      var imgs  = track.querySelectorAll('img');
-      var half  = Math.floor(imgs.length / 2); // 8 imagens reais
-      var step  = 2; // 2 fotos por vez
-      var gap   = 14;
-      var idx   = 0;
-      var busy  = false;
+      var slides = track.querySelectorAll('.nc-slide');
+      var total  = slides.length; // 10
+      var idx    = 0;
       var timer;
 
-      function imgW() {
-        return (imgs[0] ? imgs[0].offsetWidth : 160) + gap;
+      // Calcula quantas slides aparecem por vez
+      function perView() {
+        return window.innerWidth <= 768 ? 2 : 3;
       }
 
-      function scrollTo(i, smooth) {
-        wrap.scrollTo({ left: i * imgW(), behavior: smooth ? 'smooth' : 'auto' });
+      function maxIdx() {
+        return total - perView();
       }
 
-      function advance() {
-        if (busy) return;
-        idx += step;
-        if (idx >= half) {
-          // Avança suavemente até os duplicados (visualmente iguais a 0,1)
-          scrollTo(idx, true);
-          busy = true;
-          setTimeout(function() {
-            wrap.scrollLeft = 0;
-            idx = 0;
-            busy = false;
-          }, 420);
-        } else {
-          scrollTo(idx, true);
-        }
+      // Cria dots dinamicamente
+      for (var i = 0; i < total; i++) {
+        var d = document.createElement('button');
+        d.className = 'nc-dot';
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        (function(j) { d.addEventListener('click', function() { goTo(j); startTimer(); }); })(i);
+        dotsWrap.appendChild(d);
+      }
+      var dots = dotsWrap.querySelectorAll('.nc-dot');
+
+      function slideW() {
+        return slides[0].offsetWidth + 12; // 12 = gap
       }
 
-      function prev() {
-        if (busy) return;
-        idx = (idx - step + half) % half;
-        scrollTo(idx, true);
+      function goTo(i) {
+        var mx = maxIdx();
+        if (i < 0)   i = mx;
+        if (i > mx)  i = 0;
+        idx = i;
+        track.style.transform = 'translateX(-' + idx * slideW() + 'px)';
+        dots.forEach(function(d, j) { d.classList.toggle('active', j === idx); });
       }
 
-      function resetTimer() {
+      function startTimer() {
         clearInterval(timer);
-        timer = setInterval(advance, 2600);
+        timer = setInterval(function() { goTo(idx + 1); }, 2800);
       }
 
-      btnN.addEventListener('click', function() { advance(); resetTimer(); });
-      btnP.addEventListener('click', function() { prev();    resetTimer(); });
+      btnP.addEventListener('click', function() { goTo(idx - 1); startTimer(); });
+      btnN.addEventListener('click', function() { goTo(idx + 1); startTimer(); });
 
-      resetTimer();
+      window.addEventListener('resize', function() { goTo(idx); });
+
+      goTo(0);
+      startTimer();
     })();
   </script>
 
