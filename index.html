@@ -1107,6 +1107,91 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       .carousel-arr:active { background: #fff; transform: translateY(-50%) scale(.9); }
     }
 
+    /* ── Depoimentos estilo Facebook ── */
+    .fb-comments-section {
+      background: var(--cream);
+      padding: 48px 0 40px;
+    }
+    .fb-comments-section .section-title {
+      margin-bottom: 24px;
+    }
+    .fb-comments-wrap {
+      background: #fff;
+      border: 1px solid #dddfe2;
+      border-radius: 12px;
+      padding: 20px 16px;
+      max-width: 620px;
+      margin: 0 auto;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+    .fb-count {
+      font-size: .82rem;
+      color: #65676b;
+      font-weight: 600;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e4e6eb;
+    }
+    .fb-comment {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .fb-comment:last-child { border-bottom: none; }
+    .fb-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .fb-bubble {
+      background: #f0f2f5;
+      border-radius: 0 12px 12px 12px;
+      padding: 10px 12px;
+      flex: 1;
+    }
+    .fb-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: #050505;
+      margin-bottom: 3px;
+    }
+    .fb-text {
+      font-size: .84rem;
+      color: #1c1e21;
+      line-height: 1.5;
+    }
+    .fb-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: .75rem;
+      color: #65676b;
+    }
+    .fb-actions span { font-weight: 600; cursor: default; }
+    .fb-actions .fb-sep { color: #bcc0c4; }
+    .fb-reactions { font-size: .78rem; }
+    .fb-plugin-tag {
+      font-size: .7rem;
+      color: #90939a;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    @media (max-width: 600px) {
+      .fb-comments-wrap { padding: 14px 10px; }
+      .fb-text { font-size: .8rem; }
+    }
+
     /* =========================================================
        TESTIMONIALS
     ========================================================= */
@@ -2375,6 +2460,131 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           <span>⚡ Acesso imediato</span><span>•</span>
           <span>💳 Pagamento único</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS FACEBOOK -->
+  <section class="fb-comments-section">
+    <div class="container text-center">
+      <h2 class="section-title">Veja o que Pais e educadores<br><span style="color:var(--orange)">dizem sobre o Kit de Grafismo Fonético</span></h2>
+
+      <div class="fb-comments-wrap">
+        <div class="fb-count">8 Comentários</div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#1877f2">A</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">André Azevedo</p>
+              <p class="fb-text">Meus pequenos estão tendo uma evolução incrível graças ao Grafismo Fonético. A mais velha já está lendo palavras simples e o caçula melhorou muito o traçado. Melhor investimento do ano! 🙌</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">👍❤️ 7</span><span class="fb-sep">·</span><span>28 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#e4405f">A</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Ana Oliveira</p>
+              <p class="fb-text">Minha filha começou a formar palavras com apenas duas semanas usando o kit. É incrível como ela evoluiu em tão pouco tempo! A professora até perguntou o que eu estava fazendo diferente em casa 😍</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">🔥❤️ 3</span><span class="fb-sep">·</span><span>55 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#9b59b6">M</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Marisa Correia</p>
+              <p class="fb-text">Acreditem em mim, essa é a melhor compra que vocês vão fazer este ano. O material é rico, bem organizado e as crianças adoram. Não percam essa chance! ✅</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">😍 13</span><span class="fb-sep">·</span><span>1 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#e67e22">C</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Camila Silva</p>
+              <p class="fb-text">É incrível como algo tão simples pode fazer tanta diferença! Meu filho parou de ter birra na hora da tarefa porque agora ele acha divertido. Estou muito satisfeita com a minha compra 🤩</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">🔥 8</span><span class="fb-sep">·</span><span>2 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#27ae60">B</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Breno Souza</p>
+              <p class="fb-text">O método é simples de seguir mesmo para nós que somos pais sem experiência em ensino. É muito gratificante ver nosso filho lendo suas primeiras palavras! Vale cada centavo 💚</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">👍❤️ 20</span><span class="fb-sep">·</span><span>5 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#e74c3c">F</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Fernanda Lima</p>
+              <p class="fb-text">Comprei ontem e já imprimi as primeiras atividades. Minha filha de 5 anos ficou encantada com as cores e os desenhos! Ela pediu pra fazer mais 😂 Recomendo demais!</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">😂❤️ 11</span><span class="fb-sep">·</span><span>6 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#2980b9">R</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Roberto Mendes</p>
+              <p class="fb-text">Comprei para minha neta que estava com dificuldade na escola. Em menos de um mês a professora já notou a diferença no traçado e na concentração dela. Produto de altíssima qualidade! 👏</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">👍 15</span><span class="fb-sep">·</span><span>8 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-avatar" style="background:#8e44ad">J</div>
+          <div>
+            <div class="fb-bubble">
+              <p class="fb-name">Juliana Pereira</p>
+              <p class="fb-text">Sou professora e indiquei para as mães dos meus alunos. O material é excelente e complementa perfeitamente o que fazemos em sala. Parabéns pelo trabalho! 🏫✨</p>
+            </div>
+            <div class="fb-actions">
+              <span>Curtir</span><span class="fb-sep">·</span><span>Responder</span><span class="fb-sep">·</span>
+              <span class="fb-reactions">❤️🔥 24</span><span class="fb-sep">·</span><span>12 h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-plugin-tag">🔒 Plug-in social do Facebook</div>
       </div>
     </div>
   </section>
