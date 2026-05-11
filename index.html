@@ -1057,28 +1057,54 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       .carousel-track img { height: 160px; }
     }
 
-    /* seta avançar — só mobile */
-    .carousel-next-btn { display: none; }
+    /* setas do carrossel — só mobile */
+    .carousel-arr { display: none; }
     @media (max-width: 768px) {
-      .carousel-next-btn {
+      .carousel-wrap {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .carousel-wrap::-webkit-scrollbar { display: none; }
+      .carousel-track {
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
+        width: max-content;
+      }
+      .carousel-track img {
+        scroll-snap-align: start;
+        height: 170px;
+        width: auto;
+        max-width: 80vw;
+      }
+      .carousel-arr {
         display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 30px;
+        height: 30px;
+        background: rgba(255,255,255,.88);
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,.22);
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        margin: 14px auto 0;
-        width: auto;
-        padding: 10px 20px;
-        border-radius: 30px;
-        background: var(--green);
-        border: none;
         cursor: pointer;
-        box-shadow: 0 3px 10px rgba(0,0,0,.18);
-        font-size: .85rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        color: #fff;
-        letter-spacing: .02em;
+        color: var(--brown);
+        line-height: 1;
         -webkit-tap-highlight-color: transparent;
       }
+      .carousel-arr--prev { left: 6px; }
+      .carousel-arr--next { right: 6px; }
+      .carousel-arr:active { background: #fff; transform: translateY(-50%) scale(.9); }
     }
 
     /* =========================================================
@@ -2403,6 +2429,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       <h2 class="section-title">Veja tudo que você vai receber<br>no <span class="text-green">kit de atividades</span></h2>
 
       <div class="carousel-wrap">
+        <button class="carousel-arr carousel-arr--prev" id="carouselPrev" aria-label="Anterior">&#8249;</button>
         <div class="carousel-track" aria-hidden="true">
           <!-- set 1 -->
           <img src="images/carousel-1.png" alt="Atividade 1 do kit" loading="eager" />
@@ -2423,12 +2450,8 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           <img src="images/nivel2.png" alt="" loading="lazy" />
           <img src="images/nivel3.png" alt="" loading="lazy" />
         </div>
+        <button class="carousel-arr carousel-arr--next" id="carouselNext" aria-label="Próxima">&#8250;</button>
       </div>
-
-      <!-- seta avançar foto — só aparece no mobile -->
-      <button class="carousel-next-btn" id="carouselNext" aria-label="Próxima foto">
-        Toque para ver as fotos &#8250;
-      </button>
 
       <div class="kit-contents">
         <ul class="kit-contents__list">
@@ -2467,7 +2490,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         <div class="bonus-box-card">
           <span class="bonus-box-free">GRÁTIS</span>
           <div class="bonus-box-img-wrap">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-QUEBRA-CABECA-COM-ALFABETO.png" alt="Caderno Quebra Cabeça Alfabeto" loading="lazy" />
+            <img src="https://i.ibb.co/5W6t5hRL/Chat-GPT-Image-10-05-2026-21-10-51.png" alt="Caderno Quebra Cabeça Alfabeto" loading="lazy" />
           </div>
           <div class="bonus-box-body">
             <p class="bonus-box-name">Caderno Quebra Cabeça Alfabeto</p>
@@ -2898,47 +2921,64 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       });
     })();
 
-    // ── Seta mobile carrossel ─────────────────────────────────────
+    // ── Carrossel mobile — setas + loop contínuo ─────────────────
     (function() {
-      var btn   = document.getElementById('carouselNext');
-      var track = document.querySelector('.carousel-track');
-      if (!btn || !track) return;
-      var gap = 14;
+      if (window.innerWidth > 768) return;
 
-      function getTranslateX(el) {
-        var t = window.getComputedStyle(el).transform;
-        if (!t || t === 'none') return 0;
-        var m = t.match(/matrix\([^,]+,[^,]+,[^,]+,[^,]+,\s*([-\d.]+)/);
-        return m ? parseFloat(m[1]) : 0;
+      var wrap  = document.querySelector('.carousel-wrap');
+      var track = document.querySelector('.carousel-track');
+      var btnP  = document.getElementById('carouselPrev');
+      var btnN  = document.getElementById('carouselNext');
+      if (!wrap || !track || !btnP || !btnN) return;
+
+      var imgs  = track.querySelectorAll('img');
+      var half  = Math.floor(imgs.length / 2); // 8 imagens reais
+      var gap   = 14;
+      var idx   = 0;
+      var busy  = false;
+      var timer;
+
+      function imgW() {
+        return (imgs[0] ? imgs[0].offsetWidth : 160) + gap;
       }
 
-      btn.addEventListener('click', function() {
-        var firstImg = track.querySelector('img');
-        if (!firstImg) return;
+      function scrollTo(i, smooth) {
+        wrap.scrollTo({ left: i * imgW(), behavior: smooth ? 'smooth' : 'auto' });
+      }
 
-        var currentX = getTranslateX(track);
-        var step     = firstImg.offsetWidth + gap;
-        var halfW    = track.scrollWidth / 2;
-        var newOffset = currentX - step;
-        if (Math.abs(newOffset) >= halfW) newOffset = newOffset + halfW;
+      function advance() {
+        if (busy) return;
+        idx++;
+        if (idx >= half) {
+          // Avança suavemente até o duplicado (visualmente igual à img 0)
+          scrollTo(idx, true);
+          busy = true;
+          setTimeout(function() {
+            // Pulo invisível de volta ao set original
+            wrap.scrollLeft = 0;
+            idx = 0;
+            busy = false;
+          }, 420);
+        } else {
+          scrollTo(idx, true);
+        }
+      }
 
-        // Congela na posição visual atual antes de remover a animação
-        track.style.animation  = 'none';
-        track.style.transform  = 'translateX(' + currentX + 'px)';
-        void track.offsetWidth; // força reflow
+      function prev() {
+        if (busy) return;
+        idx = (idx - 1 + half) % half;
+        scrollTo(idx, true);
+      }
 
-        track.style.transition = 'transform 0.35s ease';
-        track.style.transform  = 'translateX(' + newOffset + 'px)';
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(advance, 2600);
+      }
 
-        clearTimeout(btn._t);
-        btn._t = setTimeout(function() {
-          track.style.transition    = '';
-          track.style.transform     = '';
-          var delay = 28 * Math.abs(newOffset) / halfW;
-          track.style.animationDelay = '-' + delay + 's';
-          track.style.animation      = 'marqueeScroll 28s linear infinite';
-        }, 1500);
-      });
+      btnN.addEventListener('click', function() { advance(); resetTimer(); });
+      btnP.addEventListener('click', function() { prev();    resetTimer(); });
+
+      resetTimer();
     })();
   </script>
 
