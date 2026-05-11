@@ -2759,7 +2759,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
             <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
             <p class="pricing-card__price-intro">Tudo isso por apenas</p>
-            <p class="pricing-card__price"><small>R$</small> 29,90</p>
+            <p class="pricing-card__price"><small>R$</small> 17,90</p>
             <p class="pricing-card__desc">O kit completo com todos os materiais e bônus para uma alfabetização tranquila e eficaz.</p>
             <ul class="pricing-card__benefits">
               <li><span>✅</span> Kit completo de alfabetização infantil</li>
@@ -2772,9 +2772,9 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             </ul>
             <div class="pricing-card__value-box">
               📦 Valor total do kit + bônus: <s>R$ 147,00</s><br>
-              🔥 Hoje você paga somente: <strong>R$ 29,90</strong>
+              🔥 Hoje você paga somente: <strong>R$ 17,90</strong>
             </div>
-            <a href="https://pay.cakto.com.br/xumrbgf_872894" class="btn--main-cta" target="_blank" rel="noopener">COMPRAR O KIT COMPLETO POR R$29,90</a>
+            <a href="https://pay.cakto.com.br/xumrbgf_872894" class="btn--main-cta" target="_blank" rel="noopener">COMPRAR O KIT COMPLETO POR R$17,90</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após pagamento</p>
           </div>
         </div>
@@ -2984,11 +2984,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Oferta rápida">
-    <a href="https://pay.cakto.com.br/xumrbgf_872894" target="_blank" rel="noopener">
-      COMPRAR AGORA POR R$ 19,90
-    </a>
-  </div>
 
   <!-- =========================================================
        JS: FAQ ACCORDION + STICKY BUTTON
@@ -3017,22 +3012,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       });
     });
 
-    // ── Sticky CTA (mobile) ────────────────────────────────────
-    var stickyCta  = document.getElementById('stickyCta');
-    var heroHeight = document.getElementById('hero-cta');
-    var shown      = false;
-
-    function onScroll() {
-      if (!shown && window.scrollY > 400) {
-        stickyCta.classList.add('visible');
-        shown = true;
-      } else if (shown && window.scrollY <= 200) {
-        stickyCta.classList.remove('visible');
-        shown = false;
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
 
     // ── VSL overlay ───────────────────────────────────────────────
     (function() {
@@ -3058,43 +3037,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       });
     });
 
-    // ── Upsell Popup — Kit Intermediário ─────────────────────────
-    (function() {
-      var overlay   = document.getElementById('upsellOverlay');
-      var closeBtn  = document.getElementById('upsellClose');
-      var btnNo     = document.getElementById('upsellBtnNo');
-      var basicUrl  = 'https://pay.cakto.com.br/bub5qbq';
-
-      function openPopup(e) {
-        e.preventDefault();
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closePopup() {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      document.querySelectorAll('.btn--entry').forEach(function(btn) {
-        btn.addEventListener('click', openPopup);
-      });
-
-      closeBtn.addEventListener('click', closePopup);
-
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) closePopup();
-      });
-
-      btnNo.addEventListener('click', function() {
-        closePopup();
-        window.open(basicUrl, '_blank', 'noopener');
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && overlay.classList.contains('active')) closePopup();
-      });
-    })();
 
     // ── Novo carrossel showcase ───────────────────────────────────
     (function() {
