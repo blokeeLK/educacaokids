@@ -1001,12 +1001,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
 
     .kit-contents {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 28px 24px;
       margin-top: 28px;
-      box-shadow: var(--shadow);
-      text-align: left;
     }
     .kit-contents__title {
       font-size: 1rem;
@@ -1021,28 +1016,28 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       display: flex;
       flex-direction: column;
       gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     .kit-contents__list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .92rem;
-      font-weight: 600;
-      color: var(--brown);
-      padding: 10px 14px;
-      background: var(--cream);
-      border-radius: var(--radius-sm);
-      border-left: 4px solid var(--green);
-    }
-    .kit-contents__list li .num {
-      background: var(--green);
+      border-radius: 50px;
+      padding: 14px 28px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 900;
       color: #fff;
-      font-size: .72rem;
-      font-weight: 800;
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .kit-pill-1 { background: #FF8C00; }
+    .kit-pill-2 { background: #D500F9; }
+    .kit-pill-3 { background: #7B1FA2; }
+    .kit-pill-4 { background: #2E7D32; }
+    .kit-pill-5 { background: #1565C0; }
+    @media (max-width: 600px) {
+      .kit-contents__list li { font-size: .82rem; padding: 12px 18px; }
     }
 
     @media (max-width: 768px) {
@@ -2423,14 +2418,12 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       </button>
 
       <div class="kit-contents">
-        <div class="kit-contents__title">📋 O que você recebe no kit:</div>
         <ul class="kit-contents__list">
-          <li><span class="num">+100</span> Mais de <strong>100 atividades prontas para imprimir</strong></li>
-          <li><span class="num">🔤</span> Atividades com <strong>vogais e alfabeto completo</strong></li>
-          <li><span class="num">N1</span> <strong>Formação de sílabas</strong> — do mais simples ao mais complexo</li>
-          <li><span class="num">📖</span> <strong>Palavras simples</strong> para praticar leitura</li>
-          <li><span class="num">✍️</span> <strong>Coordenação motora e traçado</strong> — cursivo e bastão</li>
-          <li><span class="num">🎨</span> <strong>Atividades de pintura e associação visual</strong></li>
+          <li class="kit-pill-1">+ de 100 atividades de grafomotricidade</li>
+          <li class="kit-pill-2">100 atividades de letra cursiva</li>
+          <li class="kit-pill-3">Letra script e bastão</li>
+          <li class="kit-pill-4">Mais de 100 páginas de frases e textos – cursiva</li>
+          <li class="kit-pill-5">Mais de 50 páginas de letra bastão maiúscula</li>
         </ul>
       </div>
     </div>
