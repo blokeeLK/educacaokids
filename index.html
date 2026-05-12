@@ -401,12 +401,20 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       color: var(--brown);
       margin-bottom: 20px;
     }
+    /* layout lado a lado */
+    .dor-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .dor-col-left { display: flex; flex-direction: column; gap: 0; }
     .dor-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 500px;
-      margin: 0 auto 24px;
+      margin: 0 0 20px;
     }
     .dor-item {
       border: 2px dashed #e57373;
@@ -415,58 +423,49 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: .97rem;
+      font-size: .93rem;
       font-weight: 600;
       color: #b71c1c;
       background: #fff5f5;
     }
     .dor-item span.icon { font-size: 1.2rem; flex-shrink: 0; }
     .dor-pior {
-      max-width: 500px;
-      margin: 0 auto 32px;
-      font-size: .97rem;
+      font-size: .93rem;
       color: var(--brown);
       line-height: 1.65;
+      margin: 0;
     }
     .dor-pior .tag {
       display: inline-block;
       background: var(--orange);
       color: #fff;
       font-weight: 800;
-      font-size: .85rem;
+      font-size: .82rem;
       border-radius: 6px;
       padding: 2px 8px;
       margin-right: 4px;
     }
-    .dor-divider {
-      display: flex;
-      justify-content: center;
-      margin: 0 0 32px;
-    }
-    .dor-divider svg { width: 40px; height: 40px; }
+    .dor-divider { display: none; }
     .dor-box {
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 24px rgba(0,0,0,.09);
-      max-width: 540px;
-      margin: 0 auto;
-      padding: 32px 28px 28px;
+      padding: 32px 26px 28px;
       text-align: center;
+      height: 100%;
+      box-sizing: border-box;
     }
     .dor-box__icon { font-size: 2.4rem; margin-bottom: 12px; }
     .dor-box h3 {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 900;
       color: var(--brown);
       margin-bottom: 14px;
       line-height: 1.4;
     }
-    .dor-box h3 em {
-      font-style: normal;
-      color: var(--orange);
-    }
+    .dor-box h3 em { font-style: normal; color: var(--orange); }
     .dor-box p {
-      font-size: .96rem;
+      font-size: .92rem;
       color: var(--gray);
       line-height: 1.7;
       margin-bottom: 18px;
@@ -479,13 +478,13 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
     .dor-box__calm strong {
       display: block;
-      font-size: .97rem;
+      font-size: .94rem;
       font-weight: 800;
       color: var(--green-dark);
       margin-bottom: 6px;
     }
     .dor-box__calm p {
-      font-size: .92rem;
+      font-size: .88rem;
       color: #2d5a38;
       margin: 0;
       line-height: 1.65;
@@ -493,12 +492,11 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     .dor-down {
       display: flex;
       justify-content: center;
-      margin-top: 28px;
+      margin-top: 24px;
     }
-    .dor-down svg { width: 36px; height: 36px; color: var(--green); }
-    @media (max-width: 600px) {
-      .dor-box { padding: 24px 16px 20px; }
-      .dor-box h3 { font-size: 1.08rem; }
+    .dor-down svg { width: 32px; height: 32px; color: var(--green); }
+    @media (max-width: 700px) {
+      .dor-cols { grid-template-columns: 1fr; gap: 24px; }
     }
 
     /* VSL video */
@@ -2448,33 +2446,34 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         Até que…
       </p>
 
-      <div class="dor-list">
-        <div class="dor-item"><span class="icon">✏️</span> A criança não consegue segurar o lápis corretamente</div>
-        <div class="dor-item"><span class="icon">📉</span> As notas caem e a professora começa a reclamar</div>
-        <div class="dor-item"><span class="icon">😔</span> Ela se sente "menos inteligente" do que os colegas</div>
-        <div class="dor-item"><span class="icon">😤</span> Chora, bate o pé e se recusa a fazer tarefa em casa</div>
-      </div>
-
-      <p class="dor-pior">
-        <span class="tag">E o pior:</span> Começa a acreditar que não é capaz —<br>
-        sem entender o porquê. E você, como pai ou mãe,<br>
-        fica de mãos atadas, sem saber como ajudar.
-      </p>
-
-      <div class="dor-divider">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
-      </div>
-
-      <div class="dor-box">
-        <div class="dor-box__icon">⚠️</div>
-        <h3>Entenda o que realmente está travando<br><em>a escrita e a coordenação do seu filho…</em></h3>
-        <p>A falta de estímulo correto na <strong>coordenação motora fina</strong> na fase certa pode tornar atividades como segurar o lápis, traçar linhas e começar a escrever algo frustrante, cansativo e até doloroso — tanto pra criança quanto pra você.</p>
-        <div class="dor-box__calm">
-          <strong>👉 Mas calma, você não tem culpa disso…</strong>
-          <p>É que ninguém te ensinou que, antes de exigir que a criança escreva, ela precisa <strong>desenvolver movimentos específicos</strong>, fortalecer os músculos das mãos e trabalhar o foco — de forma divertida, leve e no ritmo dela.</p>
+      <div class="dor-cols">
+        <!-- coluna esquerda: dores -->
+        <div class="dor-col-left">
+          <div class="dor-list">
+            <div class="dor-item"><span class="icon">✏️</span> A criança não consegue segurar o lápis corretamente</div>
+            <div class="dor-item"><span class="icon">📉</span> As notas caem e a professora começa a reclamar</div>
+            <div class="dor-item"><span class="icon">😔</span> Ela se sente "menos inteligente" do que os colegas</div>
+            <div class="dor-item"><span class="icon">😤</span> Chora, bate o pé e se recusa a fazer tarefa em casa</div>
+          </div>
+          <p class="dor-pior">
+            <span class="tag">E o pior:</span> Começa a acreditar que não é capaz —
+            sem entender o porquê. E você, como pai ou mãe,
+            fica de mãos atadas, sem saber como ajudar.
+          </p>
         </div>
-        <div class="dor-down">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+
+        <!-- coluna direita: caixa de solução -->
+        <div class="dor-box">
+          <div class="dor-box__icon">⚠️</div>
+          <h3>Entenda o que realmente está travando<br><em>a escrita e a coordenação do seu filho…</em></h3>
+          <p>A falta de estímulo correto na <strong>coordenação motora fina</strong> na fase certa pode tornar atividades como segurar o lápis, traçar linhas e começar a escrever algo frustrante, cansativo e até doloroso — tanto pra criança quanto pra você.</p>
+          <div class="dor-box__calm">
+            <strong>👉 Mas calma, você não tem culpa disso…</strong>
+            <p>É que ninguém te ensinou que, antes de exigir que a criança escreva, ela precisa <strong>desenvolver movimentos específicos</strong>, fortalecer os músculos das mãos e trabalhar o foco — de forma divertida, leve e no ritmo dela.</p>
+          </div>
+          <div class="dor-down">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </div>
         </div>
       </div>
 
@@ -2669,11 +2668,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
       <div class="bonus-total">🎁 Valor total dos bônus: <s>R$ 256,00</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!</div>
 
-      <div class="bonus-price-cta">
-        <span class="bonus-price-cta__label">Tudo isso por apenas</span>
-        <span class="bonus-price-cta__value">📄 Acesso imediato em PDF por apenas <strong>R$ 10,00</strong></span>
-        <span class="bonus-price-cta__note">🔒 Compra segura &nbsp;•&nbsp; ⚡ Acesso imediato &nbsp;•&nbsp; 🛡️ Garantia de 7 dias</span>
-      </div>
 
     </div>
   </section>
