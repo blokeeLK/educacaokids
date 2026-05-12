@@ -2044,64 +2044,58 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
     .offer-cards-grid {
       display: grid;
-      grid-template-columns: 1fr 1.18fr;
-      gap: 20px;
+      grid-template-columns: 1fr 1.28fr;
+      gap: 22px;
       align-items: start;
     }
     .pricing-card {
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 28px 24px 24px;
       display: flex;
       flex-direction: column;
       gap: 14px;
       position: relative;
     }
+    /* ── Kit Básico: neutro e discreto ── */
     .pricing-card--entry {
       background: #fff;
-      border: 2px solid #ddd;
-      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      border: 1.5px solid #e0e0e0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
     }
+    /* ── Kit Completo: dominante ── */
     .pricing-card--main {
-      background: linear-gradient(145deg, #1a6e30, #28A745);
+      background: linear-gradient(155deg, #145a26 0%, #1e8234 50%, #28A745 100%);
       border: 3px solid #f5c842;
-      box-shadow: 0 8px 36px rgba(40,167,69,.35);
+      box-shadow: 0 12px 48px rgba(40,167,69,.42), 0 0 0 1px rgba(245,200,66,.3);
       color: #fff;
     }
     .pricing-card__badge {
       display: inline-block;
       font-size: .72rem;
       font-weight: 800;
-      letter-spacing: .06em;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 50px;
       align-self: flex-start;
     }
-    .pricing-card--entry .pricing-card__badge {
-      background: #f0f0f0;
-      color: #555;
-    }
-    .pricing-card--main .pricing-card__badge {
-      background: #f5c842;
-      color: #2a1a00;
-    }
+    .pricing-card--entry .pricing-card__badge { background: #f0f0f0; color: #777; }
+    .pricing-card--main .pricing-card__badge  { background: #f5c842; color: #2a1a00; }
     @keyframes badgePulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,200,66,.6); }
-      50%       { transform: scale(1.07); box-shadow: 0 0 0 7px rgba(245,200,66,0); }
+      0%,100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(245,200,66,.6); }
+      50%     { transform: scale(1.07); box-shadow: 0 0 0 8px rgba(245,200,66,0);  }
     }
-    .badge--pulse {
-      animation: badgePulse 2s ease-in-out infinite;
-    }
+    .badge--pulse { animation: badgePulse 2s ease-in-out infinite; }
     .pricing-card__title {
       font-size: 1.1rem;
       font-weight: 800;
       margin: 0;
-      line-height: 1.2;
+      line-height: 1.25;
     }
     .pricing-card--entry .pricing-card__title { color: var(--brown); }
-    .pricing-card--main .pricing-card__title { color: #fff; }
+    .pricing-card--main  .pricing-card__title { color: #fff; font-size: 1.2rem; }
     .pricing-card__price-intro {
-      font-size: .8rem;
+      font-size: .78rem;
       font-weight: 600;
       opacity: .7;
       margin: 0;
@@ -2113,7 +2107,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       margin: 0;
     }
     .pricing-card--entry .pricing-card__price { color: var(--brown); }
-    .pricing-card--main .pricing-card__price { color: #fff; }
+    .pricing-card--main  .pricing-card__price { color: #fff; font-size: 3.2rem; }
     .pricing-card__price small {
       font-size: 1.1rem;
       font-weight: 700;
@@ -2121,18 +2115,18 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
     .pricing-card__desc {
       font-size: .82rem;
-      line-height: 1.45;
+      line-height: 1.5;
       margin: 0;
     }
-    .pricing-card--entry .pricing-card__desc { color: #666; }
-    .pricing-card--main .pricing-card__desc { color: rgba(255,255,255,.85); }
+    .pricing-card--entry .pricing-card__desc { color: #777; }
+    .pricing-card--main  .pricing-card__desc { color: rgba(255,255,255,.82); }
     .pricing-card__benefits {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 8px;
     }
     .pricing-card__benefits li {
       font-size: .85rem;
@@ -2142,54 +2136,68 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       line-height: 1.4;
     }
     .pricing-card--entry .pricing-card__benefits li { color: #444; }
-    .pricing-card--main .pricing-card__benefits li { color: rgba(255,255,255,.95); }
+    .pricing-card--main  .pricing-card__benefits li { color: rgba(255,255,255,.95); }
     .pricing-card__value-box {
-      background: rgba(0,0,0,.18);
+      background: rgba(0,0,0,.2);
       border-radius: 10px;
-      padding: 10px 14px;
-      font-size: .8rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,.9);
+      padding: 11px 14px;
+      font-size: .82rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,.88);
     }
-    .pricing-card__value-box s { opacity: .65; }
-    .pricing-card__value-box strong { color: #fff; font-size: .95rem; }
+    .pricing-card__value-box s      { opacity: .6; }
+    .pricing-card__value-box strong { color: #ffe87a; font-size: 1rem; }
+    /* frase de oferta acima do botão */
+    .pricing-card__offer-line {
+      background: rgba(255,232,122,.15);
+      border: 1px solid rgba(255,232,122,.4);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: .82rem;
+      font-weight: 700;
+      color: #ffe87a;
+      text-align: center;
+    }
     .pricing-card__note {
       font-size: .72rem;
       text-align: center;
       margin: 0;
     }
-    .pricing-card--entry .pricing-card__note { color: #888; }
-    .pricing-card--main .pricing-card__note { color: rgba(255,255,255,.7); }
+    .pricing-card--entry .pricing-card__note { color: #999; }
+    .pricing-card--main  .pricing-card__note { color: rgba(255,255,255,.65); }
+    /* ── Botão Kit Básico ── */
     .btn--entry {
       display: block;
       width: 100%;
       text-align: center;
       background: #fff;
       color: var(--brown);
-      border: 2px solid var(--brown);
-      padding: 14px 20px;
+      border: 2px solid #ccc;
+      padding: 13px 20px;
       border-radius: 50px;
-      font-weight: 800;
-      font-size: .88rem;
+      font-weight: 700;
+      font-size: .85rem;
       text-decoration: none;
-      transition: background .2s, color .2s;
+      transition: background .2s, color .2s, border-color .2s;
     }
-    .btn--entry:hover { background: var(--brown); color: #fff; }
+    .btn--entry:hover { background: var(--brown); color: #fff; border-color: var(--brown); }
+    /* ── Botão Kit Completo ── */
     .btn--main-cta {
       display: block;
       width: 100%;
       text-align: center;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
+      background: linear-gradient(135deg, #FFE234 0%, #FFA500 100%);
       color: #1a1a1a;
-      padding: 16px 20px;
+      padding: 18px 20px;
       border-radius: 50px;
       font-weight: 900;
-      font-size: .95rem;
+      font-size: 1rem;
       text-decoration: none;
-      box-shadow: 0 4px 16px rgba(255,165,0,.45);
+      box-shadow: 0 6px 22px rgba(255,165,0,.55), 0 2px 6px rgba(0,0,0,.18);
       transition: transform .15s, box-shadow .15s;
+      letter-spacing: .02em;
     }
-    .btn--main-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(255,165,0,.55); }
+    .btn--main-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,165,0,.65); }
     .offer-footer-security {
       text-align: center;
       margin-top: 20px;
@@ -2200,22 +2208,10 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       flex-wrap: wrap;
       gap: 10px;
     }
-
     @media (max-width: 700px) {
       .offer-cards-grid { grid-template-columns: 1fr; }
-      .pricing-card--entry {
-        border: 2.5px solid var(--green);
-        box-shadow: 0 6px 24px rgba(40,167,69,.22);
-      }
-      .btn--entry {
-        background: linear-gradient(135deg, #2DB84B, #1E9E3E);
-        color: #fff;
-        border-color: transparent;
-        font-size: 1rem;
-        padding: 16px 20px;
-      }
-      .pricing-card--main .pricing-card__price { font-size: 3rem; }
-      .btn--main-cta { font-size: 1rem; padding: 18px 20px; }
+      .pricing-card--main .pricing-card__price { font-size: 2.8rem; }
+      .btn--main-cta { font-size: .95rem; padding: 17px 18px; }
     }
 
     /* ═══════════════════════════════════════════════════════
@@ -2696,43 +2692,46 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         </div>
 
         <div class="offer-cards-grid">
+          <!-- Kit Básico -->
           <div class="pricing-card pricing-card--entry">
             <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
-            <p class="pricing-card__price-intro">Comece agora por apenas</p>
+            <p class="pricing-card__price-intro">Comece com atividades simples para apresentar letras, sílabas e palavras de forma leve.</p>
             <p class="pricing-card__price"><small>R$</small> 10</p>
-            <p class="pricing-card__desc">Ideal para começar e ver o método funcionando antes de avançar.</p>
+            <p class="pricing-card__desc">Ideal para quem quer testar o método e iniciar a alfabetização em casa com materiais prontos para imprimir.</p>
             <ul class="pricing-card__benefits">
-              <li><span>✅</span> Caderno de Letras e Sílabas</li>
-              <li><span>✅</span> Caderno de Palavras Simples</li>
+              <li><span>✅</span> Caderno de letras e sílabas</li>
+              <li><span>✅</span> Caderno de palavras simples</li>
               <li><span>✅</span> Atividades prontas para imprimir</li>
               <li><span>✅</span> Acesso digital imediato</li>
               <li><span>🛡️</span> Garantia de 7 dias</li>
             </ul>
-            <a href="https://pay.cakto.com.br/bub5qbq" class="btn--entry" target="_blank" rel="noopener">COMPRAR MEU ACESSO POR R$10</a>
-            <p class="pricing-card__note">Pagamento único • Sem mensalidade</p>
+            <a href="https://pay.cakto.com.br/bub5qbq" class="btn--entry" target="_blank" rel="noopener">COMEÇAR COM O KIT BÁSICO POR R$ 10</a>
+            <p class="pricing-card__note">Pagamento único • Acesso imediato • Sem mensalidade</p>
           </div>
 
+          <!-- Kit Completo -->
           <div class="pricing-card pricing-card--main">
             <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
             <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
-            <p class="pricing-card__price-intro">Tudo isso por apenas</p>
+            <p class="pricing-card__price-intro">O pacote mais completo para ajudar a criança a reconhecer letras, formar sílabas, ler palavrinhas e praticar escrita em casa.</p>
             <p class="pricing-card__price"><small>R$</small> 17,90</p>
-            <p class="pricing-card__desc">O kit completo com todos os materiais e bônus para uma alfabetização tranquila e eficaz.</p>
+            <p class="pricing-card__desc">Perfeito para mães, pais e educadores que querem um material pronto, organizado e fácil de aplicar no dia a dia.</p>
             <ul class="pricing-card__benefits">
               <li><span>✅</span> Kit completo de alfabetização infantil</li>
               <li><span>✅</span> Atividades com letras, sílabas e palavras</li>
-              <li><span>✅</span> Exercícios de leitura e escrita</li>
+              <li><span>✅</span> Exercícios de leitura, escrita e coordenação</li>
               <li><span>🎁</span> 6 bônus exclusivos inclusos</li>
               <li><span>⚡</span> Acesso digital imediato</li>
               <li><span>🛡️</span> Garantia de 7 dias</li>
               <li><span>♾️</span> Acesso vitalício</li>
             </ul>
             <div class="pricing-card__value-box">
-              📦 Valor total do kit + bônus: <s>R$ 147,00</s><br>
+              🎁 Valor total do kit + bônus: <s>R$ 147,00</s><br>
               🔥 Hoje você paga somente: <strong>R$ 17,90</strong>
             </div>
-            <a href="https://pay.cakto.com.br/xumrbgf_872894" class="btn--main-cta" target="_blank" rel="noopener">COMPRAR O KIT COMPLETO POR R$17,90</a>
-            <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após pagamento</p>
+            <p class="pricing-card__offer-line">🔥 Oferta de hoje: leve o kit completo + 6 bônus por apenas R$ 17,90</p>
+            <a href="https://pay.cakto.com.br/xumrbgf_872894" class="btn--main-cta" target="_blank" rel="noopener">LIBERAR MEU ACESSO POR R$ 17,90</a>
+            <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após o pagamento</p>
           </div>
         </div>
 
