@@ -179,15 +179,21 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
        TOP BAR
     ========================================================= */
     .topbar {
-      background: var(--brown);
+      background: linear-gradient(90deg, #e63500 0%, #ff5a1f 50%, #e63500 100%);
       color: #fff;
       text-align: center;
-      padding: 10px 16px;
-      font-size: .82rem;
-      font-weight: 600;
+      padding: 11px 16px;
+      font-size: .88rem;
+      font-weight: 700;
       letter-spacing: .03em;
+      animation: topbarPulse 2.4s ease-in-out infinite;
     }
-    .topbar strong { color: var(--yellow-mid); }
+    .topbar strong { color: #ffe066; }
+    .topbar span.topbar-price { font-size: 1.05rem; color: #ffe066; font-weight: 900; }
+    @keyframes topbarPulse {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
 
     /* =========================================================
        HERO SECTION
@@ -235,9 +241,21 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     .hero__sub {
       font-size: 1rem;
       color: #5A4535;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
       max-width: 520px;
     }
+    .hero__price-line {
+      font-size: 1rem;
+      color: #2a2a2a;
+      background: #fffbe6;
+      border: 1.5px solid #f0c040;
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: inline-block;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+    .hero__price-line strong { color: #c00; font-size: 1.1rem; }
 
     /* Seals row */
     .seals {
@@ -728,78 +746,69 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
 
     /* =========================================================
-       BONUS BOX GRID (estilo imagem 1 — caixinhas do produto)
+       BONUS COMPACT BOOK GRID
     ========================================================= */
-    .bonus-box-grid {
+    .bk-section-inner {
+      background: #0f1b2d;
+      border-radius: 18px;
+      padding: 32px 28px 28px;
+      margin-top: 28px;
+    }
+    .bk-subtitle {
+      color: #a8c0d6;
+      font-size: .9rem;
+      margin-bottom: 24px;
+    }
+    .bk-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 36px 0 28px;
-    }
-    .bonus-box-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-      transition: transform .2s;
-    }
-    .bonus-box-card:hover { transform: translateY(-4px); }
-
-    .bonus-box-free {
-      position: absolute;
-      top: 8px; left: 8px;
-      background: var(--orange);
-      color: #fff;
-      font-size: .62rem;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 20px;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      z-index: 2;
-    }
-    .bonus-box-img-wrap img {
-      width: 100%;
-      height: 150px;
-      object-fit: contain;
-      padding: 12px;
-      background: #fafafa;
-      display: block;
-    }
-    .bonus-box-body { padding: 10px 12px 14px; }
-    .bonus-box-name {
-      font-size: .82rem;
-      font-weight: 800;
-      line-height: 1.35;
-      margin-bottom: 6px;
-      color: var(--brown);
-    }
-    .bonus-box-desc {
-      font-size: .72rem;
-      color: var(--gray);
-      line-height: 1.5;
+      gap: 14px;
       margin-bottom: 8px;
     }
-    .bonus-box-price {
-      font-size: .75rem;
+    .bk-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,.45);
+      transition: transform .22s;
+      aspect-ratio: 3/4;
+    }
+    .bk-item:hover { transform: scale(1.04); }
+    .bk-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .bk-item__badge {
+      position: absolute;
+      top: 7px; left: 7px;
+      background: #ff5a1f;
+      color: #fff;
+      font-size: .58rem;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 20px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .bk-item__name {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      color: #fff;
+      font-size: .68rem;
       font-weight: 700;
-      color: #e53935;
-      text-decoration: line-through;
-      margin-bottom: 2px;
+      padding: 18px 8px 8px;
+      line-height: 1.3;
+      text-align: center;
     }
-    .bonus-box-hoje {
-      font-size: .78rem;
-      font-weight: 800;
-      color: var(--green-dark);
-    }
-
     @media (max-width: 768px) {
-      .bonus-box-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .bk-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .bk-section-inner { padding: 22px 14px 20px; }
     }
     @media (max-width: 480px) {
-      .bonus-box-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .bk-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     }
 
     /* =========================================================
@@ -2353,7 +2362,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 <body>
 
   <div class="topbar">
-    ⚡ <strong>Oferta especial por tempo limitado</strong> — 6 bônus exclusivos inclusos na compra de hoje!
+    🔥 <strong>Oferta de hoje:</strong> Kit Completo por <span class="topbar-price">R$ 10,00</span> — acesso imediato após a compra. <strong>Aproveite!</strong>
   </div>
 
   <!-- 1. HERO -->
@@ -2362,8 +2371,9 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       <div class="hero__inner">
         <div class="hero__text">
           <div class="hero__eyebrow">🎯 Material educativo infantil</div>
-          <h1>Seu filho ainda tem dificuldade para <em>começar a ler?</em></h1>
-          <p class="hero__sub">Com atividades simples e prontas para imprimir, você pode ajudar na alfabetização dele em casa — mesmo sem ser professora.</p>
+          <h1>Seu filho ainda trava para ler as <em>primeiras palavras?</em></h1>
+          <p class="hero__sub">Com o Kit Alfabetização Divertida, você recebe atividades prontas para imprimir e aplicar em casa, ajudando a criança a reconhecer letras, sílabas e formar palavras de um jeito simples e divertido.</p>
+          <p class="hero__price-line">📄 Acesso imediato em PDF por apenas <strong>R$ 10,00</strong></p>
           <div class="seals">
             <div class="seal"><span class="seal-icon">⚡</span> Acesso imediato</div>
             <div class="seal"><span class="seal-icon">🖨️</span> Pronto para imprimir</div>
@@ -2371,7 +2381,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <div class="seal"><span class="seal-icon">🛡️</span> Garantia 7 dias</div>
           </div>
           <div class="btn-wrap">
-            <a href="#oferta" class="btn btn--primary" id="hero-cta">QUERO AJUDAR MEU FILHO A LER</a>
+            <a href="https://pay.cakto.com.br/bub5qbq" class="btn btn--primary" id="hero-cta" target="_blank" rel="noopener">QUERO AJUDAR MEU FILHO A LER</a>
             <div class="microcopy">
               <span>⚡ Acesso imediato</span><span>•</span>
               <span>📄 Material digital</span><span>•</span>
@@ -2630,77 +2640,38 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       <h2 class="section-title">Comprando hoje, você também recebe <span class="text-orange">6 bônus exclusivos</span></h2>
       <p class="section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
 
-      <div class="bonus-box-grid">
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+      <div class="bk-section-inner">
+        <p class="bk-subtitle">Amostra dos bônus exclusivos inclusos na coleção completa.</p>
+        <div class="bk-grid">
+          <div class="bk-item">
             <img src="https://i.ibb.co/chXw5KMk/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Alfabeto com Imagem</div>
           </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Alfabeto com Imagem</p>
-            <p class="bonus-box-desc">Apresenta cada letra do alfabeto com imagens associadas, ajudando na familiarização das crianças com as letras de forma visual e divertida.</p>
-            <p class="bonus-box-price">De R$ 37,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
-          </div>
-        </div>
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+          <div class="bk-item">
             <img src="https://i.ibb.co/5W6t5hRL/Chat-GPT-Image-10-05-2026-21-10-51.png" alt="Caderno Quebra Cabeça Alfabeto" loading="lazy" />
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Quebra Cabeça Alfabeto</div>
           </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Quebra Cabeça Alfabeto</p>
-            <p class="bonus-box-desc">Atividades de quebra-cabeça com letras do alfabeto para fixação divertida e interativa.</p>
-            <p class="bonus-box-price">De R$ 47,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
-          </div>
-        </div>
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+          <div class="bk-item">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-FORMANDO-PALAVRAS.png" alt="Caderno Formando Palavras" loading="lazy" />
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Formando Palavras</div>
           </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Formando Palavras</p>
-            <p class="bonus-box-desc">Exercícios de formação de palavras que incentivam leitura e escrita, ajudando as crianças a construir vocabulário.</p>
-            <p class="bonus-box-price">De R$ 57,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
-          </div>
-        </div>
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+          <div class="bk-item">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-RELOGIO.png" alt="Caderno Alfabeto com Relógio" loading="lazy" />
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Alfabeto com Relógio</div>
           </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Alfabeto com Relógio</p>
-            <p class="bonus-box-desc">Caderno interativo que ensina as letras do alfabeto junto a um relógio, promovendo a leitura e noções de tempo de forma lúdica.</p>
-            <p class="bonus-box-price">De R$ 39,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
-          </div>
-        </div>
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+          <div class="bk-item">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-TRACADO.png" alt="Caderno Alfabeto Traçado" loading="lazy" />
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Alfabeto Traçado</div>
           </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Alfabeto Traçado</p>
-            <p class="bonus-box-desc">Caderno com letras do alfabeto traçadas, perfeito para que as crianças pratiquem a escrita e melhorem sua coordenação motora.</p>
-            <p class="bonus-box-price">De R$ 27,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
-          </div>
-        </div>
-        <div class="bonus-box-card">
-          <span class="bonus-box-free">GRÁTIS</span>
-          <div class="bonus-box-img-wrap">
+          <div class="bk-item">
             <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-CARINHAS.png" alt="Caderno Alfabeto com Carinhas" loading="lazy" />
-          </div>
-          <div class="bonus-box-body">
-            <p class="bonus-box-name">Caderno Alfabeto com Carinhas</p>
-            <p class="bonus-box-desc">Caderno divertido que associa cada letra do alfabeto a carinhas expressivas, ajudando as crianças a aprender com alegria e criatividade.</p>
-            <p class="bonus-box-price">De R$ 49,00</p>
-            <p class="bonus-box-hoje">HOJE: GRÁTIS</p>
+            <span class="bk-item__badge">GRÁTIS</span>
+            <div class="bk-item__name">Caderno Alfabeto com Carinhas</div>
           </div>
         </div>
       </div>
