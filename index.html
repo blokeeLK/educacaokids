@@ -2396,9 +2396,22 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 </head>
 <body>
 
-  <div class="topbar">
+  <div class="topbar" id="topbarEl">
     🔥 <strong>Oferta de hoje:</strong> Kit Completo por <span class="topbar-price">R$ 10,00</span> — acesso imediato após a compra. <strong>Aproveite!</strong>
   </div>
+  <script>
+    (function(){
+      var dias = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+      var meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+      var now = new Date();
+      var dia = dias[now.getDay()];
+      var d = String(now.getDate()).padStart(2,'0');
+      var m = String(now.getMonth()+1).padStart(2,'0');
+      var a = now.getFullYear();
+      document.getElementById('topbarEl').innerHTML =
+        '🔥 <strong>Oferta válida somente hoje, ' + dia + ', ' + d + '/' + m + '/' + a + '</strong>';
+    })();
+  </script>
 
   <!-- 1. HERO -->
   <section class="hero" id="inicio">
@@ -2623,10 +2636,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     <div class="container text-center">
       <div class="bonus-header-badge">🎁 Bônus exclusivos</div>
       <h2 class="section-title">Comprando hoje, você também recebe <span class="text-orange">6 bônus exclusivos</span></h2>
-      <p class="section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
-
       <div class="bk-section-inner">
-        <p class="bk-subtitle section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
         <div class="bk-grid">
           <div class="bk-item">
             <img src="https://i.ibb.co/chXw5KMk/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
