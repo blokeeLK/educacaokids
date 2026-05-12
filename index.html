@@ -746,69 +746,66 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
 
     /* =========================================================
-       BONUS COMPACT BOOK GRID
+       BONUS COMPACT BOOK GRID — clean / site style
     ========================================================= */
     .bk-section-inner {
-      background: #0f1b2d;
-      border-radius: 18px;
-      padding: 32px 28px 28px;
-      margin-top: 28px;
+      background: transparent;
+      margin-top: 24px;
     }
     .bk-subtitle {
-      color: #a8c0d6;
+      color: var(--gray, #777);
       font-size: .9rem;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .bk-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
       margin-bottom: 8px;
     }
     .bk-item {
       position: relative;
-      border-radius: 10px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      box-shadow: 0 4px 18px rgba(0,0,0,.45);
-      transition: transform .22s;
-      aspect-ratio: 3/4;
+      transition: transform .22s, box-shadow .22s;
+      display: flex;
+      flex-direction: column;
     }
-    .bk-item:hover { transform: scale(1.04); }
+    .bk-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
     .bk-item img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 3/4;
       object-fit: cover;
       display: block;
     }
     .bk-item__badge {
       position: absolute;
-      top: 7px; left: 7px;
-      background: #ff5a1f;
+      top: 8px; left: 8px;
+      background: var(--orange);
       color: #fff;
-      font-size: .58rem;
+      font-size: .6rem;
       font-weight: 900;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 20px;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
     .bk-item__name {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.82));
-      color: #fff;
-      font-size: .68rem;
+      padding: 8px 10px 10px;
+      font-size: .75rem;
       font-weight: 700;
-      padding: 18px 8px 8px;
+      color: var(--brown);
       line-height: 1.3;
       text-align: center;
+      border-top: 1px solid var(--cream-dark);
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       .bk-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-      .bk-section-inner { padding: 22px 14px 20px; }
-    }
-    @media (max-width: 480px) {
-      .bk-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     }
 
     /* =========================================================
@@ -2641,7 +2638,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       <p class="section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
 
       <div class="bk-section-inner">
-        <p class="bk-subtitle">Amostra dos bônus exclusivos inclusos na coleção completa.</p>
+        <p class="bk-subtitle section-sub">Incluídos sem custo adicional para quem garantir o acesso agora.</p>
         <div class="bk-grid">
           <div class="bk-item">
             <img src="https://i.ibb.co/chXw5KMk/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
