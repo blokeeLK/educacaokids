@@ -2560,6 +2560,56 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     .iphone__sound-overlay.hidden { opacity: 0; pointer-events: none; }
     .iphone__sound-icon { font-size: 2rem; }
 
+    /* Subtítulo da seção 3D */
+    .vsl3d-subtitle {
+      font-size: .95rem;
+      color: var(--gray, #777);
+      margin-top: 8px;
+    }
+
+    /* Dica lateral de scroll — desktop */
+    .vsl3d-scroll-tip {
+      position: absolute;
+      left: calc(50% + 158px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: #aaa;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      writing-mode: vertical-rl;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .vsl3d-scroll-tip svg {
+      flex-shrink: 0;
+      writing-mode: horizontal-tb;
+      animation: tipBounce 1.6s ease-in-out infinite;
+    }
+    @keyframes tipBounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(5px); }
+    }
+
+    /* Mobile: dica abaixo do iPhone */
+    @media (max-width: 600px) {
+      .vsl3d-scroll-tip {
+        position: absolute;
+        left: 50%;
+        top: auto;
+        bottom: 100px;
+        transform: translateX(-50%);
+        writing-mode: horizontal-tb;
+        flex-direction: row;
+        font-size: .7rem;
+        white-space: nowrap;
+      }
+    }
+
     /* identificador da página de teste */
     .teste-badge {
       text-align: center;
@@ -2676,7 +2726,8 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     <!-- Cabeçalho fixo acima do efeito -->
     <div class="vsl3d-header">
       <div class="section-label">Veja como funciona</div>
-      <h2 class="section-title">Veja como o Kit de Atividades funciona na prática</h2>
+      <h2 class="section-title">Veja como funciona na prática</h2>
+      <p class="vsl3d-subtitle">Assista ao vídeo dentro do celular enquanto rola a página.</p>
     </div>
 
     <!-- Área de scroll-pin onde acontece a animação -->
@@ -2708,6 +2759,12 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Dica lateral de scroll -->
+        <div class="vsl3d-scroll-tip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          <span>Role para baixo até o vídeo aparecer</span>
         </div>
 
       </div><!-- /vsl3dStage -->
@@ -3531,6 +3588,20 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
           sndOver.style.pointerEvents = 'none';
         }});
       });
+    }
+
+    /* ── Pausa/retoma vídeo conforme visibilidade ── */
+    if ('IntersectionObserver' in window && video) {
+      var visObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            video.play().catch(function () {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+      visObs.observe(iphone);
     }
 
     /* ── Refresh no resize ── */
