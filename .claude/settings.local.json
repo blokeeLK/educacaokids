@@ -11,7 +11,8 @@
       "Bash(python -c \"from PIL import Image; print\\('Pillow ok'\\)\")",
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow ok'\\)\")",
       "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
-      "Bash(node -e \"const jimp = require\\('jimp'\\); console.log\\('jimp ok'\\)\")"
+      "Bash(node -e \"const jimp = require\\('jimp'\\); console.log\\('jimp ok'\\)\")",
+      "Bash(Copy-Item \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html\" \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\teste.html\")"
     ]
   }
 }
