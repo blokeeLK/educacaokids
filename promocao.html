@@ -3,6 +3,27 @@
 <head>
   <script>if(location.hostname==='educacaokids-4s5h.onrender.com'){location.replace('https://aeducacaokids.com.br'+location.pathname+location.search+location.hash);}</script>
   <meta charset="UTF-8" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1280501823665802');
+  fbq('track', 'PageView');
+  </script>
+  <script>
+    if (typeof fbq === 'function') { fbq('track', 'ViewContent'); }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oferta Exclusiva - Bônus Educação Kids</title>
   <style>
@@ -844,5 +865,113 @@
       <span>🔒 Ambiente 100% seguro</span>
     </div>
   </main>
+  <!-- Contador fixo -->
+  <div id="countdownBar">
+    <div id="countdownInner">
+      <span id="countdownIcon">🔥</span>
+      <span id="countdownText">Esta oferta expira em:</span>
+      <span id="countdownTimer">10:00</span>
+      <a href="https://pay.kirvano.com/86045c08-ebeb-4993-a2b8-12c78b636d40"
+         id="countdownCta" target="_blank" rel="noopener">
+        GARANTIR AGORA
+      </a>
+    </div>
+  </div>
+
+  <style>
+    #countdownBar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+      background-size: 200% 100%;
+      animation: countdownPulse 2s ease-in-out infinite;
+      padding: 12px 16px;
+      box-shadow: 0 -4px 24px rgba(185,28,28,0.55);
+    }
+    @keyframes countdownPulse {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+    #countdownInner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    #countdownIcon { font-size: 1.3rem; animation: iconShake 1.4s ease-in-out infinite; }
+    @keyframes iconShake {
+      0%,100% { transform: rotate(0deg); }
+      25%      { transform: rotate(-12deg); }
+      75%      { transform: rotate(12deg); }
+    }
+    #countdownText {
+      color: #ffe4e4;
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    #countdownTimer {
+      color: #fff;
+      font-size: 1.7rem;
+      font-weight: 950;
+      letter-spacing: .06em;
+      font-variant-numeric: tabular-nums;
+      background: rgba(0,0,0,0.22);
+      padding: 2px 14px;
+      border-radius: 8px;
+      min-width: 88px;
+      text-align: center;
+    }
+    #countdownTimer.urgent { color: #ffd700; }
+    #countdownCta {
+      background: #fff;
+      color: #b91c1c;
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      transition: transform .15s;
+    }
+    #countdownCta:hover { transform: scale(1.04); }
+    /* espaço extra no rodapé para o bar não tapar conteúdo */
+    body { padding-bottom: 70px; }
+  </style>
+
+  <script>
+  (function() {
+    var MINUTES = 10;
+    var total = MINUTES * 60;
+    var timerEl = document.getElementById('countdownTimer');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      if (total <= 0) {
+        timerEl.textContent = '00:00';
+        timerEl.classList.add('urgent');
+        return;
+      }
+      var m = Math.floor(total / 60);
+      var s = total % 60;
+      timerEl.textContent = pad(m) + ':' + pad(s);
+      if (total <= 60) timerEl.classList.add('urgent');
+      total--;
+      setTimeout(tick, 1000);
+    }
+
+    tick();
+  })();
+  </script>
+
 </body>
 </html>
