@@ -630,7 +630,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         position: relative !important;
         background: transparent !important;
         box-shadow: none !important;
-        padding: 0 !important;
+        padding: 0 0 48px !important;
         min-height: 300px; /* JS updates this */
         overflow: visible !important;
         transform: none !important;
@@ -703,8 +703,9 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       .dor-box__arrow {
         display: flex;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: auto;
+        bottom: -24px;
+        transform: none;
         width: 36px; height: 36px;
         border-radius: 50%;
         border: none;
@@ -720,15 +721,15 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         transition: background 0.2s, transform 0.2s;
         -webkit-tap-highlight-color: transparent;
       }
-      .dor-box__arrow:active { background: #f0e8dc; transform: translateY(-50%) scale(0.93); }
-      .dor-box__arrow--prev { left: -18px; }
-      .dor-box__arrow--next { right: -18px; }
+      .dor-box__arrow:active { background: #f0e8dc; transform: scale(0.93); }
+      .dor-box__arrow--prev { left: calc(50% - 56px); }
+      .dor-box__arrow--next { right: calc(50% - 56px); }
 
       /* Dots indicadores */
       .dor-box__dots {
         display: flex;
         position: absolute;
-        bottom: -28px;
+        bottom: -20px;
         left: 50%;
         transform: translateX(-50%);
         gap: 8px;
@@ -2857,7 +2858,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       autoTimer = setInterval(function() {
         if (window.innerWidth > 768) return;
         setSwap(!isSwapped);
-      }, 3000);
+      }, 5000);
     }
 
     function resetAutoSwap() {
