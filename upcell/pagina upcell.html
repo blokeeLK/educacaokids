@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script>if(location.hostname==='educacaokids-4s5h.onrender.com'){location.replace('https://aeducacaokids.com.br'+location.pathname+location.search+location.hash);}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oferta Exclusiva - Bônus Educação Kids</title>
@@ -22,7 +21,11 @@
       --radius: 22px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -63,7 +66,10 @@
       letter-spacing: .6px;
     }
 
-    .headline { text-align: center; margin-bottom: 26px; }
+    .headline {
+      text-align: center;
+      margin-bottom: 26px;
+    }
 
     .headline h1 {
       font-size: clamp(30px, 7vw, 49px);
@@ -73,8 +79,13 @@
       margin-bottom: 10px;
     }
 
-    .headline .red  { color: var(--red); }
-    .headline .green { color: var(--green); }
+    .headline .red {
+      color: var(--red);
+    }
+
+    .headline .green {
+      color: var(--green);
+    }
 
     .headline p {
       font-size: clamp(22px, 5.7vw, 38px);
@@ -98,12 +109,15 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 18% 14%, rgba(255,211,77,.22), transparent 28%),
-        radial-gradient(circle at 88% 74%, rgba(21,150,54,.12), transparent 30%);
+        radial-gradient(circle at 18% 14%, rgba(255, 211, 77, .22), transparent 28%),
+        radial-gradient(circle at 88% 74%, rgba(21, 150, 54, .12), transparent 30%);
       pointer-events: none;
     }
 
-    .hero-inner { position: relative; z-index: 1; }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
 
     .bundle-ribbon {
       width: fit-content;
@@ -120,12 +134,14 @@
       display: flex;
       gap: 9px;
       align-items: center;
-      box-shadow: 0 10px 20px rgba(8,113,38,.24);
+      box-shadow: 0 10px 20px rgba(8, 113, 38, .24);
     }
 
     .gift {
-      width: 35px; height: 35px;
-      display: grid; place-items: center;
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
       background: #ffc63d;
       color: #063f18;
       border-radius: 50%;
@@ -133,7 +149,10 @@
       flex: none;
     }
 
-    .hero-title { text-align: center; margin-bottom: 16px; }
+    .hero-title {
+      text-align: center;
+      margin-bottom: 16px;
+    }
 
     .hero-title h2 {
       font-size: clamp(40px, 10vw, 66px);
@@ -177,11 +196,13 @@
 
     .plus {
       align-self: center;
-      width: 34px; height: 34px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: var(--green);
       color: #fff;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       font-size: 24px;
       font-weight: 950;
       box-shadow: 0 8px 16px rgba(21,150,54,.26);
@@ -193,22 +214,59 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 10px 18px rgba(0,0,0,.10);
+      min-height: 260px;
       display: flex;
       flex-direction: column;
     }
 
     .cover {
-      width: 100%;
-      aspect-ratio: 3/4;
-      overflow: hidden;
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      text-align: center;
     }
 
-    .cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .cover.badge {
+      background: radial-gradient(circle, #1c3144 0%, #07111d 76%);
+      color: #f5ce62;
     }
+
+    .cover.fun {
+      background: linear-gradient(180deg, #fff, #f7fbff);
+      color: #1e79d6;
+    }
+
+    .cover.delay {
+      background: radial-gradient(circle, #2c2c26 0%, #090908 80%);
+      color: #f4ba39;
+    }
+
+    .emblem {
+      width: 125px;
+      height: 125px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      border: 3px solid #c79c38;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,.08);
+      font-weight: 950;
+      text-transform: uppercase;
+      line-height: .94;
+      font-size: 26px;
+      padding: 10px;
+    }
+
+    .abc-logo {
+      font-size: 28px;
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: .4px;
+      color: #e9372e;
+    }
+
+    .abc-logo span:nth-child(2) { color: #168c38; }
+    .abc-logo span:nth-child(3) { color: #1b74e4; }
 
     .mini-label {
       background: linear-gradient(180deg, #10213a, #071324);
@@ -218,13 +276,25 @@
       margin-top: auto;
     }
 
-    .mini-label.dark { background: linear-gradient(180deg, #1e1e18, #070707); }
+    .mini-label.dark {
+      background: linear-gradient(180deg, #1e1e18, #070707);
+    }
 
-    .mini-label h4 { font-size: 19px; line-height: 1.08; margin-bottom: 6px; font-weight: 950; }
-    .mini-label p  { font-size: 13px; font-weight: 800; color: #fff6d2; }
+    .mini-label h4 {
+      font-size: 19px;
+      line-height: 1.08;
+      margin-bottom: 6px;
+      font-weight: 950;
+    }
+
+    .mini-label p {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff6d2;
+    }
 
     .price-row {
-      border-top: 2px dashed rgba(20,32,43,.25);
+      border-top: 2px dashed rgba(20, 32, 43, .25);
       padding-top: 19px;
       display: grid;
       grid-template-columns: 1fr .85fr 1fr;
@@ -234,7 +304,11 @@
     }
 
     .old-price small,
-    .now small { display: block; font-size: 16px; font-weight: 900; }
+    .now small {
+      display: block;
+      font-size: 16px;
+      font-weight: 900;
+    }
 
     .old-price strong {
       position: relative;
@@ -248,7 +322,9 @@
     .old-price strong::after {
       content: "";
       position: absolute;
-      left: -8%; right: -8%; top: 50%;
+      left: -8%;
+      right: -8%;
+      top: 50%;
       height: 5px;
       background: #df2e2e;
       transform: rotate(-7deg);
@@ -264,22 +340,24 @@
       font-size: clamp(34px, 8.2vw, 56px);
       font-weight: 950;
       letter-spacing: -1px;
-      box-shadow: 0 10px 18px rgba(21,150,54,.25);
+      box-shadow: 0 10px 18px rgba(21, 150, 54, .25);
     }
 
     .seal {
-      width: 112px; height: 112px;
+      width: 112px;
+      height: 112px;
       margin: 0 auto;
       background: #d92b2e;
       color: #fff;
       border-radius: 50%;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       text-align: center;
       font-weight: 950;
       font-size: 15px;
       line-height: 1.02;
       text-transform: uppercase;
-      box-shadow: 0 7px 16px rgba(217,43,46,.28);
+      box-shadow: 0 7px 16px rgba(217, 43, 46, .28);
       outline: 5px dashed rgba(255,255,255,.4);
       outline-offset: -10px;
     }
@@ -292,7 +370,7 @@
       width: 100%;
       border: none;
       margin: 24px auto 14px;
-      padding: 18px;
+      padding: 18px 18px;
       border-radius: 11px;
       background: linear-gradient(180deg, #18b83f, #079529);
       color: #fff;
@@ -305,7 +383,10 @@
       transition: transform .18s ease, filter .18s ease;
     }
 
-    .cta:hover { transform: translateY(-2px); filter: brightness(1.03); }
+    .cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
 
     .trust-row {
       display: flex;
@@ -318,7 +399,11 @@
       text-align: center;
     }
 
-    .trust-row span { display: flex; align-items: center; gap: 6px; }
+    .trust-row span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
     .compare {
       display: grid;
@@ -331,7 +416,9 @@
       margin: 0 0 31px;
     }
 
-    .compare-side { padding: 25px 24px; }
+    .compare-side {
+      padding: 25px 24px;
+    }
 
     .compare-side.green-bg {
       background: linear-gradient(180deg, #f3fff4, #e9f8ed);
@@ -346,9 +433,19 @@
       margin-bottom: 12px;
     }
 
-    .compare .red-price { color: #df2e2e; font-size: 32px; font-weight: 950; text-align: center; margin-bottom: 16px; }
+    .compare .red-price {
+      color: #df2e2e;
+      font-size: 32px;
+      font-weight: 950;
+      text-align: center;
+      margin-bottom: 16px;
+    }
 
-    .compare-list { list-style: none; font-size: 14px; color: #24303a; }
+    .compare-list {
+      list-style: none;
+      font-size: 14px;
+      color: #24303a;
+    }
 
     .compare-list li {
       display: flex;
@@ -366,11 +463,13 @@
     }
 
     .vs {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: #fff3d5;
       color: #8a5b08;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       font-weight: 950;
       align-self: center;
       margin: 0 -22px;
@@ -388,17 +487,23 @@
 
     .check-big {
       margin: 0 auto 10px;
-      width: 72px; height: 72px;
+      width: 72px;
+      height: 72px;
       background: var(--green);
       color: #fff;
       border-radius: 50%;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       font-size: 42px;
       font-weight: 950;
-      box-shadow: 0 9px 16px rgba(21,150,54,.25);
+      box-shadow: 0 9px 16px rgba(21, 150, 54, .25);
     }
 
-    .save { color: var(--green); font-size: 25px; font-weight: 950; }
+    .save {
+      color: var(--green);
+      font-size: 25px;
+      font-weight: 950;
+    }
 
     .section-title {
       text-align: center;
@@ -408,10 +513,12 @@
       letter-spacing: -.6px;
     }
 
-    .section-title::before, .section-title::after {
+    .section-title::before,
+    .section-title::after {
       content: "";
       display: inline-block;
-      width: 70px; max-width: 12vw;
+      width: 70px;
+      max-width: 12vw;
       height: 3px;
       background: #dfb13d;
       vertical-align: middle;
@@ -430,35 +537,34 @@
       background: #fffdf8;
       border: 1px solid #ecdcae;
       border-radius: 18px;
-      overflow: hidden;
+      padding: 22px 15px 16px;
       box-shadow: 0 12px 26px rgba(0,0,0,.08);
       text-align: center;
+      min-height: 380px;
       display: flex;
       flex-direction: column;
     }
 
-    .bonus-card__img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      overflow: hidden;
+    .round-icon {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 45px;
+      font-weight: 950;
+      box-shadow: 0 12px 22px rgba(0,0,0,.13);
+      border: 4px solid #e0b042;
     }
 
-    .bonus-card__img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .bonus-card__body {
-      padding: 18px 15px 16px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+    .round-icon.navy { background: radial-gradient(circle, #163253, #06111d); color: #f6c850; }
+    .round-icon.abc { background: #fff; color: #e6312c; }
+    .round-icon.black { background: radial-gradient(circle, #333323, #080807); color: #e5b348; }
 
     .bonus-card h4 {
-      font-size: 20px;
+      font-size: 24px;
       line-height: 1.05;
       font-weight: 950;
       margin-bottom: 9px;
@@ -475,10 +581,21 @@
       font-weight: 950;
     }
 
-    .pill.blue  { color: #fff; background: linear-gradient(90deg, #0d4b94, #1b7bd7); }
-    .pill.dark  { color: #fff; background: linear-gradient(90deg, #1c1c18, #4d3b15); }
+    .pill.blue {
+      color: #fff;
+      background: linear-gradient(90deg, #0d4b94, #1b7bd7);
+    }
 
-    .bonus-card p { color: #424b55; font-size: 15px; margin-bottom: 17px; }
+    .pill.dark {
+      color: #fff;
+      background: linear-gradient(90deg, #1c1c18, #4d3b15);
+    }
+
+    .bonus-card p {
+      color: #424b55;
+      font-size: 15.5px;
+      margin-bottom: 17px;
+    }
 
     .mini-icons {
       margin-top: auto;
@@ -488,9 +605,11 @@
     }
 
     .mini-icons span {
-      width: 48px; height: 44px;
+      width: 48px;
+      height: 44px;
       border-radius: 10px;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       background: #fff9ec;
       border: 1px solid #ead8a8;
       font-size: 25px;
@@ -510,11 +629,13 @@
     }
 
     .home-icon {
-      width: 95px; height: 95px;
+      width: 95px;
+      height: 95px;
       border-radius: 50%;
       background: var(--green-dark);
       color: #fff;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       font-size: 48px;
       box-shadow: 0 10px 20px rgba(8,113,38,.22);
     }
@@ -526,8 +647,14 @@
       margin-bottom: 9px;
     }
 
-    .info-box h3 span { color: var(--green); }
-    .info-box p { color: #4f5862; font-size: 16px; }
+    .info-box h3 span {
+      color: var(--green);
+    }
+
+    .info-box p {
+      color: #4f5862;
+      font-size: 16px;
+    }
 
     .final-box {
       position: relative;
@@ -552,7 +679,10 @@
       pointer-events: none;
     }
 
-    .final-content { position: relative; z-index: 1; }
+    .final-content {
+      position: relative;
+      z-index: 1;
+    }
 
     .final-flex {
       display: grid;
@@ -569,7 +699,9 @@
       letter-spacing: -.9px;
     }
 
-    .final-box h2 span { color: #ffd95f; }
+    .final-box h2 span {
+      color: #ffd95f;
+    }
 
     .check-list {
       display: grid;
@@ -584,7 +716,8 @@
       content: "✓";
       display: inline-grid;
       place-items: center;
-      width: 22px; height: 22px;
+      width: 22px;
+      height: 22px;
       margin-right: 8px;
       border-radius: 50%;
       background: #fff;
@@ -593,11 +726,13 @@
     }
 
     .gold-seal {
-      width: 132px; height: 132px;
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
       background: radial-gradient(circle, #ffe68d, #d6a331);
       color: #0d5e25;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       text-align: center;
       font-weight: 950;
       line-height: 1.1;
@@ -605,7 +740,11 @@
       border: 4px solid #ffd75d;
     }
 
-    .gold-seal span { display: block; font-size: 31px; margin-bottom: 4px; }
+    .gold-seal span {
+      display: block;
+      font-size: 31px;
+      margin-bottom: 4px;
+    }
 
     .final-cta {
       background: #fff;
@@ -627,37 +766,80 @@
     }
 
     @media (max-width: 720px) {
-      .page { padding: 26px 12px 32px; }
+      .page {
+        padding: 26px 12px 32px;
+      }
 
       .bundle-products {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .plus { margin: -3px auto; }
+      .plus {
+        margin: -3px auto;
+      }
 
-      .price-row { grid-template-columns: 1fr; }
+      .product-mini {
+        min-height: auto;
+      }
 
-      .seal { width: 96px; height: 96px; font-size: 13px; }
+      .cover {
+        min-height: 135px;
+      }
 
-      .compare { grid-template-columns: 1fr; }
+      .price-row {
+        grid-template-columns: 1fr;
+      }
 
-      .vs { margin: -22px auto; }
+      .seal {
+        width: 96px;
+        height: 96px;
+        font-size: 13px;
+      }
 
-      .cards { grid-template-columns: 1fr; }
+      .compare {
+        grid-template-columns: 1fr;
+      }
+
+      .vs {
+        margin: -22px auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-card {
+        min-height: auto;
+      }
 
       .section-title::before,
-      .section-title::after { display: none; }
+      .section-title::after {
+        display: none;
+      }
 
-      .info-box { grid-template-columns: 1fr; text-align: center; }
+      .info-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-      .home-icon { margin: 0 auto; }
+      .home-icon {
+        margin: 0 auto;
+      }
 
-      .final-flex { grid-template-columns: 1fr; text-align: center; }
+      .final-flex {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-      .gold-seal { margin: 0 auto; }
+      .gold-seal {
+        margin: 0 auto;
+      }
 
-      .check-list { grid-template-columns: 1fr; text-align: left; }
+      .check-list {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -684,8 +866,8 @@
 
         <div class="bundle-products">
           <article class="product-mini">
-            <div class="cover">
-              <img src="upcell/mão firme.png" alt="Kit Mão Firme + Escrita" loading="lazy" />
+            <div class="cover badge">
+              <div class="emblem">Kit<br>Mão<br>Firme</div>
             </div>
             <div class="mini-label">
               <h4>Kit Mão Firme<br>+ Escrita</h4>
@@ -696,8 +878,8 @@
           <div class="plus">+</div>
 
           <article class="product-mini">
-            <div class="cover">
-              <img src="upcell/jogos de alfabeto.webp" alt="Jogos com Alfabeto" loading="lazy" />
+            <div class="cover fun">
+              <div class="abc-logo">KIT<br><span>JOGOS</span><br>COM<br><span>Alfabeto</span></div>
             </div>
             <div class="mini-label">
               <h4>Jogos com<br>Alfabeto</h4>
@@ -708,8 +890,8 @@
           <div class="plus">+</div>
 
           <article class="product-mini">
-            <div class="cover">
-              <img src="upcell/ant atraso.png" alt="Anti-Atraso Escolar" loading="lazy" />
+            <div class="cover delay">
+              <div class="emblem">Anti<br>Atraso<br>Escolar</div>
             </div>
             <div class="mini-label dark">
               <h4>Anti-Atraso<br>Escolar</h4>
@@ -734,7 +916,7 @@
       </div>
     </section>
 
-    <a href="https://pay.kirvano.com/86045c08-ebeb-4993-a2b8-12c78b636d40" class="cta" target="_blank" rel="noopener">🔒 Quero garantir os 3 bônus por R$ 10,90</a>
+    <a href="#comprar" class="cta">🔒 Quero garantir os 3 bônus por R$ 10,90</a>
 
     <div class="trust-row">
       <span>🛡️ Compra 100% segura</span>
@@ -770,39 +952,27 @@
 
     <section class="cards">
       <article class="bonus-card">
-        <div class="bonus-card__img">
-          <img src="upcell/mão firme.png" alt="Kit Mão Firme + Escrita" loading="lazy" />
-        </div>
-        <div class="bonus-card__body">
-          <h4>Kit Mão Firme<br>+ Escrita</h4>
-          <div class="pill">R$ 7,90</div>
-          <p>Exercícios para melhorar o controle do lápis, coordenação motora fina e os primeiros traços da escrita.</p>
-          <div class="mini-icons"><span>✏️</span><span>〰️</span><span>🖐️</span></div>
-        </div>
+        <div class="round-icon navy">✍️</div>
+        <h4>Kit Mão Firme<br>+ Escrita</h4>
+        <div class="pill">R$ 7,90</div>
+        <p>Exercícios para melhorar o controle do lápis, coordenação motora fina e os primeiros traços da escrita.</p>
+        <div class="mini-icons"><span>✏️</span><span>〰️</span><span>🖐️</span></div>
       </article>
 
       <article class="bonus-card">
-        <div class="bonus-card__img">
-          <img src="upcell/jogos de alfabeto.webp" alt="Jogos com Alfabeto" loading="lazy" />
-        </div>
-        <div class="bonus-card__body">
-          <h4>Jogos com<br>Alfabeto</h4>
-          <div class="pill blue">R$ 5,90</div>
-          <p>Atividades divertidas como labirinto, dominó e complete as palavras para estimular a alfabetização.</p>
-          <div class="mini-icons"><span>🧩</span><span>🔤</span><span>🎲</span></div>
-        </div>
+        <div class="round-icon abc">ABC</div>
+        <h4>Jogos com<br>Alfabeto</h4>
+        <div class="pill blue">R$ 5,90</div>
+        <p>Atividades divertidas como labirinto, dominó e complete as palavras para estimular a alfabetização.</p>
+        <div class="mini-icons"><span>🧩</span><span>🔤</span><span>🎲</span></div>
       </article>
 
       <article class="bonus-card">
-        <div class="bonus-card__img">
-          <img src="upcell/ant atraso.png" alt="Anti-Atraso Escolar" loading="lazy" />
-        </div>
-        <div class="bonus-card__body">
-          <h4>Anti-Atraso<br>Escolar</h4>
-          <div class="pill dark">R$ 5,90</div>
-          <p>Atividades extras para reforçar leitura, letras, traços e atenção, ajudando a criança a não ficar para trás.</p>
-          <div class="mini-icons"><span>📖</span><span>🎯</span><span>📝</span></div>
-        </div>
+        <div class="round-icon black">⏰</div>
+        <h4>Anti-Atraso<br>Escolar</h4>
+        <div class="pill dark">R$ 5,90</div>
+        <p>Atividades extras para reforçar leitura, letras, traços e atenção, ajudando a criança a não ficar para trás.</p>
+        <div class="mini-icons"><span>📖</span><span>🎯</span><span>📝</span></div>
       </article>
     </section>
 
@@ -835,7 +1005,7 @@
           </div>
         </div>
 
-        <a href="https://pay.kirvano.com/86045c08-ebeb-4993-a2b8-12c78b636d40" class="cta final-cta" target="_blank" rel="noopener">🔒 Sim! Quero desbloquear os 3 bônus por R$ 10,90</a>
+        <a href="#" class="cta final-cta">🔒 Sim! Quero desbloquear os 3 bônus por R$ 10,90</a>
       </div>
     </section>
 
