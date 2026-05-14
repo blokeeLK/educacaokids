@@ -2423,6 +2423,42 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       color: #ffe87a;
       text-align: center;
     }
+    /* Caixa de itens inclusos */
+    .pc-inc-box {
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 12px;
+      padding: 14px 16px 12px;
+      margin: 14px 0 12px;
+    }
+    .pc-inc-box__header {
+      font-size: .78rem;
+      font-weight: 800;
+      color: #ffe87a;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .pc-inc-box__list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .pc-inc-box__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .86rem;
+      color: rgba(255,255,255,.95);
+      line-height: 1.45;
+    }
+    .pc-inc-box__list li span { flex-shrink: 0; font-size: .95rem; }
+    .pricing-card__benefits--seals {
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
     .pricing-card__note {
       font-size: .72rem;
       text-align: center;
@@ -3055,15 +3091,20 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <p class="pricing-card__price-intro">O pacote mais completo para ajudar a criança a reconhecer letras, formar sílabas, ler palavrinhas e praticar escrita em casa.</p>
             <p class="pricing-card__price"><small>R$</small> 19,90</p>
             <p class="pricing-card__desc">Perfeito para mães, pais e educadores que querem um material pronto, organizado e fácil de aplicar no dia a dia.</p>
-            <ul class="pricing-card__benefits">
-              <li><span>✅</span> Kit completo de alfabetização infantil para estudar em casa</li>
-              <li><span>✅</span> Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
-              <li><span>✅</span> Exercícios para escrita, coordenação motora, foco e raciocínio</li>
-              <li><span>🎁</span> 6 bônus especiais para deixar o aprendizado mais completo</li>
-              <li><span>📘</span> Guia de aplicação para você saber exatamente por onde começar</li>
-              <li><span>✍️</span> Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
-              <li><span>🧠</span> Atividades de fixação para a criança aprender sem pressão</li>
-              <li><span>🖨️</span> Material digital pronto para imprimir e usar quantas vezes quiser</li>
+            <div class="pc-inc-box">
+              <div class="pc-inc-box__header">📦 Tudo que você recebe:</div>
+              <ul class="pc-inc-box__list">
+                <li><span>✅</span> Kit completo de alfabetização infantil para estudar em casa</li>
+                <li><span>✅</span> Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
+                <li><span>✅</span> Exercícios para escrita, coordenação motora, foco e raciocínio</li>
+                <li><span>🎁</span> 6 bônus especiais para deixar o aprendizado mais completo</li>
+                <li><span>📘</span> Guia de aplicação para você saber exatamente por onde começar</li>
+                <li><span>✍️</span> Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
+                <li><span>🧠</span> Atividades de fixação para a criança aprender sem pressão</li>
+                <li><span>🖨️</span> Material digital pronto para imprimir e usar quantas vezes quiser</li>
+              </ul>
+            </div>
+            <ul class="pricing-card__benefits pricing-card__benefits--seals">
               <li><span>⚡</span> Acesso imediato após a compra</li>
               <li><span>🛡️</span> Garantia de 7 dias sem risco</li>
               <li><span>♾️</span> Acesso vitalício ao conteúdo</li>
@@ -3554,15 +3595,20 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         <span class="co-price">R$ <strong>14,90</strong></span>
         <span class="co-price-note">Pagamento único • Acesso imediato</span>
       </div>
-      <ul class="co-list">
-        <li>✅ Kit completo de alfabetização infantil para estudar em casa</li>
-        <li>✅ Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
-        <li>✅ Exercícios para escrita, coordenação motora, foco e raciocínio</li>
-        <li>🎁 6 bônus especiais para deixar o aprendizado mais completo</li>
-        <li>📘 Guia de aplicação para você saber exatamente por onde começar</li>
-        <li>✍️ Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
-        <li>🧠 Atividades de fixação para a criança aprender sem pressão</li>
-        <li>🖨️ Material digital pronto para imprimir e usar quantas vezes quiser</li>
+      <div class="co-inc-box">
+        <div class="co-inc-box__header">📦 Tudo que você recebe:</div>
+        <ul class="co-list">
+          <li>✅ Kit completo de alfabetização infantil para estudar em casa</li>
+          <li>✅ Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
+          <li>✅ Exercícios para escrita, coordenação motora, foco e raciocínio</li>
+          <li>🎁 6 bônus especiais para deixar o aprendizado mais completo</li>
+          <li>📘 Guia de aplicação para você saber exatamente por onde começar</li>
+          <li>✍️ Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
+          <li>🧠 Atividades de fixação para a criança aprender sem pressão</li>
+          <li>🖨️ Material digital pronto para imprimir e usar quantas vezes quiser</li>
+        </ul>
+      </div>
+      <ul class="co-list co-list--seals">
         <li>⚡ Acesso imediato após a compra</li>
         <li>🛡️ Garantia de 7 dias sem risco</li>
         <li>♾️ Acesso vitalício ao conteúdo</li>
@@ -3656,15 +3702,33 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       font-size: .78rem;
       color: #777;
     }
+    .co-inc-box {
+      background: #f4fdf6;
+      border: 1.5px solid #b6e4c2;
+      border-radius: 12px;
+      padding: 14px 16px 12px;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .co-inc-box__header {
+      font-size: .75rem;
+      font-weight: 800;
+      color: #1e8234;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
     .co-list {
       list-style: none;
-      padding: 0; margin: 0 0 22px;
+      padding: 0; margin: 0;
       text-align: left;
       display: flex;
       flex-direction: column;
       gap: 7px;
     }
-    .co-list li { font-size: .9rem; color: #444; }
+    .co-list li { font-size: .88rem; color: #444; }
+    .co-list--seals { margin: 8px 0 18px; padding: 0 4px; }
+    .co-list--seals li { font-size: .84rem; color: #777; }
 
     .co-btn-yes {
       display: block;
