@@ -950,6 +950,27 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       background: transparent;
       margin-top: 24px;
     }
+    /* Bonus single image float */
+    .bonus-img-wrap {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+    .bonus-img-float {
+      max-width: 780px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.08);
+      animation: bonusFloat 3.6s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes bonusFloat {
+      0%,100% { transform: translateY(0px);    box-shadow: 0 16px 56px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.08); }
+      50%     { transform: translateY(-12px);  box-shadow: 0 28px 72px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.10); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bonus-img-float { animation: none; }
+    }
     .bk-subtitle {
       color: var(--gray, #777);
       font-size: .9rem;
@@ -2242,7 +2263,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
     .offer-cards-grid {
       display: grid;
-      grid-template-columns: 1fr 1.28fr;
+      grid-template-columns: 1.28fr 1fr;
       gap: 22px;
       align-items: start;
     }
@@ -2919,39 +2940,13 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     <div class="container text-center">
       <div class="bonus-header-badge">🎁 Bônus exclusivos</div>
       <h2 class="section-title">Comprando hoje, você também recebe <span class="text-orange">6 bônus exclusivos</span></h2>
-      <div class="bk-section-inner">
-        <div class="bk-grid">
-          <div class="bk-item">
-            <img src="https://i.ibb.co/chXw5KMk/FRAFISMO-FONETICO-ALFABETO-CADERNO-COM-ALFABETO-768x672.png" alt="Caderno Alfabeto com Imagem" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Alfabeto com Imagem</div>
-          </div>
-          <div class="bk-item">
-            <img src="https://i.ibb.co/5W6t5hRL/Chat-GPT-Image-10-05-2026-21-10-51.png" alt="Caderno Quebra Cabeça Alfabeto" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Quebra Cabeça Alfabeto</div>
-          </div>
-          <div class="bk-item">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-FORMANDO-PALAVRAS.png" alt="Caderno Formando Palavras" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Formando Palavras</div>
-          </div>
-          <div class="bk-item">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-RELOGIO.png" alt="Caderno Alfabeto com Relógio" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Alfabeto com Relógio</div>
-          </div>
-          <div class="bk-item">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-TRACADO.png" alt="Caderno Alfabeto Traçado" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Alfabeto Traçado</div>
-          </div>
-          <div class="bk-item">
-            <img src="images/GRAFISMO-FONETICO-ALFABETO-CADERNO-ALFABETO-COM-CARINHAS.png" alt="Caderno Alfabeto com Carinhas" loading="lazy" />
-            <span class="bk-item__badge">GRÁTIS</span>
-            <div class="bk-item__name">Caderno Alfabeto com Carinhas</div>
-          </div>
-        </div>
+      <div class="bonus-img-wrap">
+        <img
+          src="bonus-grid.png"
+          alt="6 bônus exclusivos: Caderno Alfabeto com Imagem, Caderno Quebra Cabeça Alfabeto, Caderno Formando Palavras, Caderno Alfabeto com Relógio, Caderno Alfabeto Traçado e Caderno Alfabeto com Carinhas"
+          class="bonus-img-float"
+          loading="lazy"
+        />
       </div>
 
       <div class="bonus-total">🎁 Valor total dos bônus: <s>R$ 256,00</s> — Inclusos <strong>gratuitamente</strong> na compra de hoje!</div>
@@ -2974,23 +2969,6 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         </div>
 
         <div class="offer-cards-grid">
-          <!-- Kit Básico -->
-          <div class="pricing-card pricing-card--entry">
-            <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
-            <p class="pricing-card__price-intro">Comece com atividades simples para apresentar letras, sílabas e palavras de forma leve.</p>
-            <p class="pricing-card__price"><small>R$</small> 10</p>
-            <p class="pricing-card__desc">Ideal para quem quer testar o método e iniciar a alfabetização em casa com materiais prontos para imprimir.</p>
-            <ul class="pricing-card__benefits">
-              <li><span>✅</span> Caderno de letras e sílabas</li>
-              <li><span>✅</span> Caderno de palavras simples</li>
-              <li><span>✅</span> Atividades prontas para imprimir</li>
-              <li><span>✅</span> Acesso digital imediato</li>
-              <li><span>🛡️</span> Garantia de 7 dias</li>
-            </ul>
-            <a href="https://pay.kirvano.com/80f9c9bb-0d9d-44e2-8095-005c85335a5e" class="btn--entry" target="_blank" rel="noopener">COMEÇAR COM O KIT BÁSICO POR R$ 10</a>
-            <p class="pricing-card__note">Pagamento único • Acesso imediato • Sem mensalidade</p>
-          </div>
-
           <!-- Kit Completo -->
           <div class="pricing-card pricing-card--main">
             <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
@@ -3014,6 +2992,23 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <p class="pricing-card__offer-line">🔥 Oferta de hoje: leve o kit completo + 6 bônus por apenas R$ 17,90</p>
             <a href="https://pay.kirvano.com/01fdf71e-498b-4db7-9442-1c8da46fdd38" class="btn--main-cta" target="_blank" rel="noopener">LIBERAR MEU ACESSO POR R$ 17,90</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após o pagamento</p>
+          </div>
+
+          <!-- Kit Básico -->
+          <div class="pricing-card pricing-card--entry">
+            <h3 class="pricing-card__title">Kit Básico de Alfabetização</h3>
+            <p class="pricing-card__price-intro">Comece com atividades simples para apresentar letras, sílabas e palavras de forma leve.</p>
+            <p class="pricing-card__price"><small>R$</small> 10</p>
+            <p class="pricing-card__desc">Ideal para quem quer testar o método e iniciar a alfabetização em casa com materiais prontos para imprimir.</p>
+            <ul class="pricing-card__benefits">
+              <li><span>✅</span> Caderno de letras e sílabas</li>
+              <li><span>✅</span> Caderno de palavras simples</li>
+              <li><span>✅</span> Atividades prontas para imprimir</li>
+              <li><span>✅</span> Acesso digital imediato</li>
+              <li><span>🛡️</span> Garantia de 7 dias</li>
+            </ul>
+            <a href="https://pay.kirvano.com/80f9c9bb-0d9d-44e2-8095-005c85335a5e" class="btn--entry" target="_blank" rel="noopener">COMEÇAR COM O KIT BÁSICO POR R$ 10</a>
+            <p class="pricing-card__note">Pagamento único • Acesso imediato • Sem mensalidade</p>
           </div>
         </div>
 
