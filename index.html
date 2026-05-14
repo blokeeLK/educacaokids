@@ -622,6 +622,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     /* ── DOR Mobile Card Stack ── */
     /* Desktop: wrappers are layout-transparent */
     .dor-box__card { display: contents; }
+    .dor-box__arrow, .dor-box__dots { display: none; }
 
     @media (max-width: 768px) {
       /* Outer box becomes the stack container */
@@ -697,6 +698,50 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
       /* Hide down arrow on mobile (inside stack) */
       .dor-box .dor-down { display: none; }
+
+      /* Setas */
+      .dor-box__arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255,255,255,0.92);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        font-size: 1.5rem;
+        line-height: 1;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        color: var(--brown, #5c4020);
+        transition: background 0.2s, transform 0.2s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .dor-box__arrow:active { background: #f0e8dc; transform: translateY(-50%) scale(0.93); }
+      .dor-box__arrow--prev { left: -18px; }
+      .dor-box__arrow--next { right: -18px; }
+
+      /* Dots indicadores */
+      .dor-box__dots {
+        display: flex;
+        position: absolute;
+        bottom: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 8px;
+      }
+      .dor-box__dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .dor-box__dot--1 { background: var(--orange, #F97316); transform: scale(1.25); }
+      .dor-box--swapped .dor-box__dot--1 { background: #ccc; transform: scale(1); }
+      .dor-box--swapped .dor-box__dot--2 { background: var(--green, #28A745); transform: scale(1.25); }
     }
 
     /* VSL video */
@@ -2723,6 +2768,13 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
               <p>É que ninguém te ensinou que, antes de exigir que a criança escreva, ela precisa <strong>desenvolver movimentos específicos</strong>, fortalecer os músculos das mãos e trabalhar o foco — de forma divertida, leve e no ritmo dela.</p>
             </div>
           </div>
+          <!-- Setas e dots — visíveis só no mobile via CSS -->
+          <button class="dor-box__arrow dor-box__arrow--prev" aria-label="Card anterior">&#8249;</button>
+          <button class="dor-box__arrow dor-box__arrow--next" aria-label="Próximo card">&#8250;</button>
+          <div class="dor-box__dots">
+            <span class="dor-box__dot dor-box__dot--1"></span>
+            <span class="dor-box__dot dor-box__dot--2"></span>
+          </div>
           <div class="dor-down">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
           </div>
@@ -2786,29 +2838,44 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
 
     // ── Mobile card stack ──
     var isSwapped = false;
+    var autoTimer = null;
 
     function setBoxHeight() {
       if (!box || !card1 || !card2) return;
       if (window.innerWidth > 768) { box.style.minHeight = ''; return; }
-      box.style.minHeight = (Math.max(card1.offsetHeight, card2.offsetHeight) + 20) + 'px';
+      box.style.minHeight = (Math.max(card1.offsetHeight, card2.offsetHeight) + 48) + 'px';
     }
 
-    function checkMobileSwap() {
+    function setSwap(swapped) {
       if (!box || window.innerWidth > 768) return;
-      var rect = box.getBoundingClientRect();
-      var swapped = (rect.top + rect.height * 0.45) < window.innerHeight * 0.5;
-      if (swapped === isSwapped) return;
       isSwapped = swapped;
       box.classList.toggle('dor-box--swapped', swapped);
     }
 
-    window.addEventListener('scroll', checkMobileSwap, { passive: true });
-    window.addEventListener('resize', function() { setBoxHeight(); checkMobileSwap(); }, { passive: true });
-    // Measure after layout (fonts, images settled)
+    function startAutoSwap() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(function() {
+        if (window.innerWidth > 768) return;
+        setSwap(!isSwapped);
+      }, 3000);
+    }
+
+    function resetAutoSwap() {
+      startAutoSwap(); // reinicia o timer ao clicar
+    }
+
+    // Setas
+    var btnPrev = box ? box.querySelector('.dor-box__arrow--prev') : null;
+    var btnNext = box ? box.querySelector('.dor-box__arrow--next') : null;
+    if (btnPrev) btnPrev.addEventListener('click', function() { setSwap(false); resetAutoSwap(); });
+    if (btnNext) btnNext.addEventListener('click', function() { setSwap(true);  resetAutoSwap(); });
+
+    window.addEventListener('resize', function() { setBoxHeight(); }, { passive: true });
+
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { setTimeout(setBoxHeight, 80); });
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(function() { setBoxHeight(); startAutoSwap(); }, 80); });
     } else {
-      setTimeout(setBoxHeight, 80);
+      setTimeout(function() { setBoxHeight(); startAutoSwap(); }, 80);
     }
   })();
   </script>
