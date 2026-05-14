@@ -12,7 +12,10 @@
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow ok'\\)\")",
       "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
       "Bash(node -e \"const jimp = require\\('jimp'\\); console.log\\('jimp ok'\\)\")",
-      "Bash(Copy-Item \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html\" \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\teste.html\")"
+      "Bash(Copy-Item \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html\" \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\teste.html\")",
+      "Bash(dir \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\" /b)",
+      "Bash(findstr /i \"bonus\\\\|bônus\\\\|BONUS\")",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\" -Recurse | Where-Object { $_.Name -match \"bonus|bônus\" -and $_.Extension -match \"\\\\.\\(png|jpg|jpeg|webp\\)\" } | Select-Object FullName)"
     ]
   }
 }
