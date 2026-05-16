@@ -15,7 +15,8 @@
       "Bash(Copy-Item \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html\" \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\teste.html\")",
       "Bash(dir \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\" /b)",
       "Bash(findstr /i \"bonus\\\\|bônus\\\\|BONUS\")",
-      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\" -Recurse | Where-Object { $_.Name -match \"bonus|bônus\" -and $_.Extension -match \"\\\\.\\(png|jpg|jpeg|webp\\)\" } | Select-Object FullName)"
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\" -Recurse | Where-Object { $_.Name -match \"bonus|bônus\" -and $_.Extension -match \"\\\\.\\(png|jpg|jpeg|webp\\)\" } | Select-Object FullName)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\index.html\" \"c:\\\\Users\\\\bloke\\\\Documents\\\\GitHub\\\\educacaokids\\\\oferta-especial.html\")"
     ]
   }
 }
