@@ -1003,7 +1003,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       justify-content: center;
     }
     .bonus-img-float {
-      max-width: 780px;
+      max-width: 420px;
       width: 100%;
       border-radius: 20px;
       box-shadow: 0 16px 56px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.08);
@@ -1013,6 +1013,9 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     @keyframes bonusFloat {
       0%,100% { transform: translateY(0px);    box-shadow: 0 16px 56px rgba(0,0,0,0.13), 0 4px 16px rgba(0,0,0,0.08); }
       50%     { transform: translateY(-12px);  box-shadow: 0 28px 72px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.10); }
+    }
+    @media (max-width: 600px) {
+      .bonus-img-float { max-width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
       .bonus-img-float { animation: none; }
