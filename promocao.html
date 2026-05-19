@@ -15,10 +15,11 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1280501823665802');
-  fbq('track', 'PageView');
+  var _pvId='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);
+  fbq('track','PageView',{},{eventID:_pvId});
   </script>
   <script>
-    if (typeof fbq === 'function') { fbq('track', 'ViewContent'); }
+    if(typeof fbq==='function'){var _vcId='vc_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);fbq('track','ViewContent',{},{eventID:_vcId});}
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"

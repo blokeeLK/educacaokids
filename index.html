@@ -20,11 +20,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1280501823665802');
-fbq('track', 'PageView');
+var _pvId='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);
+fbq('track','PageView',{},{eventID:_pvId});
 </script>
 <script>
-  if (typeof fbq === 'function') {
-    fbq('track', 'ViewContent');
+  if(typeof fbq==='function'){
+    var _vcId='vc_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);
+    fbq('track','ViewContent',{},{eventID:_vcId});
   }
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -3110,7 +3112,7 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <span class="pricing-card__badge badge--pulse">⭐ MAIS ESCOLHIDO</span>
             <h3 class="pricing-card__title">Kit Completo de Alfabetização + 6 Bônus</h3>
             <p class="pricing-card__price-intro">O pacote mais completo para ajudar a criança a reconhecer letras, formar sílabas, ler palavrinhas e praticar escrita em casa.</p>
-            <p class="pricing-card__price"><small>R$</small> 19,90</p>
+            <p class="pricing-card__price"><small>R$</small> 29,90</p>
             <p class="pricing-card__desc">Perfeito para mães, pais e educadores que querem um material pronto, organizado e fácil de aplicar no dia a dia.</p>
             <div class="pc-inc-box">
               <div class="pc-inc-box__header">📦 Tudo que você recebe:</div>
@@ -3133,10 +3135,10 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             </ul>
             <div class="pricing-card__value-box">
               🎁 Valor total do kit + bônus: <s>R$ 147,00</s><br>
-              🔥 Hoje você paga somente: <strong>R$ 19,90</strong>
+              🔥 Hoje você paga somente: <strong>R$ 29,90</strong>
             </div>
-            <p class="pricing-card__offer-line">🔥 Oferta de hoje: leve o kit completo + 6 bônus por apenas R$ 19,90</p>
-            <a href="https://pay.kirvano.com/01fdf71e-498b-4db7-9442-1c8da46fdd38" class="btn--main-cta" target="_blank" rel="noopener">LIBERAR MEU ACESSO POR R$ 19,90</a>
+            <p class="pricing-card__offer-line">🔥 Oferta de hoje: leve o kit completo + 6 bônus por apenas R$ 29,90</p>
+            <a href="https://pay.kirvano.com/4615f138-11af-4a11-aba6-29f8cb021757" class="btn--main-cta" target="_blank" rel="noopener">LIBERAR MEU ACESSO POR R$ 29,90</a>
             <p class="pricing-card__note">Pagamento único • Sem mensalidade • Acesso imediato após o pagamento</p>
           </div>
         </div>
@@ -3606,12 +3608,12 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
   })();
   </script>
 
-  <!-- ── POPUP CONTRA-OFERTA R$14,90 ── -->
+  <!-- ── POPUP CONTRA-OFERTA R$19,90 ── -->
   <div id="contraOfertaOverlay" style="display:none" aria-modal="true" role="dialog" aria-labelledby="contraOfertaTitle">
     <div id="contraOfertaModal">
       <div class="co-badge">⚡ Oferta especial</div>
-      <h2 class="co-title" id="contraOfertaTitle">Espera! Aproveite o<br>Kit Completo por R$ 14,90</h2>
-      <p class="co-sub">Tudo que está no plano de <strong>R$ 19,90</strong> — por um valor ainda menor:</p>
+      <h2 class="co-title" id="contraOfertaTitle">Espera! Aproveite o<br>Kit Completo por R$ 19,90</h2>
+      <p class="co-sub">Tudo que está no plano de <strong>R$ 29,90</strong> — por um valor ainda menor:</p>
       <div class="co-inc-box">
         <div class="co-inc-box__header">📦 Tudo que você recebe:</div>
         <ul class="co-list co-list--rich">
@@ -3627,8 +3629,8 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
         </ul>
       </div>
       <div class="co-price-box">
-        <span class="co-price-old">De R$ 19,90</span>
-        <span class="co-price">R$ <strong>14,90</strong></span>
+        <span class="co-price-old">De R$ 29,90</span>
+        <span class="co-price">R$ <strong>19,90</strong></span>
         <span class="co-price-note">Pagamento único • Acesso imediato</span>
       </div>
       <a href="https://pay.kirvano.com/c69a3c1d-4997-4638-9d7b-fec1d08c17b3" class="co-btn-yes" id="coBtnYes" target="_blank" rel="noopener">
