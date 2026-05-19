@@ -2447,13 +2447,26 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     }
     .pc-inc-box__list li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
       font-size: .86rem;
       color: rgba(255,255,255,.95);
       line-height: 1.45;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    .pc-inc-box__list li span { flex-shrink: 0; font-size: .95rem; }
+    .pc-inc-box__list li:last-child { border-bottom: none; }
+    .pci-icon { flex-shrink: 0; font-size: .95rem; }
+    .pci-text { flex: 1; }
+    .pci-text strong { color: #fff; }
+    .pci-old {
+      flex-shrink: 0;
+      font-size: .72rem;
+      color: #ff9494;
+      text-decoration: line-through;
+      white-space: nowrap;
+      font-weight: 700;
+    }
     .pricing-card__benefits--seals {
       margin-top: 4px;
       margin-bottom: 14px;
@@ -3093,14 +3106,15 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
             <div class="pc-inc-box">
               <div class="pc-inc-box__header">📦 Tudo que você recebe:</div>
               <ul class="pc-inc-box__list">
-                <li><span>✅</span> Kit completo de alfabetização infantil para estudar em casa</li>
-                <li><span>✅</span> Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
-                <li><span>✅</span> Exercícios para escrita, coordenação motora, foco e raciocínio</li>
-                <li><span>🎁</span> 6 bônus especiais para deixar o aprendizado mais completo</li>
-                <li><span>📘</span> Guia de aplicação para você saber exatamente por onde começar</li>
-                <li><span>✍️</span> Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
-                <li><span>🧠</span> Atividades de fixação para a criança aprender sem pressão</li>
-                <li><span>🖨️</span> Material digital pronto para imprimir e usar quantas vezes quiser</li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Atividades de Grafismo Fonético</strong> Nível 1, 2 e 3</span><span class="pci-old">De R$197</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 01:</strong> Caderno Alfabeto com Imagem</span><span class="pci-old">De R$ 37</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 02:</strong> Caderno Quebra-Cabeça Alfabeto</span><span class="pci-old">De R$ 47</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 03:</strong> Caderno Formando Palavras</span><span class="pci-old">De R$ 57</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 04:</strong> Caderno Alfabeto com Relógio</span><span class="pci-old">De R$ 39</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 05:</strong> Caderno Alfabeto Traçado</span><span class="pci-old">De R$ 27</span></li>
+                <li><span class="pci-icon">✅</span><span class="pci-text"><strong>Bônus 06:</strong> Caderno Alfabeto com Carinhas</span><span class="pci-old">De R$ 49</span></li>
+                <li><span class="pci-icon">🎓</span><span class="pci-text">Suporte Profissional</span></li>
+                <li><span class="pci-icon">🛡️</span><span class="pci-text">Garantia Incondicional</span></li>
               </ul>
             </div>
             <ul class="pricing-card__benefits pricing-card__benefits--seals">
@@ -3596,22 +3610,18 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       </div>
       <div class="co-inc-box">
         <div class="co-inc-box__header">📦 Tudo que você recebe:</div>
-        <ul class="co-list">
-          <li>✅ Kit completo de alfabetização infantil para estudar em casa</li>
-          <li>✅ Atividades prontas com letras, sílabas, palavras e leitura inicial</li>
-          <li>✅ Exercícios para escrita, coordenação motora, foco e raciocínio</li>
-          <li>🎁 6 bônus especiais para deixar o aprendizado mais completo</li>
-          <li>📘 Guia de aplicação para você saber exatamente por onde começar</li>
-          <li>✍️ Treinos extras para melhorar o controle do lápis e os primeiros traços</li>
-          <li>🧠 Atividades de fixação para a criança aprender sem pressão</li>
-          <li>🖨️ Material digital pronto para imprimir e usar quantas vezes quiser</li>
+        <ul class="co-list co-list--rich">
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Atividades de Grafismo Fonético</strong> Nível 1, 2 e 3</span><span class="co-old">De R$197</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 01:</strong> Caderno Alfabeto com Imagem</span><span class="co-old">De R$ 37</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 02:</strong> Caderno Quebra-Cabeça Alfabeto</span><span class="co-old">De R$ 47</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 03:</strong> Caderno Formando Palavras</span><span class="co-old">De R$ 57</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 04:</strong> Caderno Alfabeto com Relógio</span><span class="co-old">De R$ 39</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 05:</strong> Caderno Alfabeto Traçado</span><span class="co-old">De R$ 27</span></li>
+          <li><span class="co-icon">✅</span><span class="co-text"><strong>Bônus 06:</strong> Caderno Alfabeto com Carinhas</span><span class="co-old">De R$ 49</span></li>
+          <li><span class="co-icon">🎓</span><span class="co-text">Suporte Profissional</span></li>
+          <li><span class="co-icon">🛡️</span><span class="co-text">Garantia Incondicional</span></li>
         </ul>
       </div>
-      <ul class="co-list co-list--seals">
-        <li>⚡ Acesso imediato após a compra</li>
-        <li>🛡️ Garantia de 7 dias sem risco</li>
-        <li>♾️ Acesso vitalício ao conteúdo</li>
-      </ul>
       <a href="https://pay.kirvano.com/01fdf71e-498b-4db7-9442-1c8da46fdd38" class="co-btn-yes" id="coBtnYes" target="_blank" rel="noopener">
         ✅ QUERO O KIT COMPLETO POR R$ 19,90
       </a>
@@ -3728,6 +3738,25 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
     .co-list li { font-size: .88rem; color: #444; }
     .co-list--seals { margin: 8px 0 18px; padding: 0 4px; }
     .co-list--seals li { font-size: .84rem; color: #777; }
+    .co-list--rich li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 0;
+      border-bottom: 1px dashed #eee;
+    }
+    .co-list--rich li:last-child { border-bottom: none; }
+    .co-icon { flex-shrink: 0; font-size: .95rem; }
+    .co-text { flex: 1; font-size: .85rem; color: #333; }
+    .co-text strong { color: #1a1a1a; }
+    .co-old {
+      flex-shrink: 0;
+      font-size: .72rem;
+      color: #e53e3e;
+      text-decoration: line-through;
+      white-space: nowrap;
+      font-weight: 700;
+    }
 
     .co-btn-yes {
       display: block;
