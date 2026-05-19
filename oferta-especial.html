@@ -3797,6 +3797,67 @@ src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
       transition: background .2s, transform .15s;
     }
     .co-btn-no:hover { background: #b91c1c; transform: translateY(-1px); }
+
+    /* ── MOBILE: cabe em 1 tela sem scroll ── */
+    @media (max-width: 600px) {
+      #contraOfertaOverlay {
+        padding: 10px;
+        align-items: center;
+      }
+      #contraOfertaModal {
+        padding: 16px 16px 14px;
+        max-height: 96vh;
+        border-radius: 16px;
+      }
+      .co-badge {
+        font-size: .65rem;
+        padding: 3px 10px;
+        margin-bottom: 8px;
+      }
+      .co-title {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      .co-sub {
+        font-size: .76rem;
+        margin-bottom: 10px;
+      }
+      .co-inc-box {
+        padding: 8px 10px 6px;
+        margin-bottom: 8px;
+        border-radius: 9px;
+      }
+      .co-inc-box__header {
+        font-size: .62rem;
+        margin-bottom: 6px;
+      }
+      .co-list--rich li {
+        gap: 5px;
+        padding: 3px 0;
+      }
+      .co-icon { font-size: .78rem; }
+      .co-text { font-size: .71rem; }
+      .co-old { font-size: .6rem; }
+      .co-price-box {
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .co-price-old { font-size: .72rem; }
+      .co-price { font-size: 1.9rem; }
+      .co-price-note { font-size: .65rem; }
+      .co-btn-yes {
+        font-size: .8rem;
+        padding: 12px 14px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+      }
+      .co-btn-no {
+        font-size: .7rem;
+        padding: 9px 14px;
+        border-radius: 8px;
+      }
+    }
   </style>
 
   <script>
