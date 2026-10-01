@@ -109,3 +109,12 @@ A página possui uma seção de 7 dias marcada como configurável. Só mantenha 
 - autoplay/loop dos 4 vídeos;
 - páginas legais;
 - Meta/TikTok/Google eventos, se instalados.
+
+
+## Atualização de design (versão colorida)
+
+- Hero mais objetivo com foco em benefício e produto.
+- Paleta mais colorida inspirada em páginas educacionais: azul para estrutura, laranja para CTA, amarelo para energia, verde para progresso e coral/roxo como apoio visual.
+- Três depoimentos em vídeo e três provas em imagem, conforme solicitado.
+- Bônus Bible Goods destacado no Kit Completo.
+- Não usei a alegação “evita TDAH” no site por segurança jurídica e de anúncios. A copy trabalha atenção, foco, rotina e estímulo de linguagem sem promessa médica.
