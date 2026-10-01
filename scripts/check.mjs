@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {execFileSync} from 'node:child_process';
+const root=path.resolve(import.meta.dirname,'..');let failures=[];let refs=0;
+for(const file of fs.readdirSync(root).filter(f=>f.endsWith('.html'))){const html=fs.readFileSync(path.join(root,file),'utf8');const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);if(new Set(ids).size!==ids.length)failures.push(file+': IDs duplicados');for(const m of html.matchAll(/\b(?:src|href|data-src)="([^"]+)"/g)){let url=m[1];if(/^(https?:|data:|mailto:|tel:)/.test(url))continue;if(url.startsWith('#')){if(!ids.includes(url.slice(1)))failures.push(file+': âncora '+url);continue;}url=url.split('#')[0];refs++;if(!fs.existsSync(path.join(root,url)))failures.push(file+': arquivo ausente '+url);}if(!html.includes('lang="pt-BR"'))failures.push(file+': idioma ausente');}
+for(const f of fs.readdirSync(path.join(root,'js')))if(f.endsWith('.js'))execFileSync(process.execPath,['--check',path.join(root,'js',f)]);
+JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8'));
+if(failures.length){console.error(failures.join('\n'));process.exit(1);}console.log(`OK: HTMLs, ${refs} referências locais, âncoras, IDs, JavaScript e vercel.json.`);
