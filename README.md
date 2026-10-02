@@ -49,9 +49,9 @@ Os vídeos já estão configurados para `muted + autoplay + loop + playsinline`.
 ### 4. Troque as imagens dos depoimentos
 Substitua:
 
-- `assets/images/crianca-atividade-01.webp`
-- `assets/images/crianca-atividade-02.webp`
-- `assets/images/crianca-atividade-03.webp`
+- `assets/images/crianca-atividade-01.png`
+- `assets/images/crianca-atividade-02.png`
+- `assets/images/crianca-atividade-03.png`
 
 Use somente material real e autorizado.
 
