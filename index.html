@@ -13,6 +13,46 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Ajustes pontuais solicitados: galeria maior e maior ênfase visual na seção de dor */
+    #produto .gallery-grid{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+      max-width:1080px;
+    }
+
+    .problem-section{
+      background:linear-gradient(180deg,#fff8f7 0%,#f7fbff 100%);
+    }
+    .problem-section .problem-copy .eyebrow{
+      background:#ffe9e4;
+      color:#b83226;
+      border:1px solid #ffd4cb;
+    }
+    .problem-section .pain-list div{
+      background:#fffafa;
+      border-color:#ffd8d2;
+      box-shadow:0 8px 22px rgba(177,50,38,.05);
+    }
+    .problem-section .safe-note{
+      background:linear-gradient(135deg,#fff0ec,#fff8ed);
+      border-left-color:#e04432;
+      color:#4f4450;
+    }
+
+    @media(max-width:1060px){
+      #produto .gallery-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        max-width:900px;
+      }
+    }
+    @media(max-width:640px){
+      #produto .gallery-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+      }
+    }
+  </style>
   <script defer src="js/config.js"></script>
   <script defer src="js/analytics.js"></script>
   <script defer src="js/videos.js"></script>
@@ -63,16 +103,16 @@
     <section class="section-pad problem-section">
       <div class="container problem-grid">
         <div class="problem-copy reveal">
-          <span class="eyebrow">QUANDO “CADA CRIANÇA TEM SEU TEMPO” COMEÇA A PREOCUPAR</span>
-          <h2>Muitos pais esperam a leitura acontecer naturalmente. Até perceberem que <em>a dificuldade já está afetando a confiança.</em></h2>
-          <p>Quando ler deixa de ser apenas difícil e começa a virar frustração, a criança pode evitar as tarefas, se comparar com os colegas e perder a vontade de tentar.</p>
+          <span class="eyebrow">O ERRO É ESPERAR A FRUSTRAÇÃO VIRAR CRENÇA</span>
+          <h2>Esperar pode parecer inofensivo. O problema é quando a criança começa a concluir: <em>“eu não consigo”.</em></h2>
+          <p>Quando a leitura vira uma sequência de tentativas frustradas, a dificuldade deixa de ficar só no exercício: ela aparece no comportamento, na comparação com os colegas e na confiança para tentar de novo.</p>
           <div class="pain-list">
-            <div>✕ tarefas de leitura viram sofrimento</div>
-            <div>✕ chora ou trava na hora da lição</div>
-            <div>✕ notas começam a cair</div>
-            <div>✕ começa a achar que não é capaz</div>
+            <div>✕ a tarefa de leitura vira sofrimento</div>
+            <div>✕ chora, trava ou tenta escapar da lição</div>
+            <div>✕ começa a evitar ler na frente dos outros</div>
+            <div>✕ se compara e passa a se sentir menos capaz</div>
           </div>
-          <div class="safe-note"><strong>E o pior é quando ela começa a acreditar nisso.</strong> Quanto antes a rotina ganha atividades mais leves, visuais e guiadas, mais oportunidades você cria para praticar sem transformar o aprendizado em uma batalha.</div>
+          <div class="safe-note"><strong>Esse é o ponto de atenção:</strong> repetir frustração todos os dias pode fazer a criança associar leitura ao medo de errar. A proposta é quebrar esse ciclo com atividades curtas, visuais e guiadas, para que ela volte a praticar com mais segurança.</div>
         </div>
         <div class="solution-card reveal reveal-delay">
           <span class="solution-kicker">COM O EDUCAÇÃO KIDS</span>
@@ -295,7 +335,6 @@
             <li>Pagamento único</li>
           </ul>
           <button class="btn btn-primary btn-block js-complete-buy">Quero o Kit Completo + 6 bônus</button>
-          <small class="price-foot">Produto digital. Sem envio físico.</small>
         </article>
       </div>
     </section>
