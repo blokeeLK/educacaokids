@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const cfg = window.EDUKIDS_CONFIG || {};
   const modal = document.getElementById("upsellModal");
   let previousFocus = null;
-  const isPlaceholder = url => !url || /SEU-CHECKOUT/i.test(url);
+  const isUnavailable = url => !url;
   const toast = msg => { const el = document.getElementById("toast"); if (!el) return; el.textContent = msg; el.classList.add("show"); setTimeout(()=>el.classList.remove("show"),3200); };
   const navigate = (url, eventName) => {
     trackEvent(eventName || "checkout_click", { destination:url || "" });
-    if (isPlaceholder(url)) { toast("Configure o link de checkout em js/config.js antes de publicar."); return; }
+    if (isUnavailable(url)) { toast("O checkout ainda não está disponível. Tente novamente em instantes."); return; }
     sessionStorage.setItem("edukidsNavigatingToCheckout","1");
     location.href = url;
   };
