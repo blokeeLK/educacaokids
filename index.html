@@ -46,27 +46,243 @@
         max-width:900px;
       }
     }
+    @media(max-width:760px){
+      html,
+      body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+      }
+
+      .container{
+        width:calc(100% - 24px);
+        max-width:100%;
+      }
+
+      .hero-grid,
+      .problem-grid,
+      .development-grid,
+      .bible-grid,
+      .faq-grid,
+      .pricing-grid,
+      .receive-grid,
+      .footer-grid,
+      .quick-value-grid,
+      .how-grid,
+      .bonus-grid{
+        min-width:0;
+      }
+
+      .hero-grid > *,
+      .problem-grid > *,
+      .development-grid > *,
+      .bible-grid > *,
+      .faq-grid > *,
+      .pricing-grid > *,
+      .receive-grid > *,
+      .footer-grid > *,
+      .quick-value-grid > *,
+      .how-grid > *,
+      .bonus-grid > *{
+        min-width:0;
+        max-width:100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      li,
+      summary,
+      .hero-lead,
+      .safe-note,
+      .solution-step span,
+      .price-card,
+      .bonus-card,
+      .receive-grid article,
+      .final-card,
+      .guarantee-card,
+      .accordion details{
+        overflow-wrap:break-word;
+        word-break:normal;
+      }
+
+      .pill,
+      .eyebrow{
+        width:auto;
+        max-width:100%;
+        white-space:normal;
+        line-height:1.25;
+      }
+
+      .btn,
+      .text-button{
+        max-width:100%;
+        white-space:normal;
+        text-align:center;
+        line-height:1.25;
+      }
+
+      .price-card,
+      .solution-card,
+      .bonus-card,
+      .how-card,
+      .quick-card,
+      .video-card,
+      .receive-grid article,
+      .guarantee-card,
+      .final-card,
+      .accordion details{
+        min-width:0;
+        max-width:100%;
+      }
+
+      .price-top{
+        flex-wrap:wrap;
+        align-items:flex-start;
+      }
+
+      .mobile-buybar > *{
+        min-width:0;
+      }
+
+      .mobile-buybar .btn{
+        flex:0 1 58%;
+        max-width:58%;
+      }
+
+      .modal-panel{
+        max-width:calc(100vw - 24px);
+      }
+
+      /* Bônus em duas colunas no celular: 2 + 2 + 2 */
+      .bonus-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px;
+      }
+
+      .bonus-card{
+        padding:16px 10px 15px;
+        min-height:0;
+        border-radius:20px;
+      }
+
+      .bonus-book{
+        width:min(104px,100%);
+        height:134px;
+        margin:2px auto 14px;
+        padding:12px 8px;
+        box-shadow:10px 10px 16px rgba(23,33,59,.14);
+      }
+
+      .bonus-book::before{
+        left:-9px;
+        width:10px;
+        height:126px;
+      }
+
+      .bonus-book::after{
+        left:8px;
+        right:8px;
+        bottom:9px;
+        height:6px;
+      }
+
+      .bonus-book span{
+        font-size:7px;
+        padding:4px 5px;
+      }
+
+      .bonus-book strong{
+        font-size:11px;
+        margin-top:7px;
+      }
+
+      .bonus-book i{
+        font-size:23px;
+        margin-top:6px;
+      }
+
+      .bonus-card h3{
+        font-size:14px;
+        line-height:1.2;
+        margin-bottom:7px;
+      }
+
+      .bonus-card p{
+        font-size:11px;
+        line-height:1.45;
+        margin-bottom:10px;
+      }
+
+      .bonus-card s,
+      .bonus-card > b{
+        font-size:10px;
+      }
+    }
+
     @media(max-width:640px){
+      /* Carrossel mobile: uma imagem grande por vez, sem gerar rolagem lateral da página */
       #produto .gallery-grid{
         display:flex;
         gap:12px;
-        width:calc(100% - 28px);
+        width:calc(100% - 24px);
         max-width:none;
-        overflow-x:auto;
+        overflow-x:hidden;
+        overflow-y:visible;
         scroll-behavior:smooth;
-        scroll-snap-type:x mandatory;
+        scroll-snap-type:none;
         scrollbar-width:none;
         -ms-overflow-style:none;
         padding-left:0;
         padding-right:0;
+        touch-action:pan-y;
+        overscroll-behavior-x:contain;
       }
+
       #produto .gallery-grid::-webkit-scrollbar{
         display:none;
       }
+
       #produto .gallery-grid .gallery-item{
-        flex:0 0 84%;
-        min-width:84%;
-        scroll-snap-align:center;
+        flex:0 0 86%;
+        width:86%;
+        min-width:0;
+        max-width:86%;
+        transform:none;
+      }
+
+      #produto .gallery-grid .gallery-item img{
+        width:100%;
+        height:auto;
+      }
+    }
+
+    @media(max-width:380px){
+      .container{
+        width:calc(100% - 18px);
+      }
+
+      .bonus-grid{
+        gap:8px;
+      }
+
+      .bonus-card{
+        padding:13px 8px;
+      }
+
+      .bonus-book{
+        width:min(94px,100%);
+        height:122px;
+      }
+
+      .bonus-book::before{
+        height:114px;
+      }
+
+      .mobile-buybar .btn{
+        font-size:12px;
+        padding:11px 10px;
       }
     }
   </style>
@@ -424,32 +640,54 @@
       let timer = null;
       let index = 0;
 
+      function getGallery(){
+        return document.querySelector('#produto .gallery-grid');
+      }
+
       function stopGalleryLoop(){
         if(timer){
-          clearInterval(timer);
+          clearTimeout(timer);
           timer = null;
         }
       }
 
-      function startGalleryLoop(){
+      function resetGallery(){
+        const gallery = getGallery();
+        if(!gallery) return;
+
+        gallery.style.scrollBehavior = 'auto';
+        gallery.scrollLeft = 0;
+        index = 0;
+
+        requestAnimationFrame(function(){
+          gallery.style.scrollBehavior = 'smooth';
+        });
+      }
+
+      function scheduleNext(){
         stopGalleryLoop();
 
-        const gallery = document.querySelector('#produto .gallery-grid');
-        if(!gallery || !mobileGallery.matches) return;
+        if(!mobileGallery.matches || document.hidden) return;
 
-        const items = Array.from(gallery.querySelectorAll('.gallery-item'));
-        if(items.length < 2) return;
-
-        index = 0;
-        gallery.scrollLeft = 0;
-
-        timer = setInterval(function(){
-          if(!mobileGallery.matches){
+        timer = setTimeout(function move(){
+          const gallery = getGallery();
+          if(!gallery || !mobileGallery.matches || document.hidden){
             stopGalleryLoop();
             return;
           }
 
-          index++;
+          const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+          if(items.length < 2){
+            stopGalleryLoop();
+            return;
+          }
+
+          const styles = getComputedStyle(gallery);
+          const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+          const cardWidth = items[0].getBoundingClientRect().width;
+          const step = cardWidth + gap;
+
+          index += 1;
 
           if(index >= items.length){
             gallery.style.scrollBehavior = 'auto';
@@ -461,23 +699,59 @@
                 gallery.style.scrollBehavior = 'smooth';
               });
             });
-            return;
+          }else{
+            gallery.scrollTo({
+              left:index * step,
+              behavior:'smooth'
+            });
           }
 
-          const item = items[index];
-          const target = item.offsetLeft - Math.max(0, (gallery.clientWidth - item.clientWidth) / 2);
-          gallery.scrollTo({left: target, behavior: 'smooth'});
+          timer = setTimeout(move, 3200);
         }, 3200);
       }
 
-      window.addEventListener('DOMContentLoaded', startGalleryLoop);
-      window.addEventListener('resize', startGalleryLoop);
+      function startGalleryLoop(){
+        stopGalleryLoop();
+
+        if(!mobileGallery.matches) return;
+
+        const gallery = getGallery();
+        if(!gallery) return;
+
+        resetGallery();
+        scheduleNext();
+      }
+
+      function initGalleryLoop(){
+        startGalleryLoop();
+
+        if(typeof mobileGallery.addEventListener === 'function'){
+          mobileGallery.addEventListener('change', function(){
+            if(mobileGallery.matches){
+              startGalleryLoop();
+            }else{
+              stopGalleryLoop();
+              resetGallery();
+            }
+          });
+        }
+      }
+
+      if(document.readyState === 'complete'){
+        initGalleryLoop();
+      }else{
+        window.addEventListener('load', initGalleryLoop, {once:true});
+      }
+
+      window.addEventListener('orientationchange', function(){
+        setTimeout(startGalleryLoop, 350);
+      });
 
       document.addEventListener('visibilitychange', function(){
         if(document.hidden){
           stopGalleryLoop();
         }else{
-          startGalleryLoop();
+          scheduleNext();
         }
       });
     })();
