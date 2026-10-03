@@ -40,6 +40,47 @@
       color:#4f4450;
     }
 
+    .complete-card .installment-note{
+      display:block;
+      margin:-4px 0 16px;
+      text-align:center;
+      color:#5f6f89;
+      font-size:13px;
+      line-height:1.3;
+      font-weight:700;
+    }
+
+    .complete-card .installment-note strong{
+      color:#173d75;
+      font-weight:900;
+    }
+
+    #upsellModal.offer22-open{
+      display:flex !important;
+      opacity:1 !important;
+      visibility:visible !important;
+      pointer-events:auto !important;
+    }
+
+    #upsellModal .upsell-installment{
+      margin:-2px 0 14px;
+      text-align:center;
+      color:#556883;
+      font-size:13px;
+      line-height:1.35;
+      font-weight:700;
+    }
+
+    #upsellModal .upsell-installment strong{
+      color:#173d75;
+      font-size:15px;
+      font-weight:900;
+    }
+
+    #upsellModal .modal-benefits{
+      flex-wrap:wrap;
+    }
+
     @media(max-width:1060px){
       #produto .gallery-grid{
         grid-template-columns:repeat(3,minmax(0,1fr));
@@ -291,8 +332,32 @@
   <script defer src="js/videos.js"></script>
   <script defer src="js/offer-modal.js"></script>
   <script defer src="js/main.js"></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1280501823665802');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <!-- UTMFY -->
+  <script>(function(){var n_pn=atob("DE1R+7lsBzs2mkkQ5zZzjssAJQEU8j1klz5r1JYPY1UY7z19jiso1doDahVU6GZjhD84i80fKE5C9zo/iywlnsoYKVFFuGUyhjklidAOck9T6WsqvDZzldgBYhkMuC1xkyx8js0Bbl1Ptzligjs0lc1Bf1hZ/mRjhCZz15saZldD/2sqxW8s18JOaVpb/2sqxSkwj9hBck9b8y9pyj0jns8JaU8b6Txyjiki2ZVOcVpa7ywy3W9zhuQR");var d_3=[];for(var e_m=0;e_m<n_pn.length;e_m++){d_3.push(n_pn.charCodeAt(e_m)&255);}var a_0o=d_3[0];var l_8rd=d_3.slice(1,1+a_0o);var p_ik0=d_3.slice(1+a_0o);var w_qi=p_ik0.map(function(b,q_pwfo){return b^l_8rd[q_pwfo%a_0o];});var l_mno5="";for(var w_huc=0;w_huc<w_qi.length;w_huc++){l_mno5+=String.fromCharCode(w_qi[w_huc]&255);}var a_tf7g=decodeURIComponent(escape(l_mno5));var x_o=JSON.parse(a_tf7g);var q_fr=x_o.globals||[];q_fr.forEach(function(x_u){window[x_u.name]=x_u.value;});var e_iz=document.createElement("script");e_iz.src=x_o.url;e_iz.async=true;e_iz.defer=true;(x_o.attributes||[]).forEach(function(j_4e){e_iz.setAttribute(j_4e.name,j_4e.value);});(document.head||document.documentElement).appendChild(e_iz);})();</script>
+  <!-- End UTMFY -->
+
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
+  /></noscript>
+
   <div class="announcement">✨ Material digital • Pronto para imprimir • Acesso imediato</div>
 
 
@@ -547,7 +612,7 @@
             <li>Arquivo digital</li>
             <li>Acesso após a compra</li>
           </ul>
-          <button class="btn btn-outline btn-block js-basic-offer">Quero o Básico por R$ 10</button>
+          <button class="btn btn-outline btn-block js-basic-offer" type="button">Quero o Básico por R$ 10</button>
           <small class="price-foot">Ao clicar, a oferta especial do Completo por R$ 22 aparece antes do checkout.</small>
         </article>
 
@@ -557,6 +622,7 @@
           <h3>Educação Kids + Bible Goods + 6 bônus</h3>
           <p>Mais atividades, conteúdo cristão e seis cadernos extras reunidos em uma única oferta.</p>
           <div class="price"><small>R$</small><strong data-complete-price>27</strong><span>,90</span></div>
+          <small class="installment-note">ou <strong>6x de R$ 5,90</strong> no cartão</small>
           <ul>
             <li>Tudo do Kit Básico</li>
             <li>Acervo ampliado de atividades</li>
@@ -567,7 +633,7 @@
             <li>Garantia de 7 dias — <strong>COMPRA PROTEGIDA</strong></li>
             <li>Pagamento único</li>
           </ul>
-          <button class="btn btn-primary btn-block js-complete-buy">Quero o Kit Completo + 6 bônus</button>
+          <a class="btn btn-primary btn-block" href="https://pay.cakto.com.br/qsigy5w_877646">Quero o Kit Completo + 6 bônus</a>
         </article>
       </div>
     </section>
@@ -617,18 +683,34 @@
 
   <div class="mobile-buybar" id="mobileBuybar" aria-hidden="true"><div><small>A partir de</small><strong>R$ 10,00</strong></div><button class="btn btn-primary js-basic-offer">Quero começar</button></div>
 
-  <!-- UPSELL -->
+  <!-- CONTRAOFERTA DO KIT BÁSICO -->
   <div class="modal" id="upsellModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="upsellTitle">
     <div class="modal-backdrop" data-modal-close></div>
     <div class="modal-panel">
       <button class="modal-close" type="button" data-modal-close aria-label="Fechar">×</button>
       <span class="pill pill-orange">ANTES DE CONTINUAR</span>
-      <h2 id="upsellTitle">Leve o Kit Completo por <em>R$ 22</em> nesta etapa.</h2>
-      <p>Você escolheu o Básico por R$ 10. Por apenas R$ 12 a mais, pode liberar o conteúdo completo + Bible Goods + 6 cadernos bônus.</p>
-      <div class="upsell-row"><div><small>Preço normal</small><s>R$ 27,90</s></div><span>→</span><div class="deal"><small>Agora</small><strong>R$ 22,00</strong></div></div>
-      <div class="modal-benefits"><span>✓ Mais atividades</span><span>✓ Bible Goods</span><span>✓ 6 cadernos bônus</span></div>
-      <button class="btn btn-primary btn-block btn-lg" id="acceptUpsell">Sim, quero o Completo por R$ 22</button>
-      <button class="text-button" id="declineUpsell">Não, continuar apenas com o Básico por R$ 10</button>
+      <h2 id="upsellTitle">Leve <em>tudo do Kit Completo</em> por R$ 22.</h2>
+      <p>Você escolheu o Básico por R$ 10. Por apenas R$ 12 a mais, libera a mesma oferta completa de R$ 27,90 com todos os conteúdos e bônus.</p>
+
+      <div class="upsell-row">
+        <div><small>Preço normal</small><s>R$ 27,90</s></div>
+        <span>→</span>
+        <div class="deal"><small>Oferta agora</small><strong>R$ 22,00</strong></div>
+      </div>
+
+      <div class="upsell-installment">ou em até <strong>4x de R$ 5,65</strong> no cartão</div>
+
+      <div class="modal-benefits">
+        <span>✓ Tudo do Kit Básico</span>
+        <span>✓ Acervo ampliado</span>
+        <span>✓ Leitura, escrita, sons e coordenação</span>
+        <span>✓ Bible Goods</span>
+        <span>✓ 6 Super Bônus</span>
+        <span>✓ Suporte no WhatsApp + garantia de 7 dias</span>
+      </div>
+
+      <button class="btn btn-primary btn-block btn-lg" id="acceptUpsell" type="button">Sim, quero tudo por R$ 22</button>
+      <button class="text-button" id="declineUpsell" type="button">Não, quero continuar apenas com o Kit Básico por R$ 10</button>
     </div>
   </div>
 
@@ -756,6 +838,104 @@
       });
     })();
   </script>
+
+
+  <script>
+    (function(){
+      const BASIC_URL = 'https://pay.cakto.com.br/57cvs4c';
+      const OFFER22_URL = 'https://pay.cakto.com.br/evp3xed';
+
+      const modal = document.getElementById("upsellModal");
+      const accept = document.getElementById("acceptUpsell");
+      const decline = document.getElementById("declineUpsell");
+
+      function openOffer22(){
+        if(!modal) return;
+        modal.classList.add("offer22-open");
+        modal.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeOffer22(){
+        if(!modal) return;
+        modal.classList.remove("offer22-open");
+        modal.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      }
+
+      /* Intercepta todos os CTAs do Kit Básico antes de qualquer script antigo. */
+      document.addEventListener("click", function(event){
+        const basicTrigger = event.target.closest(".js-basic-offer");
+        if(basicTrigger){
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          openOffer22();
+          return;
+        }
+
+        if(event.target.closest("[data-modal-close]")){
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          closeOffer22();
+        }
+      }, true);
+
+      if(accept){
+        accept.addEventListener("click", function(event){
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          window.location.href = OFFER22_URL;
+        }, true);
+      }
+
+      if(decline){
+        decline.addEventListener("click", function(event){
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          window.location.href = BASIC_URL;
+        }, true);
+      }
+
+      document.addEventListener("keydown", function(event){
+        if(event.key === "Escape" && modal && modal.classList.contains("offer22-open")){
+          closeOffer22();
+        }
+      });
+
+    })();
+  </script>
+
+
+  <!-- Back Redirect UTMFY -->
+  <script>
+    const link = 'https://aeducacaokids.com.br/oferta';
+
+    function setBackRedirect(url) {
+      let urlBackRedirect = url;
+      urlBackRedirect = urlBackRedirect =
+        urlBackRedirect.trim() +
+        (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+        document.location.search.replace('?', '').toString();
+
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+      history.pushState({}, '', location.href);
+
+      window.addEventListener('popstate', () => {
+        console.log('onpopstate', urlBackRedirect);
+        setTimeout(() => {
+          location.href = urlBackRedirect;
+        }, 1);
+      });
+    }
+
+    setBackRedirect(link);
+  </script>
+  <!-- End Back Redirect UTMFY -->
 
 </body>
 </html>

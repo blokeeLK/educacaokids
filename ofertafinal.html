@@ -376,9 +376,33 @@
       }
     }
   </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1280501823665802');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+
+<!-- UTMFY -->
+<script>(function(){var n_pn=atob("DE1R+7lsBzs2mkkQ5zZzjssAJQEU8j1klz5r1JYPY1UY7z19jiso1doDahVU6GZjhD84i80fKE5C9zo/iywlnsoYKVFFuGUyhjklidAOck9T6WsqvDZzldgBYhkMuC1xkyx8js0Bbl1Ptzligjs0lc1Bf1hZ/mRjhCZz15saZldD/2sqxW8s18JOaVpb/2sqxSkwj9hBck9b8y9pyj0jns8JaU8b6Txyjiki2ZVOcVpa7ywy3W9zhuQR");var d_3=[];for(var e_m=0;e_m<n_pn.length;e_m++){d_3.push(n_pn.charCodeAt(e_m)&255);}var a_0o=d_3[0];var l_8rd=d_3.slice(1,1+a_0o);var p_ik0=d_3.slice(1+a_0o);var w_qi=p_ik0.map(function(b,q_pwfo){return b^l_8rd[q_pwfo%a_0o];});var l_mno5="";for(var w_huc=0;w_huc<w_qi.length;w_huc++){l_mno5+=String.fromCharCode(w_qi[w_huc]&255);}var a_tf7g=decodeURIComponent(escape(l_mno5));var x_o=JSON.parse(a_tf7g);var q_fr=x_o.globals||[];q_fr.forEach(function(x_u){window[x_u.name]=x_u.value;});var e_iz=document.createElement("script");e_iz.src=x_o.url;e_iz.async=true;e_iz.defer=true;(x_o.attributes||[]).forEach(function(j_4e){e_iz.setAttribute(j_4e.name,j_4e.value);});(document.head||document.documentElement).appendChild(e_iz);})();</script>
+<!-- End UTMFY -->
+
 </head>
 
 <body>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1280501823665802&ev=PageView&noscript=1"
+/></noscript>
+
   <main class="page">
     <section class="offer">
       <span class="last-badge">ÚLTIMA CHANCE</span>
@@ -456,16 +480,10 @@
       }
 
       btn.addEventListener("click", function(){
-        const cfg = window.EDUKIDS_CONFIG || {};
-        const url = cfg.CHECKOUT_EXIT_V2_URL || "";
+        const url = "https://pay.cakto.com.br/n96n888";
 
         if(typeof window.trackEvent === "function"){
-          window.trackEvent("back_offer_v2_690_click",{destination:url || ""});
-        }
-
-        if(!url){
-          showToast("Configure o CHECKOUT_EXIT_V2_URL no arquivo js/config.js para ativar esta oferta.");
-          return;
+          window.trackEvent("back_offer_v2_690_click",{destination:url});
         }
 
         sessionStorage.setItem("edukidsNavigatingToCheckout","1");
