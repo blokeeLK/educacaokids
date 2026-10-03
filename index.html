@@ -17,27 +17,11 @@
   <script defer src="js/analytics.js"></script>
   <script defer src="js/videos.js"></script>
   <script defer src="js/offer-modal.js"></script>
-  <script defer src="js/exit-offer.js"></script>
   <script defer src="js/main.js"></script>
 </head>
 <body>
   <div class="announcement">✨ Material digital • Pronto para imprimir • Acesso imediato</div>
 
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Educação Kids, início">
-        <span class="brand-mark">EK</span>
-        <span class="brand-copy"><strong data-brand>Educação Kids</strong><small>Aprender brincando</small></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="#beneficios">Benefícios</a>
-        <a href="#provas">Na prática</a>
-        <a href="#bible">Bônus</a>
-        <a href="#oferta">Oferta</a>
-      </nav>
-      <a class="btn btn-small btn-primary" href="#oferta">Ver os kits</a>
-    </div>
-  </header>
 
   <main id="top">
     <!-- HERO -->
@@ -54,12 +38,6 @@
             <div><i>📚</i><span><strong>Leitura e escrita</strong><small>letras, sílabas, palavras e traçados</small></span></div>
             <div><i>🎯</i><span><strong>Foco na atividade</strong><small>propostas curtas, visuais e objetivas</small></span></div>
           </div>
-
-          <div class="hero-actions">
-            <button class="btn btn-primary btn-lg js-basic-offer">Quero começar por R$ 10</button>
-            <button class="btn btn-secondary btn-lg js-complete-buy">Ver Kit Completo</button>
-          </div>
-          <p class="microcopy">Pagamento único • produto digital • acesso após confirmação</p>
         </div>
 
         <div class="hero-visual reveal reveal-delay" aria-label="Vídeo principal de apresentação">
@@ -122,7 +100,6 @@
         <button class="gallery-item g5" data-lightbox="assets/images/atividade-05.png"><img src="assets/images/atividade-05.png" alt="Prévia da atividade 5"></button>
         <button class="gallery-item g6" data-lightbox="assets/images/atividade-06.png"><img src="assets/images/atividade-06.png" alt="Prévia da atividade 6"></button>
       </div>
-      <div class="container mini-cta reveal"><div><strong>Quer começar pelo essencial?</strong><span>O Kit Básico reúne uma seleção direta para colocar as atividades na rotina.</span></div><button class="btn btn-primary js-basic-offer">Começar por R$ 10</button></div>
     </section>
 
     <!-- DEVELOPMENT -->
@@ -158,12 +135,6 @@
         <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-01.png" data-autoplay-video><source data-src="assets/videos/video-01.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Atividade em uso</strong><span>Uma forma simples de transformar o conteúdo em prática.</span></div></article>
         <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-02.png" data-autoplay-video><source data-src="assets/videos/video-02.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Aprendizado visual</strong><span>Atividades coloridas para tornar a rotina mais envolvente.</span></div></article>
         <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-03.png" data-autoplay-video><source data-src="assets/videos/video-03.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Prática guiada</strong><span>Propostas objetivas para fazer junto, passo a passo.</span></div></article>
-      </div>
-
-      <div class="container photo-testimonials reveal-stagger">
-        <article><img src="assets/images/crianca-atividade-01.png" alt="Criança realizando atividade educativa"><div><strong>Aprender fazendo</strong><span>Atividades para usar em casa ou no apoio educacional.</span></div></article>
-        <article><img src="assets/images/crianca-atividade-02.png" alt="Material educativo sendo utilizado"><div><strong>Material pronto</strong><span>Escolha a página, imprima e comece.</span></div></article>
-        <article><img src="assets/images/crianca-atividade-03.png" alt="Atividade infantil impressa em uso"><div><strong>Mais variedade</strong><span>Opções para alternar habilidades e manter a rotina ativa.</span></div></article>
       </div>
     </section>
 
@@ -207,7 +178,6 @@
           <p>O <strong>BibliGoods / Bible Goods</strong> adiciona atividades cristãs infantis para transformar parte da rotina em momentos de conversa sobre Deus, histórias bíblicas e valores — e o Kit Completo ainda libera mais 6 cadernos extras sem custo adicional.</p>
           <div class="bible-number"><strong data-bible-count>400+</strong><span>atividades bíblicas</span></div>
           <div class="bible-tags"><span>Histórias de Jesus</span><span>Personagens bíblicos</span><span>Oração</span><span>Gratidão</span><span>Bondade</span><span>Família</span><span>Colorir</span><span>Jogos</span></div>
-          <button class="btn btn-gold btn-lg js-complete-buy">Quero o Kit Completo + todos os bônus</button>
         </div>
         <div class="bible-visual reveal reveal-delay">
           <div class="bible-cover"><img src="assets/images/bible-kit.png" alt="Prévia do bônus Bible Goods"></div>
@@ -264,7 +234,6 @@
 
         <div class="bonus-total">
           <div><small>VALOR DOS 6 BÔNUS</small><s>R$ 256</s><strong>HOJE: GRÁTIS</strong></div>
-          <button class="btn btn-gold btn-lg js-complete-buy">Quero o Kit Completo + 6 bônus</button>
         </div>
       </div>
     </section>
@@ -323,7 +292,13 @@
             <li>6 cadernos bônus avaliados em R$ 256</li>
             <li>Pagamento único</li>
           </ul>
-          <button class="btn btn-primary btn-block js-complete-buy">Quero o Kit Completo</button>
+          <div class="cta-value-stack" aria-label="Vantagens incluídas no Kit Completo">
+            <div><span>🎁 6 super bônus</span><strong><s>R$ 256</s> GRÁTIS</strong></div>
+            <div><span>✝ Bible Goods</span><strong>INCLUÍDO</strong></div>
+            <div><span>💬 Suporte completo no WhatsApp</span><strong>INCLUÍDO</strong></div>
+            <div><span>🛡 Garantia de 7 dias</span><strong>COMPRA PROTEGIDA</strong></div>
+          </div>
+          <button class="btn btn-primary btn-block js-complete-buy">Quero o Kit Completo + 6 bônus</button>
           <small class="price-foot">Produto digital. Sem envio físico.</small>
         </article>
       </div>
@@ -386,19 +361,6 @@
       <div class="modal-benefits"><span>✓ Mais atividades</span><span>✓ Bible Goods</span><span>✓ 6 cadernos bônus</span></div>
       <button class="btn btn-primary btn-block btn-lg" id="acceptUpsell">Sim, quero o Completo por R$ 22</button>
       <button class="text-button" id="declineUpsell">Não, continuar apenas com o Básico por R$ 10</button>
-    </div>
-  </div>
-
-  <!-- EXIT OFFER -->
-  <div class="modal" id="exitModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="exitTitle">
-    <div class="modal-backdrop" data-exit-close></div>
-    <div class="modal-panel compact-modal">
-      <button class="modal-close" type="button" data-exit-close aria-label="Fechar">×</button>
-      <span class="pill pill-purple">ÚLTIMA CONDIÇÃO</span>
-      <h2 id="exitTitle">Antes de sair, veja a condição especial do Kit Completo.</h2>
-      <div class="exit-price"><s>R$ 27,90</s><strong data-exit-price>R$ 17,90</strong></div>
-      <button class="btn btn-primary btn-block btn-lg" id="acceptExitOffer">Quero aproveitar esta condição</button>
-      <button class="text-button" data-exit-close>Não, obrigado</button>
     </div>
   </div>
 
