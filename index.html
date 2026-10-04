@@ -850,122 +850,137 @@
   <script>
     (function(){
       const mobileGallery = window.matchMedia('(max-width: 640px)');
-      let timer = null;
-      let index = 0;
+      const SPEED_PX_PER_SECOND = 38;
+      let animationFrame = null;
+      let lastTime = null;
+      let loopWidth = 0;
+      let prepared = false;
 
       function getGallery(){
         return document.querySelector('#produto .gallery-grid');
       }
 
-      function stopGalleryLoop(){
-        if(timer){
-          clearTimeout(timer);
-          timer = null;
+      function stopContinuousLoop(){
+        if(animationFrame){
+          cancelAnimationFrame(animationFrame);
+          animationFrame = null;
         }
+        lastTime = null;
       }
 
-      function resetGallery(){
+      function removeClones(gallery){
+        gallery.querySelectorAll('[data-loop-clone="true"]').forEach(function(item){
+          item.remove();
+        });
+        prepared = false;
+        loopWidth = 0;
+      }
+
+      function prepareContinuousLoop(){
         const gallery = getGallery();
-        if(!gallery) return;
+        if(!gallery || !mobileGallery.matches) return false;
+
+        if(!prepared){
+          removeClones(gallery);
+
+          const originals = Array.from(gallery.querySelectorAll('.gallery-item'));
+          if(originals.length < 2) return false;
+
+          originals.forEach(function(item){
+            const clone = item.cloneNode(true);
+            clone.setAttribute('data-loop-clone','true');
+            clone.setAttribute('aria-hidden','true');
+            clone.tabIndex = -1;
+            gallery.appendChild(clone);
+          });
+
+          prepared = true;
+        }
 
         gallery.style.scrollBehavior = 'auto';
+
+        const firstOriginal = gallery.querySelector('.gallery-item:not([data-loop-clone="true"])');
+        const firstClone = gallery.querySelector('.gallery-item[data-loop-clone="true"]');
+
+        if(!firstOriginal || !firstClone) return false;
+
+        loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
+        return loopWidth > 0;
+      }
+
+      function animate(time){
+        const gallery = getGallery();
+        if(!gallery || !mobileGallery.matches){
+          stopContinuousLoop();
+          return;
+        }
+
+        if(document.hidden){
+          lastTime = time;
+          animationFrame = requestAnimationFrame(animate);
+          return;
+        }
+
+        if(!loopWidth && !prepareContinuousLoop()){
+          animationFrame = requestAnimationFrame(animate);
+          return;
+        }
+
+        if(lastTime === null) lastTime = time;
+        const delta = Math.min((time - lastTime) / 1000, 0.05);
+        lastTime = time;
+
+        gallery.scrollLeft += SPEED_PX_PER_SECOND * delta;
+
+        if(gallery.scrollLeft >= loopWidth){
+          gallery.scrollLeft -= loopWidth;
+        }
+
+        animationFrame = requestAnimationFrame(animate);
+      }
+
+      function startContinuousLoop(){
+        stopContinuousLoop();
+
+        const gallery = getGallery();
+        if(!gallery || !mobileGallery.matches) return;
+
+        prepareContinuousLoop();
         gallery.scrollLeft = 0;
-        index = 0;
-
-        requestAnimationFrame(function(){
-          gallery.style.scrollBehavior = 'smooth';
-        });
+        lastTime = null;
+        animationFrame = requestAnimationFrame(animate);
       }
 
-      function scheduleNext(){
-        stopGalleryLoop();
-
-        if(!mobileGallery.matches || document.hidden) return;
-
-        timer = setTimeout(function move(){
-          const gallery = getGallery();
-          if(!gallery || !mobileGallery.matches || document.hidden){
-            stopGalleryLoop();
-            return;
-          }
-
-          const items = Array.from(gallery.querySelectorAll('.gallery-item'));
-          if(items.length < 2){
-            stopGalleryLoop();
-            return;
-          }
-
-          const styles = getComputedStyle(gallery);
-          const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
-          const cardWidth = items[0].getBoundingClientRect().width;
-          const step = cardWidth + gap;
-
-          index += 1;
-
-          if(index >= items.length){
-            gallery.style.scrollBehavior = 'auto';
-            gallery.scrollLeft = 0;
-            index = 0;
-
-            requestAnimationFrame(function(){
-              requestAnimationFrame(function(){
-                gallery.style.scrollBehavior = 'smooth';
-              });
-            });
-          }else{
-            gallery.scrollTo({
-              left:index * step,
-              behavior:'smooth'
-            });
-          }
-
-          timer = setTimeout(move, 3200);
-        }, 3200);
-      }
-
-      function startGalleryLoop(){
-        stopGalleryLoop();
-
-        if(!mobileGallery.matches) return;
-
+      function handleViewportChange(){
         const gallery = getGallery();
         if(!gallery) return;
 
-        resetGallery();
-        scheduleNext();
-      }
+        stopContinuousLoop();
+        removeClones(gallery);
+        gallery.scrollLeft = 0;
 
-      function initGalleryLoop(){
-        startGalleryLoop();
-
-        if(typeof mobileGallery.addEventListener === 'function'){
-          mobileGallery.addEventListener('change', function(){
-            if(mobileGallery.matches){
-              startGalleryLoop();
-            }else{
-              stopGalleryLoop();
-              resetGallery();
-            }
-          });
+        if(mobileGallery.matches){
+          requestAnimationFrame(startContinuousLoop);
         }
       }
 
-      if(document.readyState === 'complete'){
-        initGalleryLoop();
-      }else{
-        window.addEventListener('load', initGalleryLoop, {once:true});
+      /* Inicia imediatamente: não espera window.load, Pixel ou qualquer script externo. */
+      startContinuousLoop();
+
+      if(typeof mobileGallery.addEventListener === 'function'){
+        mobileGallery.addEventListener('change', handleViewportChange);
+      }else if(typeof mobileGallery.addListener === 'function'){
+        mobileGallery.addListener(handleViewportChange);
       }
+
+      window.addEventListener('resize', function(){
+        if(!mobileGallery.matches) return;
+        loopWidth = 0;
+      }, {passive:true});
 
       window.addEventListener('orientationchange', function(){
-        setTimeout(startGalleryLoop, 350);
-      });
-
-      document.addEventListener('visibilitychange', function(){
-        if(document.hidden){
-          stopGalleryLoop();
-        }else{
-          scheduleNext();
-        }
+        if(!mobileGallery.matches) return;
+        loopWidth = 0;
       });
     })();
   </script>
