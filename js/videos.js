@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const videos = [...document.querySelectorAll("[data-autoplay-video]")];
   if (!videos.length) return;
-  let sectionTracked = false;
   const loadAndPlay = async (video) => {
     const source = video.querySelector("source[data-src]");
     if (source && !source.src) { source.src = source.dataset.src; video.load(); }
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     const v = entry.target;
-    if (entry.isIntersecting) { loadAndPlay(v); if (!sectionTracked) { sectionTracked = true; trackEvent("video_section_view",{},"video_section_view"); } }
+    if (entry.isIntersecting) { loadAndPlay(v); }
     else if (!v.paused) v.pause();
   }), { rootMargin:"250px 0px", threshold:.03 });
   videos.forEach(v => { observer.observe(v); v.addEventListener("ended", () => { v.currentTime = 0; v.play().catch(()=>{}); }); });
