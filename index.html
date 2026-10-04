@@ -196,6 +196,109 @@
         max-width:calc(100vw - 24px);
       }
 
+      /* Contraoferta: ajuste exclusivo para celular */
+      #upsellModal{
+        align-items:flex-start !important;
+        justify-content:center !important;
+        overflow-y:auto !important;
+        -webkit-overflow-scrolling:touch;
+        padding:12px 0 !important;
+      }
+
+      #upsellModal .modal-backdrop{
+        position:fixed;
+        inset:0;
+      }
+
+      #upsellModal .modal-panel{
+        position:relative;
+        width:calc(100vw - 20px) !important;
+        max-width:420px !important;
+        max-height:none !important;
+        margin:auto 10px !important;
+        padding:20px 16px 18px !important;
+        border-radius:22px !important;
+        overflow:visible !important;
+        transform:none !important;
+      }
+
+      #upsellModal .modal-close{
+        top:10px !important;
+        right:10px !important;
+      }
+
+      #upsellModal .pill{
+        font-size:10px !important;
+        padding:7px 10px !important;
+        margin-right:34px;
+      }
+
+      #upsellModal h2{
+        font-size:clamp(21px,6vw,28px) !important;
+        line-height:1.08 !important;
+        margin:12px 0 10px !important;
+      }
+
+      #upsellModal .modal-panel > p{
+        font-size:13px !important;
+        line-height:1.45 !important;
+        margin-bottom:14px !important;
+      }
+
+      #upsellModal .upsell-row{
+        gap:8px !important;
+        margin:12px 0 8px !important;
+        padding:12px 10px !important;
+      }
+
+      #upsellModal .upsell-row > span{
+        font-size:16px !important;
+      }
+
+      #upsellModal .upsell-row small{
+        font-size:10px !important;
+      }
+
+      #upsellModal .upsell-row s,
+      #upsellModal .upsell-row strong{
+        font-size:17px !important;
+      }
+
+      #upsellModal .upsell-installment{
+        margin:0 0 10px !important;
+        font-size:11px !important;
+      }
+
+      #upsellModal .upsell-installment strong{
+        font-size:13px !important;
+      }
+
+      #upsellModal .modal-benefits{
+        display:grid !important;
+        grid-template-columns:1fr 1fr !important;
+        gap:6px !important;
+        margin:10px 0 14px !important;
+      }
+
+      #upsellModal .modal-benefits span{
+        min-width:0 !important;
+        font-size:10px !important;
+        line-height:1.25 !important;
+        padding:7px 8px !important;
+      }
+
+      #upsellModal #acceptUpsell{
+        font-size:14px !important;
+        line-height:1.2 !important;
+        padding:13px 12px !important;
+      }
+
+      #upsellModal #declineUpsell{
+        font-size:11px !important;
+        line-height:1.35 !important;
+        padding:10px 4px 2px !important;
+      }
+
       /* Bônus em duas colunas no celular: 2 + 2 + 2 */
       .bonus-grid{
         grid-template-columns:repeat(2,minmax(0,1fr)) !important;
@@ -740,8 +843,6 @@
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> <span data-brand>Educação Kids</span>. Todos os direitos reservados.</span></div>
   </footer>
-
-  <div class="mobile-buybar" id="mobileBuybar" aria-hidden="true"><div><small>A partir de</small><strong>R$ 10,00</strong></div><button class="btn btn-primary js-basic-offer">Quero começar</button></div>
 
   <!-- CONTRAOFERTA DO KIT BÁSICO -->
   <div class="modal" id="upsellModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="upsellTitle">
