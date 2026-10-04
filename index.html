@@ -328,7 +328,6 @@
     }
   </style>
   <script defer src="js/config.js"></script>
-  <script defer src="js/videos.js"></script>
   <script defer src="js/offer-modal.js"></script>
   <script defer src="js/main.js"></script>
 
@@ -495,11 +494,47 @@
         <p>Exemplos de aplicação ajudam você a visualizar como usar o material no dia a dia.</p>
       </div>
       <div class="container video-grid" data-video-section>
-        <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-01.png" data-autoplay-video><source data-src="assets/videos/video-01.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Atividade em uso</strong><span>Uma forma simples de transformar o conteúdo em prática.</span></div></article>
-        <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-02.png" data-autoplay-video><source data-src="assets/videos/video-02.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Aprendizado visual</strong><span>Atividades coloridas para tornar a rotina mais envolvente.</span></div></article>
-        <article class="video-card reveal"><div class="video-shell"><video muted loop playsinline preload="metadata" poster="assets/images/poster-video-03.png" data-autoplay-video><source data-src="assets/videos/video-03.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Prática guiada</strong><span>Propostas objetivas para fazer junto, passo a passo.</span></div></article>
+        <article class="video-card reveal"><div class="video-shell"><video autoplay muted loop playsinline preload="auto" poster="assets/images/poster-video-01.png" data-autoplay-video><source src="assets/videos/video-01.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Atividade em uso</strong><span>Uma forma simples de transformar o conteúdo em prática.</span></div></article>
+        <article class="video-card reveal"><div class="video-shell"><video autoplay muted loop playsinline preload="auto" poster="assets/images/poster-video-02.png" data-autoplay-video><source src="assets/videos/video-02.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Aprendizado visual</strong><span>Atividades coloridas para tornar a rotina mais envolvente.</span></div></article>
+        <article class="video-card reveal"><div class="video-shell"><video autoplay muted loop playsinline preload="auto" poster="assets/images/poster-video-03.png" data-autoplay-video><source src="assets/videos/video-03.mp4" type="video/mp4"></video><button class="sound-toggle" type="button">Ativar som</button></div><div class="video-copy"><strong>Prática guiada</strong><span>Propostas objetivas para fazer junto, passo a passo.</span></div></article>
       </div>
     </section>
+
+    <script>
+      (function(){
+        const sectionVideos = document.querySelectorAll('[data-video-section] video[data-autoplay-video]');
+        sectionVideos.forEach(function(video){
+          video.muted = true;
+          video.loop = true;
+          video.autoplay = true;
+          video.preload = 'auto';
+          const p = video.play();
+          if(p && typeof p.catch === 'function') p.catch(function(){});
+        });
+
+        document.querySelectorAll('[data-video-section] .sound-toggle').forEach(function(button){
+          button.addEventListener('click', function(){
+            const video = button.closest('.video-shell').querySelector('video');
+            if(!video) return;
+
+            if(video.muted){
+              sectionVideos.forEach(function(v){ v.muted = true; });
+              document.querySelectorAll('[data-video-section] .sound-toggle').forEach(function(b){
+                b.textContent = 'Ativar som';
+              });
+              video.muted = false;
+              video.volume = 1;
+              button.textContent = 'Desativar som';
+              const p = video.play();
+              if(p && typeof p.catch === 'function') p.catch(function(){});
+            }else{
+              video.muted = true;
+              button.textContent = 'Ativar som';
+            }
+          });
+        });
+      })();
+    </script>
 
 
     <!-- HOW IT WORKS -->
