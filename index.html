@@ -328,7 +328,6 @@
     }
   </style>
   <script defer src="js/config.js"></script>
-  <script defer src="js/analytics.js"></script>
   <script defer src="js/videos.js"></script>
   <script defer src="js/offer-modal.js"></script>
   <script defer src="js/main.js"></script>
@@ -345,6 +344,7 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1280501823665802');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent');
   </script>
   <!-- End Meta Pixel Code -->
 
@@ -379,13 +379,38 @@
         </div>
 
         <div class="hero-visual reveal reveal-delay" aria-label="Vídeo principal de apresentação">
-          <video controls playsinline preload="metadata" style="position:relative;z-index:3;width:min(100%,620px);height:auto;max-height:590px;object-fit:contain;border-radius:28px;background:#000;box-shadow:0 28px 60px rgba(23,61,117,.18);" aria-label="Vídeo de apresentação do Educação Kids">
-            <source src="assets/videos/video1.mp4" type="video/mp4">
-            Seu navegador não suporta vídeo HTML5.
-          </video>
+          <div style="position:relative;z-index:3;width:min(100%,620px);">
+            <video id="mainVslVideo" controls autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;height:auto;max-height:590px;object-fit:contain;border-radius:28px;background:#000;box-shadow:0 28px 60px rgba(23,61,117,.18);" aria-label="Vídeo de apresentação do Educação Kids">
+              <source src="assets/videos/video1.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+            <button id="mainVslSoundButton" type="button" aria-label="Clique para liberar o som do vídeo" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;border:0;border-radius:999px;padding:14px 22px;background:rgba(0,0,0,.78);color:#fff;font:800 15px/1.2 Arial,sans-serif;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);white-space:nowrap;">🔊 Clique para liberar o som</button>
+          </div>
         </div>
       </div>
     </section>
+
+    <script>
+      (function(){
+        const video = document.getElementById('mainVslVideo');
+        const soundButton = document.getElementById('mainVslSoundButton');
+        if(!video || !soundButton) return;
+
+        video.muted = true;
+        video.loop = true;
+        const playPromise = video.play();
+        if(playPromise && typeof playPromise.catch === 'function'){
+          playPromise.catch(function(){});
+        }
+
+        soundButton.addEventListener('click', function(){
+          video.muted = false;
+          video.volume = 1;
+          video.play();
+          soundButton.style.display = 'none';
+        });
+      })();
+    </script>
 
     <!-- RAPID VALUE -->
     <section class="quick-value" id="beneficios">
