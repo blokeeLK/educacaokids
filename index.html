@@ -104,7 +104,39 @@
 <button class="alex-cta alex-cta-primary" id="alexAcceptUpsell" type="button">SIM, QUERO TUDO POR R$ 22</button>
 <button class="alex-decline" id="alexDeclineUpsell" type="button">Não, quero continuar apenas com o Kit Básico por R$ 10</button>
 </div>
-</div><script defer="True" src="js/site.js"></script><!-- Back Redirect UTMFY -->
+</div>
+<!-- Rolagem dos botões promocionais até os CTAs de R$ 10 e R$ 27,90 -->
+<script>
+(function () {
+  function initOfferScroll() {
+    const offerZone = document.querySelector('.alex-offer-zone');
+    const offerGrid = document.querySelector('.alex-offer-grid');
+    if (!offerZone || !offerGrid) return;
+
+    document.querySelectorAll('a[data-testid="button-cta-comprar"]').forEach(function (button) {
+      const isBeforeOffer = !!(button.compareDocumentPosition(offerZone) & Node.DOCUMENT_POSITION_FOLLOWING);
+      if (!isBeforeOffer) return;
+
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        const top = offerGrid.getBoundingClientRect().top + window.pageYOffset - 12;
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOfferScroll);
+  } else {
+    initOfferScroll();
+  }
+})();
+</script>
+<!-- Fim da rolagem dos botões promocionais -->
+<script defer="True" src="js/site.js"></script><!-- Back Redirect UTMFY -->
 <script>
     const link = 'https://aeducacaokids.com.br/oferta';
 
